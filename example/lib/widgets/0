@@ -1,0 +1,14 @@
+border properties call before borderFromLTRB
+borderColor(Colors.black)
+borderWidth(5)
+borderFromLTRB(bool left, bool top, bool right, bool bottom)
+
+
+shape()
+shapeCircle()
+
+After use following method you can not use methods of previous widget
+container()
+gestureDetector()
+positioned() // it should be last and main widget must inside Stack/AzStack
+
