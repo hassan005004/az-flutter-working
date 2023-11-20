@@ -1,9 +1,12 @@
 
 
+import 'center.dart';
+import 'positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:example/helper/config.dart';
+import '../helper/config.dart';
 
+import 'card.dart';
 import 'gesture_detector.dart';
 
 // extension BaseProperty on AzContainer {}
@@ -755,7 +758,11 @@ class AzContainer extends StatelessWidget {
     return toBuild();
   }
 
+
+  AzCard card() => AzCard(this.toBuild());
+  AzCenter center() => AzCenter(this.toBuild());
   AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
+  AzPositioned positioned() => AzPositioned(this.toBuild());
 
 
   // @override

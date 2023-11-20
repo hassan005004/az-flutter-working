@@ -47,7 +47,7 @@ class _TextFontWeightScreenState extends State<TextFontWeightScreen> {
               SizedBox(height: 20),
 
               AzText('With Extension').fs(14).bold(),
-              codeSnippet("Text('This is text').asText().fw(FontWeight.bold)"),
+              codeSnippet("Text('This is text').azText().fw(FontWeight.bold)"),
 
               SizedBox(height: 20),
 

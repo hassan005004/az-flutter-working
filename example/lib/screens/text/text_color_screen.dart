@@ -41,7 +41,7 @@ class _TextColorScreenState extends State<TextColorScreen> {
               SizedBox(height: 20),
 
               AzText('With Extension').fs(14).bold(),
-              codeSnippet("Text('This is text').asText().primaryColor()"),
+              codeSnippet("Text('This is text').azText().primaryColor()"),
 
               SizedBox(height: 20),
 

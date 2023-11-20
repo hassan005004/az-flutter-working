@@ -63,7 +63,4 @@ class AzPositioned extends StatelessWidget{
     return toBuild();
   }
 
-  // AzContainer container() => AzContainer(widget: this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-
 }

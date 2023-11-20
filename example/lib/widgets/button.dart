@@ -1,9 +1,11 @@
+import 'package:example/widgets/card.dart';
+import 'center.dart';
 import 'package:example/widgets/container.dart';
-import 'package:example/widgets/positioned.dart';
+import 'positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:example/helper/config.dart';
-import 'package:example/helper/config.dart';
+import '../helper/config.dart';
+import '../helper/config.dart';
 
 import 'gesture_detector.dart';
 //
@@ -339,6 +341,8 @@ class AzButton extends StatelessWidget{
   }
 
   AzContainer container() => AzContainer(widget: this.toBuild());
+  AzCard card() => AzCard(this.toBuild());
+  AzCenter center() => AzCenter(this.toBuild());
   AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
   AzPositioned positioned() => AzPositioned(this.toBuild());
 

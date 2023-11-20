@@ -36,7 +36,7 @@ class _TextFontSizeScreenState extends State<TextFontSizeScreen> {
               SizedBox(height: 20),
               
               AzText('With Extension').fs(14).bold(),
-              codeSnippet("Text('This is text').asText().fs(14)"),
+              codeSnippet("Text('This is text').azText().fs(14)"),
 
               SizedBox(height: 20),
 
@@ -57,17 +57,6 @@ class _TextFontSizeScreenState extends State<TextFontSizeScreen> {
           ],
         ),
       )
-      // .container()
-      // .m(10.0)
-      // .maxHeight(100.0).alignmentTopRight()
-      // .borderColor(Colors.black)
-      // .borderWidth(5)
-      // .borderFromLTRB(true, true, true, true)
-
-      // .borderColor(Colors.yellowAccent)
-
-      ,
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

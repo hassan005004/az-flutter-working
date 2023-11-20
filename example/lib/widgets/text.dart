@@ -1,8 +1,10 @@
 import 'dart:ui';
-import 'package:example/helper/config.dart';
-import 'package:example/widgets/positioned.dart';
+import '../helper/config.dart';
+import 'positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'card.dart';
+import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 
@@ -27,7 +29,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   // style proeprties here
   Color? _textColor;// = Colors.black;
   FontWeight _fontWeight = FontWeight.normal;
-  double _fontSize = 13;
+  double? _fontSize;
 
   double? _letterSpacing;
   double? _wordSpacing;
@@ -152,11 +154,11 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _textBaseline = textBaseline;
     return this;
   }
-  AzText textBaselineAlphabetic() {
+  AzText alphabetic() {
     _textBaseline = TextBaseline.alphabetic;
     return this;
   }
-  AzText textBaselineIdeographic() {
+  AzText ideographic() {
     _textBaseline = TextBaseline.ideographic;
     return this;
   }
@@ -240,13 +242,33 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _decorationStyle = decorationStyle;
     return this;
   }
+  AzText decorationStyleSolid() {
+    _decorationStyle = TextDecorationStyle.solid;
+    return this;
+  }
+  AzText decorationStyleDotted() {
+    _decorationStyle = TextDecorationStyle.dotted;
+    return this;
+  }
+  AzText decorationStyleWavy() {
+    _decorationStyle = TextDecorationStyle.wavy;
+    return this;
+  }
+  AzText decorationStyleDashed() {
+    _decorationStyle = TextDecorationStyle.dashed;
+    return this;
+  }
+  AzText decorationStyleDouble() {
+    _decorationStyle = TextDecorationStyle.double;
+    return this;
+  }
 
   AzText decorationThickness(double decorationThickness) {
     _decorationThickness = decorationThickness;
     return this;
   }
 
-  AzText fontFamily(String fontFamily) {
+  AzText fontFamily(String? fontFamily) {
     _fontFamily = fontFamily;
     return this;
   }
@@ -589,6 +611,8 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   }
 
   AzContainer container() => AzContainer(widget:this.toBuild());
+  AzCard card() => AzCard(this.toBuild());
+  AzCenter center() => AzCenter(this.toBuild());
   AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
   AzPositioned positioned() => AzPositioned(this.toBuild());
 }
