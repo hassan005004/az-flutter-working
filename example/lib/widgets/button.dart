@@ -295,6 +295,28 @@ class AzButton extends StatelessWidget {
     ));
     return this;
   }
+  AzButton dangerOutline(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color);
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton dangerSolid(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
 
 
   toBuild(){

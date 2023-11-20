@@ -12,3 +12,9 @@ container()
 gestureDetector()
 positioned() // it should be last and main widget must inside Stack/AzStack
 
+
+
+
+Text
+opacity must apply after any color methods
+

@@ -6,8 +6,6 @@ import 'package:example/screens/IconScreen.dart';
 import 'package:example/screens/ImageScreen.dart';
 import 'package:example/screens/RowScreen.dart';
 import 'package:example/screens/TextScreen.dart';
-import 'package:example/screens/lesson/1_flutter_main_dot_dart.dart';
-import 'package:example/widgets/button.dart';
 import 'package:example/widgets/container.dart';
 import 'package:example/widgets/list_tile.dart';
 import 'package:example/widgets/navigate.dart';
@@ -60,76 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            // OutlinedButton(
-            //   style: OutlinedButton.styleFrom(
-            //     primary: Colors.black87,
-            //     minimumSize: Size(88, 36),
-            //     padding: EdgeInsets.symmetric(horizontal: 16),
-            //     shape: const RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.all(Radius.circular(2)),
-            //     ),
-            //   ),
-            //   onPressed: () { },
-            //   child: Text('Looks like an OutlineButton'),
-            // ),
-            // ElevatedButton(
-            //   style: ElevatedButton.styleFrom(
-            //     primary: Colors.green, // background
-            //     onPrimary: Colors.white, // foreground
-            //   ),
-            //   onPressed: () { },
-            //   child: Text('ElevatedButton with custom foreground/background'),
-            // ),
-            // TextButton(
-            //   style: ButtonStyle(
-            //     overlayColor: MaterialStateProperty.resolveWith<Color?>(
-            //             (Set<MaterialState> states) {
-            //           if (states.contains(MaterialState.focused))
-            //             return Colors.green;
-            //           if (states.contains(MaterialState.hovered))
-            //             return Colors.green;
-            //           if (states.contains(MaterialState.pressed))
-            //             return Colors.blue;
-            //           return null; // Defer to the widget's default.
-            //         }),
-            //   ),
-            //   onPressed: () { },
-            //   child: Text('TextButton with custom overlay colors'),
-            // ),
-            // ElevatedButton(
-            //   style: ButtonStyle(
-            //     backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-            //             (Set<MaterialState> states) {
-            //           if (states.contains(MaterialState.disabled))
-            //             return Colors.green;
-            //           return null; // Defer to the widget's default.
-            //         }),
-            //     foregroundColor: MaterialStateProperty.resolveWith<Color?>(
-            //             (Set<MaterialState> states) {
-            //           if (states.contains(MaterialState.disabled))
-            //             return Colors.blue;
-            //           return null; // Defer to the widget's default.
-            //         }),
-            //   ),
-            //   onPressed: null,
-            //   child: Text('ElevatedButton with custom disabled colors'),
-            // ),
-            // OutlinedButton(
-            //   style: ButtonStyle(
-            //     shape: MaterialStateProperty.all<OutlinedBorder>(StadiumBorder()),
-            //     side: MaterialStateProperty.resolveWith<BorderSide>(
-            //             (Set<MaterialState> states) {
-            //           final Color color = states.contains(MaterialState.pressed)
-            //               ? Colors.blue
-            //               : Colors.green;
-            //           return BorderSide(color: color, width: 2);
-            //         }
-            //     ),
-            //   ),
-            //   onPressed: () { },
-            //   child: Text('OutlinedButton with custom shape and border'),
-            // ),
-            // Text('abc'),
+            AzText("Widget of AzPackage/Flutter").dangerColor().fs(22),
+
 
             AzText("Widget of AzPackage/Flutter").fs(20).bold().container().pLTRB(10.0, 10.0, 10.0, 0.0),
 

@@ -29,6 +29,8 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   // double _opacity = 0.25;
 
   // style proeprties here
+  bool _inherit = true;
+
   Color? _textColor;// = Colors.black;
   FontWeight _fontWeight = FontWeight.normal;
   double? _fontSize;
@@ -413,149 +415,27 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _textColor = AzUtlis().colorPrimary;
     return this;
   }
+  AzText dangerColor(){
+    _textColor = AzUtlis().colorDanger;
+    return this;
+  }
 
-  /*@override
-  Widget build(context) {
-    widget = Text(name.toString(),
-      // Key? key,
-      style: TextStyle(
-        // bool inherit = true,
-        color: _textColor,
-        // Color? backgroundColor,
-        // double? fontSize,
-        fontWeight: _fontWeight,
-        fontSize: _fontSize,
-        letterSpacing: _letterSpacing,
-        wordSpacing: _wordSpacing,
-        textBaseline: _textBaseline,
-        height: _height,
-        leadingDistribution: _leadingDistribution,
-        locale: _locale,
-        foreground: _foreground,
-        background: _background,
-        shadows: _shadows,
-        fontFeatures: _fontFeatures,
-        fontVariations: _fontVariations,
-        decoration: _decoration,
-        decorationColor: _decorationColor,
-        decorationStyle: _decorationStyle,
-        decorationThickness: _decorationThickness,
-        // debugLabel: _debugLabel,
-        fontFamily: _fontFamily,
-        fontFamilyFallback: _fontFamilyFallback,
-        package: _package,
-        overflow: _overflow,
-      ),
-      // StrutStyle? strutStyle,
-      strutStyle: StrutStyle(
-        fontFamily: _fontFamilyStrut,
-        fontFamilyFallback: _fontFamilyFallbackStrut,
-        fontSize: _fontSizeStrut,
-        height: _heightStrut,
-        leadingDistribution: _leadingDistributionStrut,
-        leading: _leading,
-        fontWeight: _fontWeightStrut,
-        fontStyle: _fontStyle,
-        forceStrutHeight: _forceStrutHeight,
-        // debugLabel: _debugLabel,
-        package: _packageStrut,
-      ),
-      textAlign: _textAlign,
-      textDirection: _textDirection,
-      locale: _locale,
-      softWrap: _softWrap,
-      overflow: _overflow,
-      textScaleFactor: _textScaleFactor,
-      maxLines: _maxLines,
-      semanticsLabel: _semanticsLabel,
-      textWidthBasis: _textWidthBasis,
-      textHeightBehavior: _textHeightBehavior,
-      selectionColor: _selectionColor,
-    );
+  AzText opacity(double double){
+    _textColor = _textColor!.withOpacity(double);
+    return this;
+  }
 
-    return internalBuild(
-      widget!,
-      key: key,
-    );
-  }*/
-
-
-
-  // AzContainer b() => AzContainer(
-  //   child: Builder(
-  //     builder: (context) => build(context),
-  //   ),
-  //   // key,
-  // );
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Text(name.toString(),
-  //     // Key? key,
-  //     style: TextStyle(
-  //       // bool inherit = true,
-  //       color: _textColor,
-  //       // Color? backgroundColor,
-  //       // double? fontSize,
-  //       fontWeight: _fontWeight,
-  //       fontSize: _fontSize,
-  //       letterSpacing: _letterSpacing,
-  //       wordSpacing: _wordSpacing,
-  //       textBaseline: _textBaseline,
-  //       height: _height,
-  //       leadingDistribution: _leadingDistribution,
-  //       locale: _locale,
-  //       foreground: _foreground,
-  //       background: _background,
-  //       shadows: _shadows,
-  //       fontFeatures: _fontFeatures,
-  //       fontVariations: _fontVariations,
-  //       decoration: _decoration,
-  //       decorationColor: _decorationColor,
-  //       decorationStyle: _decorationStyle,
-  //       decorationThickness: _decorationThickness,
-  //       // debugLabel: _debugLabel,
-  //       fontFamily: _fontFamily,
-  //       fontFamilyFallback: _fontFamilyFallback,
-  //       package: _package,
-  //       overflow: _overflow,
-  //     ),
-  //     // StrutStyle? strutStyle,
-  //     strutStyle: StrutStyle(
-  //       fontFamily: _fontFamilyStrut,
-  //       fontFamilyFallback: _fontFamilyFallbackStrut,
-  //       fontSize: _fontSizeStrut,
-  //       height: _heightStrut,
-  //       leadingDistribution: _leadingDistributionStrut,
-  //       leading: _leading,
-  //       fontWeight: _fontWeightStrut,
-  //       fontStyle: _fontStyle,
-  //       forceStrutHeight: _forceStrutHeight,
-  //       // debugLabel: _debugLabel,
-  //       package: _packageStrut,
-  //     ),
-  //     textAlign: _textAlign,
-  //     textDirection: _textDirection,
-  //     locale: _locale,
-  //     softWrap: _softWrap,
-  //     overflow: _overflow,
-  //     textScaleFactor: _textScaleFactor,
-  //     maxLines: _maxLines,
-  //     semanticsLabel: _semanticsLabel,
-  //     textWidthBasis: _textWidthBasis,
-  //     textHeightBehavior: _textHeightBehavior,
-  //     selectionColor: _selectionColor,
-  //   );
-  // }
+  AzText inherit(bool bool){
+    _inherit = bool;
+    return this;
+  }
 
   toBuild(){
     return Text(name.toString(),
       key:key,
       style: TextStyle(
-        // bool inherit = true,
+        inherit: _inherit,
         color: _textColor,
-        // Color? backgroundColor,
-        // double? fontSize,
         fontWeight: _fontWeight,
         fontSize: _fontSize,
         letterSpacing: _letterSpacing,
