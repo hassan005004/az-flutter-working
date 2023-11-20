@@ -1,18 +1,17 @@
 // all file new code
-import 'package:az_ui/widgets/positioned.dart';
+import 'positioned.dart';
 
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import '../helper/hex_color.dart';
 
 
 extension ExtCard on Card {
   AzCard azCard() => AzCard(child);
 }
-
+// ignore: must_be_immutable
 class AzCard extends StatelessWidget {
   final Widget? child;
   Color? _color;
@@ -27,15 +26,15 @@ class AzCard extends StatelessWidget {
   AzCard(
       this.child, {
         Key? key,
-      });
+      }) : super(key: key);
 
   AzCard color(String hexCode){
-    _color = hex_color(hexCode);
+    _color = hexColor(hexCode);
     return this;
   }
 
   AzCard shadowColor(String hexCode){
-    _shadowColor = hex_color(hexCode);
+    _shadowColor = hexColor(hexCode);
     return this;
   }
 
@@ -69,7 +68,6 @@ class AzCard extends StatelessWidget {
     return this;
   }
 
-  @override
   toBuild() {
     return Card(
       key: key,
@@ -90,8 +88,8 @@ class AzCard extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }

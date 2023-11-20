@@ -2,11 +2,11 @@ import 'dart:ui';
 
 
 import 'package:flutter/cupertino.dart';
-Color hex_color(String hexColorCode) {
+Color hexColor(String hexColorCode) {
   String hexColor = hexColorCode;//.toString();
   hexColor = hexColor.replaceAll("#", "");
   if (hexColor.length == 6) {
-    hexColor = "FF" + hexColor;
+    hexColor = "FF$hexColor";
   }
   if (hexColor.length == 8) {
     return Color(int.parse("0x$hexColor"));
@@ -36,10 +36,10 @@ Color lighten(Color c, [int percent = 10]) {
   );
 }
 
-Color setOpacity(Color color, int _isActive, int _isDisabled){
-  if(_isActive == 1) {
+Color setOpacity(Color color, int isActive, int isDisabled){
+  if(isActive == 1) {
     return darken(color);
-  } else if(_isDisabled == 1) {
+  } else if(isDisabled == 1) {
     return lighten(color);
   }
 

@@ -2,18 +2,16 @@ import 'card.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 extension ExtPositioned on AzCenter {
 
 }
-
+// ignore: must_be_immutable
 class AzCenter extends StatelessWidget{
   Widget child;
-  final Key? key;
 
-  AzCenter(this.child, {this.key});
+  AzCenter(this.child, {Key? key}) : super(key: key);
 
   toBuild() {
     return Center(
@@ -26,9 +24,9 @@ class AzCenter extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget:this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget:toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }

@@ -19,11 +19,11 @@
 //
 //
 //   double _borderWidth = dBorderWidth;
-//   Color _borderColor = hex_color(cBorder);
-//   Color _borderTopColor = hex_color(cBorder);
-//   Color _borderRightColor = hex_color(cBorder);
-//   Color _borderBottomColor = hex_color(cBorder);
-//   Color _borderLeftColor = hex_color(cBorder);
+//   Color _borderColor = hexColor(cBorder);
+//   Color _borderTopColor = hexColor(cBorder);
+//   Color _borderRightColor = hexColor(cBorder);
+//   Color _borderBottomColor = hexColor(cBorder);
+//   Color _borderLeftColor = hexColor(cBorder);
 //   double _borderTopWidth = dBorderWidth;
 //   double _borderRightWidth = dBorderWidth;
 //   double _borderBottomWidth = dBorderWidth;
@@ -45,8 +45,8 @@
 //   double _roundedBottomRight = 0;
 //
 //
-//   Color _color = hex_color("000000");
-//   Color _backgroundColor = hex_color("FFFFFF");
+//   Color _color = hexColor("000000");
+//   Color _backgroundColor = hexColor("FFFFFF");
 //   int _isDisabled = 0;
 //   int _isActive = 0;
 //
@@ -315,7 +315,7 @@
 //
 //   // background color
 //   Az bg(String colorHexCode){
-//     _backgroundColor = hex_color(colorHexCode);
+//     _backgroundColor = hexColor(colorHexCode);
 //     _widget = helperBg(_widget);
 //     return this;
 //   }
@@ -609,27 +609,27 @@
 //   }
 //
 //   Az borderColor(String colorHexCode) {
-//     _borderColor = _borderTopColor = _borderRightColor = _borderBottomColor = _borderLeftColor = hex_color(colorHexCode);
+//     _borderColor = _borderTopColor = _borderRightColor = _borderBottomColor = _borderLeftColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //
 //   Az borderTopColor(String colorHexCode){
-//     _borderTopColor = hex_color(colorHexCode);
+//     _borderTopColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //
 //   Az borderRightColor(String colorHexCode){
-//     _borderRightColor = hex_color(colorHexCode);
+//     _borderRightColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //
 //   Az borderBottomColor(String colorHexCode){
-//     _borderBottomColor = hex_color(colorHexCode);
+//     _borderBottomColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //
 //   Az borderLeftColor(String colorHexCode){
-//     _borderLeftColor = hex_color(colorHexCode);
+//     _borderLeftColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //
@@ -640,73 +640,73 @@
 //   }
 //
 //   Az borderPrimary(){
-//     _borderTopColor = hex_color(cPrimary);
-//     _borderRightColor = hex_color(cPrimary);
-//     _borderBottomColor = hex_color(cPrimary);
-//     _borderLeftColor = hex_color(cPrimary);
+//     _borderTopColor = hexColor(cPrimary);
+//     _borderRightColor = hexColor(cPrimary);
+//     _borderBottomColor = hexColor(cPrimary);
+//     _borderLeftColor = hexColor(cPrimary);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderSecondary(){
-//     _borderTopColor = hex_color(cSecondary);
-//     _borderRightColor = hex_color(cSecondary);
-//     _borderBottomColor = hex_color(cSecondary);
-//     _borderLeftColor = hex_color(cSecondary);
+//     _borderTopColor = hexColor(cSecondary);
+//     _borderRightColor = hexColor(cSecondary);
+//     _borderBottomColor = hexColor(cSecondary);
+//     _borderLeftColor = hexColor(cSecondary);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderSuccess(){
-//     _borderTopColor = hex_color(cSuccess);
-//     _borderRightColor = hex_color(cSuccess);
-//     _borderBottomColor = hex_color(cSuccess);
-//     _borderLeftColor = hex_color(cSuccess);
+//     _borderTopColor = hexColor(cSuccess);
+//     _borderRightColor = hexColor(cSuccess);
+//     _borderBottomColor = hexColor(cSuccess);
+//     _borderLeftColor = hexColor(cSuccess);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderDanger(){
-//     _borderTopColor = hex_color(cDanger);
-//     _borderRightColor = hex_color(cDanger);
-//     _borderBottomColor = hex_color(cDanger);
-//     _borderLeftColor = hex_color(cDanger);
+//     _borderTopColor = hexColor(cDanger);
+//     _borderRightColor = hexColor(cDanger);
+//     _borderBottomColor = hexColor(cDanger);
+//     _borderLeftColor = hexColor(cDanger);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderWarning(){
-//     _borderTopColor = hex_color(cWarning);
-//     _borderRightColor = hex_color(cWarning);
-//     _borderBottomColor = hex_color(cWarning);
-//     _borderLeftColor = hex_color(cWarning);
+//     _borderTopColor = hexColor(cWarning);
+//     _borderRightColor = hexColor(cWarning);
+//     _borderBottomColor = hexColor(cWarning);
+//     _borderLeftColor = hexColor(cWarning);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderInfo(){
-//     _borderTopColor = hex_color(cInfo);
-//     _borderRightColor = hex_color(cInfo);
-//     _borderBottomColor = hex_color(cInfo);
-//     _borderLeftColor = hex_color(cInfo);
+//     _borderTopColor = hexColor(cInfo);
+//     _borderRightColor = hexColor(cInfo);
+//     _borderBottomColor = hexColor(cInfo);
+//     _borderLeftColor = hexColor(cInfo);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderLight(){
-//     _borderTopColor = hex_color(cLight);
-//     _borderRightColor = hex_color(cLight);
-//     _borderBottomColor = hex_color(cLight);
-//     _borderLeftColor = hex_color(cLight);
+//     _borderTopColor = hexColor(cLight);
+//     _borderRightColor = hexColor(cLight);
+//     _borderBottomColor = hexColor(cLight);
+//     _borderLeftColor = hexColor(cLight);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }
 //
 //   Az borderDark(){
-//     _borderTopColor = hex_color(cDark);
-//     _borderRightColor = hex_color(cDark);
-//     _borderBottomColor = hex_color(cDark);
-//     _borderLeftColor = hex_color(cDark);
+//     _borderTopColor = hexColor(cDark);
+//     _borderRightColor = hexColor(cDark);
+//     _borderBottomColor = hexColor(cDark);
+//     _borderLeftColor = hexColor(cDark);
 //     _widget = helperBorder(_widget);
 //     return this;
 //   }

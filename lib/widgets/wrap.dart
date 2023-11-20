@@ -1,7 +1,5 @@
-// all file new code
 import 'positioned.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
@@ -11,7 +9,10 @@ extension ExtWrap on Wrap {
   AzWrap azWrap() => AzWrap(children);
 }
 
+// ignore: must_be_immutable
 class AzWrap extends StatelessWidget {
+  // @override
+
   final List<Widget> children;
   // final GlobalKey key = GlobalKey();
   Axis _direction = Axis.horizontal;
@@ -27,10 +28,10 @@ class AzWrap extends StatelessWidget {
   AzWrap(
       this.children, {
         Key? key,
-      });
+      }) : super(key: key);
 
-  AzWrap axis(Axis _direction){
-    _direction = _direction;
+  AzWrap axis(Axis direction){
+    _direction = direction;
     return this;
   }
   AzWrap axisHorizontal(){
@@ -195,10 +196,10 @@ class AzWrap extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }

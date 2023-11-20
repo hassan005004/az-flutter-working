@@ -1,15 +1,14 @@
-import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'container.dart';
-import 'gesture_detector.dart';
+
 extension ExtPositioned on AzPositioned {
 
 }
 
+// ignore: must_be_immutable
 class AzPositioned extends StatelessWidget{
   Widget child;
-  final Key? key;
+  // final Key? key;
   double? _left;
   double? _top;
   double? _right;
@@ -17,7 +16,7 @@ class AzPositioned extends StatelessWidget{
   double? _width;
   double? _height;
 
-  AzPositioned(this.child, {this.key/*, this.left, this.top, this.right, this.bottom, this.height, this.width,*/});
+  AzPositioned(this.child, {Key? key}) : super(key: key);
 
 
   AzPositioned left(double double){

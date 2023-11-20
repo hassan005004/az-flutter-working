@@ -11,7 +11,7 @@ extension AzRadioBuilder on RadioListTile {
   AzRadioListTile az() => AzRadioListTile();
 }
 
-
+// ignore: must_be_immutable
 class AzRadioListTile extends StatelessWidget {
   // final String _title;
   // final Key key;
@@ -55,8 +55,8 @@ class AzRadioListTile extends StatelessWidget {
     return this;
   }
 
-  AzRadioListTile activeColor(String hexColor){//make it hex color code
-    _activeColor = hex_color(hexColor);
+  AzRadioListTile activeColor(String hexColor_){//make it hex color code
+    _activeColor = hexColor(hexColor_);
     return this;
   }
 
@@ -126,19 +126,19 @@ class AzRadioListTile extends StatelessWidget {
   }
 
   AzRadioListTile tileColor(String hexCode){
-    _tileColor = hex_color(hexCode);
+    _tileColor = hexColor(hexCode);
     return this;
   }
 
   AzRadioListTile selectedTileColor(String hexCode){
-    _selectedTileColor = hex_color(hexCode);
+    _selectedTileColor = hexColor(hexCode);
     return this;
   }
 
 
   AzRadioListTile({
     Key? key,
-  });
+  }) : super(key: key);
 
   toBuild(){
     return RadioListTile(
@@ -168,9 +168,9 @@ class AzRadioListTile extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }

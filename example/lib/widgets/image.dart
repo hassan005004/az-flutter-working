@@ -1,7 +1,5 @@
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
@@ -11,7 +9,7 @@ extension ExtImage on AssetImage {
   // AzImage azImageAsset() => AzImage(assetName);
   // AzImageNetwrok azImageNetwork() => AzImageNetwrok(data ?? "");
 }
-
+// ignore: must_be_immutable
 class AzImage extends StatelessWidget {
   dynamic data;
   Widget? _widget;
@@ -27,8 +25,8 @@ class AzImage extends StatelessWidget {
     return const Icon(Icons.info_outline, color: Colors.red,);
   };
 
-  Widget Function(BuildContext, Widget, int?, bool)? _frameBuilder = (BuildContext context, Widget widget, int? _int, bool _bool) {
-    if(_bool == true){
+  Widget Function(BuildContext, Widget, int?, bool)? _frameBuilder = (BuildContext context, Widget widget, int? int_, bool bool_) {
+    if(bool_ == true){
       return widget;
     }
     return const Icon(Icons.info_outline, color: Colors.red,);
@@ -43,7 +41,7 @@ class AzImage extends StatelessWidget {
 
   AzImage({
     Key? key,
-  });
+  }) : super(key: key);
 
   AzImage frameBuilder(Widget Function(BuildContext, Widget, int?, bool)? frameBuilder){
     _frameBuilder = frameBuilder;
@@ -227,89 +225,90 @@ class AzImage extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }
 
-class AzImageNetwrok extends AzContainer {
-  final String data;
-  double? _width;
-  double? _height;
-  BoxFit? _boxFit;
+// class AzImageNetwrok extends AzContainer {
+//   final String data;
+//   double? _width;
+//   double? _height;
+//   BoxFit? _boxFit;
+//
+//
+//   AzImageNetwrok(this.data, {
+//     Key? key,
+//   });
+//
+//   AzImageNetwrok width(double double){
+//     _width = double;
+//     return this;
+//   }
+//
+//   AzImageNetwrok height(double double){
+//     _height = double;
+//     return this;
+//   }
+//
+//   AzImageNetwrok boxFit(BoxFit boxFit){
+//     _boxFit = boxFit;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitNone(){
+//     _boxFit = BoxFit.none;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitScaleDown(){
+//     _boxFit = BoxFit.scaleDown;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFill(){
+//     _boxFit = BoxFit.fill;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFitHeight(){
+//     _boxFit = BoxFit.fitHeight;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitCover(){
+//     _boxFit = BoxFit.cover;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitContain(){
+//     _boxFit = BoxFit.contain;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFitWidth(){
+//     _boxFit = BoxFit.fitWidth;
+//     return this;
+//   }
+//
+//   toBuild() {
+//     return Image.network(data,
+//       key: key,
+//       scale: 1,
+//       width: _width,
+//       height: _height,
+//       fit: _boxFit,
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return toBuild();
+//   }
+//
+//   AzContainer container() => AzContainer(widget: toBuild());
+//   AzCard card() => AzCard(toBuild());
+//   AzCenter center() => AzCenter(toBuild());
+//   AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+//   AzPositioned positioned() => AzPositioned(toBuild());
+// }
 
-
-  AzImageNetwrok(this.data, {
-    Key? key,
-  });
-
-  AzImageNetwrok width(double double){
-    _width = double;
-    return this;
-  }
-
-  AzImageNetwrok height(double double){
-    _height = double;
-    return this;
-  }
-
-  AzImageNetwrok boxFit(BoxFit boxFit){
-    _boxFit = boxFit;
-    return this;
-  }
-  AzImageNetwrok boxFitNone(){
-    _boxFit = BoxFit.none;
-    return this;
-  }
-  AzImageNetwrok boxFitScaleDown(){
-    _boxFit = BoxFit.scaleDown;
-    return this;
-  }
-  AzImageNetwrok boxFitFill(){
-    _boxFit = BoxFit.fill;
-    return this;
-  }
-  AzImageNetwrok boxFitFitHeight(){
-    _boxFit = BoxFit.fitHeight;
-    return this;
-  }
-  AzImageNetwrok boxFitCover(){
-    _boxFit = BoxFit.cover;
-    return this;
-  }
-  AzImageNetwrok boxFitContain(){
-    _boxFit = BoxFit.contain;
-    return this;
-  }
-  AzImageNetwrok boxFitFitWidth(){
-    _boxFit = BoxFit.fitWidth;
-    return this;
-  }
-
-  toBuild() {
-    return Image.network(data,
-      key: key,
-      scale: 1,
-      width: _width,
-      height: _height,
-      fit: _boxFit,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return toBuild();
-  }
-
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
-}
 //
 //
 //
@@ -330,7 +329,7 @@ class AzImageNetwrok extends AzContainer {
 // //   double? _height;
 // //
 // //
-// //   ImgUrl(this.context, this.url);
+// //   ImgUrl(context, this.url);
 // //
 // //   width(double width){
 // //     _width = width;

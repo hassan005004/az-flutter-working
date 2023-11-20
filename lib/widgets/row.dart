@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +9,9 @@ import 'gesture_detector.dart';
 extension ExtRow on AzRow {
   AzRow azRow() => AzRow(children);
 }
-
+// ignore: must_be_immutable
 class AzRow extends StatelessWidget{
   List<Widget> children;
-  final Key? key;
 
   CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
   MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.center;
@@ -22,7 +20,7 @@ class AzRow extends StatelessWidget{
   VerticalDirection _verticalDirection = VerticalDirection.down;
   TextBaseline? _textBaseline;
 
-  AzRow(this.children, {this.key});
+  AzRow(this.children, {Key? key}) : super(key: key);
 
   AzRow crossStart(){
     _crossAxisAlignment = CrossAxisAlignment.start;
@@ -101,13 +99,13 @@ class AzRow extends StatelessWidget{
   toBuild() {
     return Row(
       key: key,
-      children: children,
       crossAxisAlignment: _crossAxisAlignment,
       mainAxisAlignment: _mainAxisAlignment,
       mainAxisSize: _mainAxisSize,
       textDirection: _textDirection,
       verticalDirection: _verticalDirection,
       textBaseline: _textBaseline,
+      children: children,
     );
   }
 
@@ -116,10 +114,10 @@ class AzRow extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }

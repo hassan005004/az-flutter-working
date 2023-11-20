@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'center.dart';
 import 'positioned.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,10 +11,10 @@ extension ExtGestureDetector on GestureDetector {
   // AzContainer on() => AzContainer(widget: AzGestureDetector(child ?? ""));
   // AzContainer container() => AzContainer(widget: child);
 }
-
-class AzGestureDetector extends AzContainer{
+// ignore: must_be_immutable
+class AzGestureDetector extends StatelessWidget{
   Widget? child;
-  final Key? key;
+  // final Key? key;
 
   void Function(TapDownDetails)? _onTapDown;
   void Function(TapUpDetails)? _onTapUp;
@@ -23,7 +22,7 @@ class AzGestureDetector extends AzContainer{
   VoidCallback? _onTapCancel;
   VoidCallback? _onSecondaryTap;
 
-  AzGestureDetector(this.child, {this.key});
+  AzGestureDetector(this.child, {Key? key}) : super(key: key);
 
   AzGestureDetector onTapDown(void Function(TapDownDetails)? callback){
     _onTapDown = callback;
@@ -187,7 +186,6 @@ class AzGestureDetector extends AzContainer{
 
   toBuild() {
     return GestureDetector(
-      child: child,
       onTapDown: _onTapDown,
       onTapUp: _onTapUp,
       onTap: _onTap,
@@ -315,6 +313,7 @@ class AzGestureDetector extends AzContainer{
       // bool trackpadScrollCausesScale = false,
       // Offset trackpadScrollToScaleFactor = kDefaultTrackpadScrollToScaleFactor,
       // Set<PointerDeviceKind>? supportedDevices,
+      child: child,
     );
   }
 
@@ -323,10 +322,10 @@ class AzGestureDetector extends AzContainer{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
   // AzContainer b() => AzContainer(
   //   child: Builder(

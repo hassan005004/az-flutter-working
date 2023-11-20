@@ -1,6 +1,4 @@
-import 'dart:ui';
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'card.dart';
 import 'center.dart';
@@ -11,21 +9,17 @@ extension ExtListTile on AzListTile {
 
 }
 
+// ignore: must_be_immutable
 class AzListTile extends StatelessWidget{
   Widget child;
-  final Key? key;
+  // final Key? key;
 
   Widget? _leading;
   Widget? _subtitle;
   Widget? _trailing;
   VoidCallback? _onTap;
 
-  AzListTile(this.child, {this.key});
-
-  // AzListTile leading(Widget leading){
-  //   _leading = leading;
-  //   return this;
-  // }
+  AzListTile(this.child, {Key? key}) : super(key: key);
 
   AzListTile leading(Widget leading){
     _leading = leading;
@@ -91,9 +85,9 @@ class AzListTile extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }

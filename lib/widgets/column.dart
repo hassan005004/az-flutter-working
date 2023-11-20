@@ -1,19 +1,16 @@
-import 'dart:ui';
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 extension ExtColumn on AzColumn {
   AzColumn azColumn() => AzColumn(children);
 }
-
+// ignore: must_be_immutable
 class AzColumn extends StatelessWidget{
   List<Widget> children;
-  final Key? key;
 
   CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
   MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.center;
@@ -22,7 +19,7 @@ class AzColumn extends StatelessWidget{
   VerticalDirection _verticalDirection = VerticalDirection.down;
   TextBaseline? _textBaseline;
 
-  AzColumn(this.children, {this.key});
+  AzColumn(this.children, {Key? key}) : super(key: key);
 
   AzColumn crossStart(){
     _crossAxisAlignment = CrossAxisAlignment.start;
@@ -101,13 +98,13 @@ class AzColumn extends StatelessWidget{
   toBuild() {
     return Column(
       key: key,
-      children: children,
       crossAxisAlignment: _crossAxisAlignment,
       mainAxisAlignment: _mainAxisAlignment,
       mainAxisSize: _mainAxisSize,
       textDirection: _textDirection,
       verticalDirection: _verticalDirection,
       textBaseline: _textBaseline,
+      children: children,
     );
   }
 
@@ -116,10 +113,10 @@ class AzColumn extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }

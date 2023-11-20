@@ -275,7 +275,7 @@
 //
 //   // color
 //   AzTextStyle textColor(String colorHexCode) {
-//     _color = setOpacity(hex_color(colorHexCode), _isActive, _isDisabled);
+//     _color = setOpacity(hexColor(colorHexCode), _isActive, _isDisabled);
 //     return this;
 //   }
 //
@@ -342,7 +342,7 @@
 //
 //   // background color
 //   AzTextStyle bg(String colorHexCode) {
-//     _backgroundColor = hex_color(colorHexCode);
+//     _backgroundColor = hexColor(colorHexCode);
 //     return this;
 //   }
 //

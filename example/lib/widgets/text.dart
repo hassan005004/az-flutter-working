@@ -18,10 +18,12 @@ extension ExtText on Text {
 //   AzText container() => AzText(widget:widget);
 // }
 
+// ignore: must_be_immutable
 class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
-  Widget widget = Text('');
+  Widget widget = const Text('');
   dynamic name;
-  final Key? key;
+
+  // final Key? key;
   // Color borderColor = Colors.transparent;//border_color;
   // Color _bgColor = Colors.transparent;//main_one_color.withOpacity(0.125);
   // double _opacity = 0.25;
@@ -78,7 +80,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Color? _selectionColor;
 
 
-  AzText(this.name, {this.key});// : super();
+  AzText(this.name, {Key? key}) : super(key: key);
 
   AzText fs(size){
     _fontSize = size.toDouble();
@@ -610,9 +612,9 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget:this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget:toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }

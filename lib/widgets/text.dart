@@ -12,22 +12,13 @@ extension ExtText on Text {
   AzText azText() => AzText(data ?? "");
 }
 
-// extension ExtAzText on AzText {
-//   // AzGestureDetector on() => AzGestureDetector(this);
-//   // AzContainer container() => AzContainer(widget:widget);
-//   AzText container() => AzText(widget:widget);
-// }
-
+// ignore: must_be_immutable
 class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
-  Widget widget = Text('');
+  Widget widget = const Text('');
   dynamic name;
-  final Key? key;
-  // Color borderColor = Colors.transparent;//border_color;
-  // Color _bgColor = Colors.transparent;//main_one_color.withOpacity(0.125);
-  // double _opacity = 0.25;
 
   // style proeprties here
-  Color? _textColor;// = Colors.black;
+  Color? _textColor;
   FontWeight _fontWeight = FontWeight.normal;
   double? _fontSize;
 
@@ -78,7 +69,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Color? _selectionColor;
 
 
-  AzText(this.name, {this.key});// : super();
+  AzText(this.name, {Key? key}) : super(key: key);
 
   AzText fs(size){
     _fontSize = size.toDouble();
@@ -399,7 +390,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-
   /*
   * Methods for work easy
   * */
@@ -411,140 +401,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _textColor = AzUtlis().colorPrimary;
     return this;
   }
-
-  /*@override
-  Widget build(context) {
-    widget = Text(name.toString(),
-      // Key? key,
-      style: TextStyle(
-        // bool inherit = true,
-        color: _textColor,
-        // Color? backgroundColor,
-        // double? fontSize,
-        fontWeight: _fontWeight,
-        fontSize: _fontSize,
-        letterSpacing: _letterSpacing,
-        wordSpacing: _wordSpacing,
-        textBaseline: _textBaseline,
-        height: _height,
-        leadingDistribution: _leadingDistribution,
-        locale: _locale,
-        foreground: _foreground,
-        background: _background,
-        shadows: _shadows,
-        fontFeatures: _fontFeatures,
-        fontVariations: _fontVariations,
-        decoration: _decoration,
-        decorationColor: _decorationColor,
-        decorationStyle: _decorationStyle,
-        decorationThickness: _decorationThickness,
-        // debugLabel: _debugLabel,
-        fontFamily: _fontFamily,
-        fontFamilyFallback: _fontFamilyFallback,
-        package: _package,
-        overflow: _overflow,
-      ),
-      // StrutStyle? strutStyle,
-      strutStyle: StrutStyle(
-        fontFamily: _fontFamilyStrut,
-        fontFamilyFallback: _fontFamilyFallbackStrut,
-        fontSize: _fontSizeStrut,
-        height: _heightStrut,
-        leadingDistribution: _leadingDistributionStrut,
-        leading: _leading,
-        fontWeight: _fontWeightStrut,
-        fontStyle: _fontStyle,
-        forceStrutHeight: _forceStrutHeight,
-        // debugLabel: _debugLabel,
-        package: _packageStrut,
-      ),
-      textAlign: _textAlign,
-      textDirection: _textDirection,
-      locale: _locale,
-      softWrap: _softWrap,
-      overflow: _overflow,
-      textScaleFactor: _textScaleFactor,
-      maxLines: _maxLines,
-      semanticsLabel: _semanticsLabel,
-      textWidthBasis: _textWidthBasis,
-      textHeightBehavior: _textHeightBehavior,
-      selectionColor: _selectionColor,
-    );
-
-    return internalBuild(
-      widget!,
-      key: key,
-    );
-  }*/
-
-
-
-  // AzContainer b() => AzContainer(
-  //   child: Builder(
-  //     builder: (context) => build(context),
-  //   ),
-  //   // key,
-  // );
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Text(name.toString(),
-  //     // Key? key,
-  //     style: TextStyle(
-  //       // bool inherit = true,
-  //       color: _textColor,
-  //       // Color? backgroundColor,
-  //       // double? fontSize,
-  //       fontWeight: _fontWeight,
-  //       fontSize: _fontSize,
-  //       letterSpacing: _letterSpacing,
-  //       wordSpacing: _wordSpacing,
-  //       textBaseline: _textBaseline,
-  //       height: _height,
-  //       leadingDistribution: _leadingDistribution,
-  //       locale: _locale,
-  //       foreground: _foreground,
-  //       background: _background,
-  //       shadows: _shadows,
-  //       fontFeatures: _fontFeatures,
-  //       fontVariations: _fontVariations,
-  //       decoration: _decoration,
-  //       decorationColor: _decorationColor,
-  //       decorationStyle: _decorationStyle,
-  //       decorationThickness: _decorationThickness,
-  //       // debugLabel: _debugLabel,
-  //       fontFamily: _fontFamily,
-  //       fontFamilyFallback: _fontFamilyFallback,
-  //       package: _package,
-  //       overflow: _overflow,
-  //     ),
-  //     // StrutStyle? strutStyle,
-  //     strutStyle: StrutStyle(
-  //       fontFamily: _fontFamilyStrut,
-  //       fontFamilyFallback: _fontFamilyFallbackStrut,
-  //       fontSize: _fontSizeStrut,
-  //       height: _heightStrut,
-  //       leadingDistribution: _leadingDistributionStrut,
-  //       leading: _leading,
-  //       fontWeight: _fontWeightStrut,
-  //       fontStyle: _fontStyle,
-  //       forceStrutHeight: _forceStrutHeight,
-  //       // debugLabel: _debugLabel,
-  //       package: _packageStrut,
-  //     ),
-  //     textAlign: _textAlign,
-  //     textDirection: _textDirection,
-  //     locale: _locale,
-  //     softWrap: _softWrap,
-  //     overflow: _overflow,
-  //     textScaleFactor: _textScaleFactor,
-  //     maxLines: _maxLines,
-  //     semanticsLabel: _semanticsLabel,
-  //     textWidthBasis: _textWidthBasis,
-  //     textHeightBehavior: _textHeightBehavior,
-  //     selectionColor: _selectionColor,
-  //   );
-  // }
 
   toBuild(){
     return Text(name.toString(),
@@ -610,9 +466,9 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget:this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget:toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }

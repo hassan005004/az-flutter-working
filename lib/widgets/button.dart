@@ -1,7 +1,6 @@
-import 'package:az_ui/widgets/positioned.dart';
-import 'package:flutter/cupertino.dart';
+import 'dart:ui' as ui;
+import 'positioned.dart';
 import 'package:flutter/material.dart';
-
 import '../helper/config.dart';
 import 'card.dart';
 import 'center.dart';
@@ -17,8 +16,9 @@ import 'gesture_detector.dart';
 // highlightColor*
 // splashColor
 
-class AzButton extends StatelessWidget{
-  Widget child;
+// ignore: must_be_immutable
+class AzButton extends StatelessWidget {
+  final Widget child;
   // void Function()? onPressed;
   VoidCallback? _onPressed;
   VoidCallback? _onLongPress;
@@ -38,13 +38,11 @@ class AzButton extends StatelessWidget{
   MaterialStateProperty<Size?>? _fixedSize;
   MaterialStateProperty<Size?>? _maximumSize;
 
-
-
   /*
   * Default properties for work easy
   * */
-  double _borderWidth = 1;
-  Color _borderColor = AzUtlis().colorDefault;
+  final double _borderWidth = 1;
+  final Color _borderColor = AzUtlis().colorDefault;
   double _width = double.minPositive;
   double _height = double.minPositive;
   double _minWidth = double.minPositive;
@@ -64,50 +62,7 @@ class AzButton extends StatelessWidget{
   // double? _height;
 
 
-  AzButton(this.child);
-
-  // fs(double size){
-  //   _fontSize = size;
-  //   return this;
-  // }
-  //
-  // color(Color color){
-  //   // borderColor = color;
-  //   _bgColor = color.withOpacity(_opacity);
-  //   // textColor = color;
-  //   return this;
-  // }
-  //
-  // textColor(Color color){
-  //   _textColor = color;
-  //   return this;
-  // }
-  //
-  // bgColor(Color color){
-  //   _bgColor = color.withOpacity(_opacity);
-  //   return this;
-  // }
-  //
-  // opacity(opacity){
-  //   _opacity = opacity;
-  //   return this;
-  // }
-  //
-  // full(){
-  //   _width = double.maxFinite;//MediaQuery.of(context).size.width;
-  //   return this;
-  // }
-  //
-  // width(double width){
-  //   _width = width;
-  //   return this;
-  // }
-  //
-  // height(double height){
-  //   _height = height;
-  //   return this;
-  // }
-
+  AzButton(this.child, {Key? key}) : super(key: key);
 
   AzButton overlayColor(Color color){
     _overlayColor = MaterialStateProperty.all(color);
@@ -211,14 +166,22 @@ class AzButton extends StatelessWidget{
     return this;
   }
   AzButton widthFull(){
-    Size screenSize = WidgetsBinding.instance.window.physicalSize;
+    ui.PlatformDispatcher platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+    ui.FlutterView flutterView = platformDispatcher.views.first;
+    // Access the physical size of the screen
+    Size screenSize = flutterView.physicalSize / flutterView.devicePixelRatio;
+
     double width = screenSize.width;
     _width = width;
     _fixedSize = MaterialStateProperty.all(Size(width, _height));
     return this;
   }
   AzButton heightFull(){
-    Size screenSize = WidgetsBinding.instance.window.physicalSize;
+    ui.PlatformDispatcher platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+    ui.FlutterView flutterView = platformDispatcher.views.first;
+    // Access the physical size of the screen
+    Size screenSize = flutterView.physicalSize / flutterView.devicePixelRatio;
+
     double height = screenSize.height;
     _height = height;
     _fixedSize = MaterialStateProperty.all(Size(_width, height));
@@ -234,16 +197,6 @@ class AzButton extends StatelessWidget{
     _fixedSize = MaterialStateProperty.all(Size(_width, height));
     return this;
   }
-  // minWidth(double width){
-  //   _width = width;
-  //   _minimumSize = MaterialStateProperty.all(Size(width, _height));
-  //   return this;
-  // }
-  // minHeight(double height){
-  //   _height = height;
-  //   _minimumSize = MaterialStateProperty.all(Size(_width, height));
-  //   return this;
-  // }
 
   AzButton minWidth(double width){
     _minWidth = width;
@@ -268,24 +221,24 @@ class AzButton extends StatelessWidget{
     return this;
   }
   AzButton primarySolid(){
-    Color _color = AzUtlis().colorPrimary;
-    Color _colorOverlay = AzUtlis().colorPrimaryOverlay;
-    _backgroundColor ??= MaterialStateProperty.all(_color);
-    _overlayColor ??= MaterialStateProperty.all(_colorOverlay);
+    Color color = AzUtlis().colorPrimary;
+    Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color);
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
     _side = MaterialStateProperty.all(BorderSide(
         width: _borderWidth,
-        color: _color
+        color: color
     ));
     return this;
   }
   AzButton primaryOutline(){
-    Color _color = AzUtlis().colorPrimary;
-    Color _colorOverlay = AzUtlis().colorPrimaryOverlay;
-    _overlayColor ??= MaterialStateProperty.all(_colorOverlay);
-    _foregroundColor ??= MaterialStateProperty.all(_color);
+    Color color = AzUtlis().colorPrimary;
+    Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
     _side = MaterialStateProperty.all(BorderSide(
         width: _borderWidth,
-        color: _color
+        color: color
     ));
     return this;
   }
@@ -299,10 +252,6 @@ class AzButton extends StatelessWidget{
       onHover: _onHover,
       onFocusChange: _onFocusChange,
       style: ButtonStyle(
-        // MaterialStateProperty<TextStyle?>? textStyle,
-        // textStyle: MaterialStateProperty.all(TextStyle(
-        //   color: Colors.white
-        // )),
         overlayColor: _overlayColor,
         backgroundColor: _backgroundColor,
         foregroundColor: _foregroundColor,
@@ -339,10 +288,10 @@ class AzButton extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 }

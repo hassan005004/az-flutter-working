@@ -429,278 +429,278 @@
 //   }
 //
 //   AzButton backgroundColor(String hexCode) {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bg(String hexCode) {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgPrimary() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cPrimary), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cPrimary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgSecondary() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSecondary), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSecondary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgSuccess() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSuccess), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSuccess), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgDanger() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDanger), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDanger), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgWarning() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWarning), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWarning), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgInfo() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cInfo), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cInfo), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgLight() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cLight), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cLight), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgDark() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDark), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDark), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton bgWhite() {
-//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWhite), _isActive, _isDisabled));
+//     _backgroundColor_btn = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWhite), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   // this is text color
 //   AzButton foregroundColor(String hexCode) {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fg(String hexCode) {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgPrimary() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cPrimary), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cPrimary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgSecondary() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSecondary), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSecondary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgSuccess() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSuccess), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSuccess), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgDanger() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDanger), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDanger), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgWarning() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWarning), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWarning), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgInfo() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cInfo), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cInfo), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgLight() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cLight), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cLight), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgDark() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDark), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDark), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton fgWhite() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWhite), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWhite), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textColor(String hexCode) {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton text(String hexCode) {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textPrimary() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cPrimary), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cPrimary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textSecondary() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSecondary), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSecondary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textSuccess() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSuccess), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSuccess), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textDanger() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDanger), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDanger), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textWarning() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWarning), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWarning), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textInfo() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cInfo), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cInfo), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textLight() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cLight), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cLight), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textDark() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDark), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDark), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton textWhite() {
-//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWhite), _isActive, _isDisabled));
+//     _foregroundColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWhite), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayColor(String hexColor) {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexColor), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexColor), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlay(String hexCode) {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayPrimary() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cPrimary), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cPrimary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlaySecondary() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSecondary), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSecondary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlaySuccess() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSuccess), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSuccess), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayDanger() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDanger), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDanger), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayWarning() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWarning), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWarning), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayInfo() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cInfo), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cInfo), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayLight() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cLight), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cLight), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayDark() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDark), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDark), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton overlayWhite() {
-//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWhite), _isActive, _isDisabled));
+//     _overlayColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWhite), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowColor(String hexColor) {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexColor), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexColor), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadow(String hexCode) {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(hexCode), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(hexCode), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowPrimary() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cPrimary), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cPrimary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowSecondary() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSecondary), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSecondary), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowSuccess() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cSuccess), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cSuccess), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowDanger() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDanger), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDanger), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowWarning() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWarning), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWarning), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowInfo() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cInfo), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cInfo), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowLight() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cLight), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cLight), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowDark() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cDark), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cDark), _isActive, _isDisabled));
 //     return this;
 //   }
 //
 //   AzButton shadowWhite() {
-//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hex_color(cWhite), _isActive, _isDisabled));
+//     _shadowColor = MaterialStateProperty.all<Color>(setOpacity(hexColor(cWhite), _isActive, _isDisabled));
 //     return this;
 //   }
 //
@@ -767,52 +767,52 @@
 //
 //   AzButton borderColor(String hexCode) {
 //     // _borderColor = _borderTopColor = _borderRightColor = _borderBottomColor = _borderLeftColor = color(colorHexCode);
-//     _borderColor = hex_color(hexCode);
+//     _borderColor = hexColor(hexCode);
 //     return this;
 //   }
 //
 //   AzButton border([String hexCode = cBorder]){
-//     _borderColor = hex_color(hexCode);
+//     _borderColor = hexColor(hexCode);
 //     return this;
 //   }
 //
 //   AzButton borderPrimary(){
-//     _borderColor = hex_color(cPrimary);
+//     _borderColor = hexColor(cPrimary);
 //     return this;
 //   }
 //
 //   AzButton borderSecondary(){
-//     _borderColor = hex_color(cSecondary);
+//     _borderColor = hexColor(cSecondary);
 //     return this;
 //   }
 //
 //   AzButton borderSuccess(){
-//     _borderColor = hex_color(cSuccess);
+//     _borderColor = hexColor(cSuccess);
 //     return this;
 //   }
 //
 //   AzButton borderDanger(){
-//     _borderColor = hex_color(cDanger);
+//     _borderColor = hexColor(cDanger);
 //     return this;
 //   }
 //
 //   AzButton borderWarning(){
-//     _borderColor = hex_color(cWarning);
+//     _borderColor = hexColor(cWarning);
 //     return this;
 //   }
 //
 //   AzButton borderInfo(){
-//     _borderColor = hex_color(cInfo);
+//     _borderColor = hexColor(cInfo);
 //     return this;
 //   }
 //
 //   AzButton borderLight(){
-//     _borderColor = hex_color(cLight);
+//     _borderColor = hexColor(cLight);
 //     return this;
 //   }
 //
 //   AzButton borderDark(){
-//     _borderColor = hex_color(cDark);
+//     _borderColor = hexColor(cDark);
 //     return this;
 //   }
 //

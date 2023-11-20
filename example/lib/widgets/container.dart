@@ -1,10 +1,8 @@
-
+import 'dart:ui' as ui;
 
 import 'center.dart';
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../helper/config.dart';
 
 import 'card.dart';
 import 'gesture_detector.dart';
@@ -14,7 +12,7 @@ import 'gesture_detector.dart';
 extension ExtAzContainer on Container {
   AzContainer azContainer() => AzContainer(widget: this);
 }
-
+// ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
   Widget widget;
 
@@ -103,7 +101,7 @@ class AzContainer extends StatelessWidget {
   BoxShape _shapeForeground = BoxShape.rectangle;
 
 
-  AzContainer({this.widget = const SizedBox.shrink()});
+  AzContainer({this.widget = const SizedBox.shrink(), Key? key}): super(key: key);
 
 
   // padding
@@ -163,7 +161,11 @@ class AzContainer extends StatelessWidget {
     return this;
   }
   AzContainer widthFull(){
-    Size screenSize = WidgetsBinding.instance.window.physicalSize;
+    ui.PlatformDispatcher platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+    ui.FlutterView flutterView = platformDispatcher.views.first;
+    // Access the physical size of the screen
+    Size screenSize = flutterView.physicalSize / flutterView.devicePixelRatio;
+
     double width = screenSize.width;
     _width = width;
     return this;
@@ -711,7 +713,7 @@ class AzContainer extends StatelessWidget {
         color: Colors.grey.withOpacity(0.125),
         spreadRadius: 1,
         blurRadius: 2,
-        offset: Offset(0, 0), // changes position of shadow
+        offset: const Offset(0, 0), // changes position of shadow
       ),
     ];
     return this;
@@ -748,8 +750,8 @@ class AzContainer extends StatelessWidget {
         margin: _margin,
         transform: _transform,
         transformAlignment: _transformAlignment,
-        child: widget,
-        clipBehavior: _clipBehavior
+        clipBehavior: _clipBehavior,
+        child: widget
     );
   }
 
@@ -759,10 +761,10 @@ class AzContainer extends StatelessWidget {
   }
 
 
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 
 
   // @override

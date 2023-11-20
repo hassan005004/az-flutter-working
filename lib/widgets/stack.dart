@@ -1,7 +1,5 @@
-// all file new code
 import 'positioned.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
@@ -11,18 +9,18 @@ extension ExtStack on Stack {
   AzStack azStack() => AzStack(children);
 }
 
+// ignore: must_be_immutable
 class AzStack extends StatelessWidget {
   final List<Widget> children;
   AlignmentGeometry _alignment = AlignmentDirectional.topStart;
   TextDirection? _textDirection;
   StackFit _fit = StackFit.loose;
-  // Overflow _overflow = Overflow.clip;
   Clip _clipBehavior = Clip.hardEdge;
 
   AzStack(
-      this.children, {
-        Key? key,
-      });
+    this.children, {
+      Key? key,
+    }) : super(key: key);
 
   AzStack alignmentDirectional(AlignmentDirectional alignmentDirectional){
     _alignment = alignmentDirectional;
@@ -124,7 +122,6 @@ class AzStack extends StatelessWidget {
       alignment: _alignment,
       textDirection: _textDirection,
       fit: _fit,
-      // overflow: _overflow,
       clipBehavior: _clipBehavior,
       children: children,
     );
@@ -135,9 +132,9 @@ class AzStack extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: this.toBuild());
-  AzCard card() => AzCard(this.toBuild());
-  AzCenter center() => AzCenter(this.toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(this.toBuild());
-  AzPositioned positioned() => AzPositioned(this.toBuild());
+  AzContainer container() => AzContainer(widget: toBuild());
+  AzCard card() => AzCard(toBuild());
+  AzCenter center() => AzCenter(toBuild());
+  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned positioned() => AzPositioned(toBuild());
 }
