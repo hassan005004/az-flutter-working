@@ -295,6 +295,83 @@ class AzButton extends StatelessWidget {
     ));
     return this;
   }
+  AzButton SecondarySolid(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton SecondaryOutline(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color);
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton InfoSolid(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton InfoOutline(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton WarningSolid(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton WarningOutline(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton dangerSolid(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
   AzButton dangerOutline(){
     Color color = AzUtlis().colorDanger;
     Color colorOverlay = AzUtlis().colorDangerOverlay;
@@ -306,9 +383,64 @@ class AzButton extends StatelessWidget {
     ));
     return this;
   }
-  AzButton dangerSolid(){
-    Color color = AzUtlis().colorDanger;
-    Color colorOverlay = AzUtlis().colorDangerOverlay;
+  AzButton DarkSolid(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton DarkOutline(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton SuccessSolid(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton SuccessOutline(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton LightSolid(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton LightOutline(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
     _overlayColor ??= MaterialStateProperty.all(colorOverlay);
     _foregroundColor ??= MaterialStateProperty.all(color);
     _side = MaterialStateProperty.all(BorderSide(
