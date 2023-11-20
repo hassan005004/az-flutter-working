@@ -9,6 +9,16 @@ Row > AzRow
 <br />
 Column > AzColumn
 
+### AzButton
+Example of calling button
+```
+AzButton('Text')
+.widthFull()
+.primaryOutline()
+.onPressed(() {
+    print('On Pressed call this');
+}),
+```
 
 ## Additional information
 TODO: Currently commonly used widgets and properties are implemented

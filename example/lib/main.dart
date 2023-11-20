@@ -6,6 +6,7 @@ import 'package:example/screens/IconScreen.dart';
 import 'package:example/screens/ImageScreen.dart';
 import 'package:example/screens/RowScreen.dart';
 import 'package:example/screens/TextScreen.dart';
+import 'package:example/widgets/button.dart';
 import 'package:example/widgets/container.dart';
 import 'package:example/widgets/list_tile.dart';
 import 'package:example/widgets/navigate.dart';
@@ -60,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
             AzText("Widget of AzPackage/Flutter").dangerColor().fs(22),
 
+            AzButton('Text')
+            .widthFull()
+            .primaryOutline()
+            .onPressed(() {
+              print(1);
+            }),
 
             AzText("Widget of AzPackage/Flutter").fs(20).bold().container().pLTRB(10.0, 10.0, 10.0, 0.0),
 

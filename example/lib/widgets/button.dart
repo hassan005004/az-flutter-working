@@ -18,7 +18,7 @@ import 'gesture_detector.dart';
 
 // ignore: must_be_immutable
 class AzButton extends StatelessWidget {
-  final Widget child;
+  final dynamic widgetOrString;
   // void Function()? onPressed;
   VoidCallback? _onPressed;
   VoidCallback? _onLongPress;
@@ -62,7 +62,7 @@ class AzButton extends StatelessWidget {
   // double? _height;
 
 
-  AzButton(this.child, {Key? key}) : super(key: key);
+  AzButton(this.widgetOrString, {Key? key}) : super(key: key);
 
   // fs(double size){
   //   _fontSize = size;
@@ -490,7 +490,7 @@ class AzButton extends StatelessWidget {
       // Clip clipBehavior = Clip.none,
       // MaterialStatesController? statesController,
       // bool? isSemanticButton = true,
-      child: child,
+      child: widgetOrString.runtimeType.toString() == 'String' ? Text(widgetOrString) : widgetOrString,
     );
   }
 
