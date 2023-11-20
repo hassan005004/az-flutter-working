@@ -431,6 +431,18 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _textColor = AzUtlis().colorDark;
     return this;
   }
+  AzText infoColor(){
+    _textColor = AzUtlis().colorInfo;
+    return this;
+  }
+  AzText warningColor(){
+    _textColor = AzUtlis().colorWarning;
+    return this;
+  }
+  AzText secondaryColor(){
+    _textColor = AzUtlis().colorSecondary;
+    return this;
+  }
 
   AzText opacity(double double){
     _textColor = _textColor!.withOpacity(double);

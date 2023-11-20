@@ -63,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
             AzButton('Text')
             .widthFull()
-            .primaryOutline()
+            .secondarySolid()
+            .radiusCircle()
             .onPressed(() {
               print(1);
             }),

@@ -909,23 +909,23 @@
 //     return this;
 //   }
 //
-//   AzButton alignmentCenterLeft(){
+//   AzButton centerLeft(){
 //     _alignment = Alignment.centerLeft;
 //     return this;
 //   }
-//   AzButton alignmentCenter(){
+//   AzButton centerCenter(){
 //     _alignment = Alignment.center;
 //     return this;
 //   }
-//   AzButton alignmentCenterRight(){
+//   AzButton centerRight(){
 //     _alignment = Alignment.centerRight;
 //     return this;
 //   }
-//   AzButton alignmentTopLeft(){
+//   AzButton topLeft(){
 //     _alignment = Alignment.topLeft;
 //     return this;
 //   }
-//   AzButton alignmentTopCenter(){
+//   AzButton topCenter(){
 //     _alignment = Alignment.topCenter;
 //     return this;
 //   }

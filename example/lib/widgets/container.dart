@@ -262,6 +262,67 @@ class AzContainer extends StatelessWidget {
     _radius = BorderRadius.circular(radius);
     return this;
   }
+  AzContainer radiusPosition(double topLeft, double topRight, double bottomRight, double bottomLeft){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(topLeft),
+      topRight:Radius.circular(topRight),
+      bottomRight:Radius.circular(bottomRight),
+      bottomLeft:Radius.circular(bottomLeft),
+    );
+    return this;
+  }
+  AzContainer radiusLeft(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      bottomLeft:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusTop(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusRight(double double){
+    _radius = BorderRadius.only(
+      bottomRight:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusBottom(double double){
+    _radius = BorderRadius.only(
+      bottomRight:Radius.circular(double),
+      bottomLeft:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusTopLeftBottomRight(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      bottomRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusBottomLeftTopRight(double double){
+    _radius = BorderRadius.only(
+      bottomLeft:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusCircle(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(1000),
+      topRight:Radius.circular(1000),
+      bottomRight:Radius.circular(1000),
+      bottomLeft:Radius.circular(1000),
+    );
+    return this;
+  }
+
   AzContainer radiusForeground(double radius){
     _radiusForeground = BorderRadius.circular(radius);
     return this;
