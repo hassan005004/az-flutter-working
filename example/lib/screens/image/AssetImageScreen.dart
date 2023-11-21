@@ -127,7 +127,7 @@ AzImage()
 
                 // SizedBox(height: 20),
               //
-              ]).crossStart().mainSizeMax().container().widthFull().px(10.0),
+              ]).crossStart().mainSizeMax().container().wFull().px(10.0),
             )
         )
     );

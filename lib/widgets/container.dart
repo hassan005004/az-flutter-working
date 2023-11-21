@@ -156,7 +156,7 @@ class AzContainer extends StatelessWidget {
     _width = width;
     return this;
   }
-  AzContainer widthFull(){
+  AzContainer wFull(){
     ui.PlatformDispatcher platformDispatcher = WidgetsBinding.instance.platformDispatcher;
     ui.FlutterView flutterView = platformDispatcher.views.first;
     // Access the physical size of the screen

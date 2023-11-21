@@ -34,7 +34,7 @@ AzText('Text')
 Simple example of calling AzButton
 ```
 AzButton('Text')
-.widthFull()
+.wFull()
 .primaryOutline()
 .onPressed(() {
     print('On Pressed call this');

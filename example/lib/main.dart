@@ -59,11 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            AzText("Test").fs(22).container().height(200).width(200).dangerCard(),
-
             AzButton('Text')
-            .widthFull()
-            .secondarySolid()
+            .wFull()
+            // .successSolid()
+            .successSolidTwo()
             .radiusCircle()
             .onPressed(() {
               print(1);
@@ -257,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 codeSnippet(String code){
-  return AzText(code).fs(14).container().cardV1(Colors.white).widthFull().p(10);
+  return AzText(code).fs(14).container().cardV1(Colors.white).wFull().p(10);
 }
 
 codeSnippetOutput(Widget widget){
@@ -265,6 +264,6 @@ codeSnippetOutput(Widget widget){
       .azContainer()
       .cardV1(Colors.white)
       .bg(Colors.black12.withOpacity(0.01))
-      .widthFull()
+      .wFull()
       .p(10);
 }

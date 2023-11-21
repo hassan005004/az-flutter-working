@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+import 'text.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
 import '../helper/config.dart';
@@ -25,6 +26,9 @@ class AzButton extends StatelessWidget {
   void Function(bool)? _onHover;
   void Function(bool)? _onFocusChange;
 
+  Color? _textColor;
+  FontWeight? _fontWeight;
+
   MaterialStateProperty<Color?>? _overlayColor;
   MaterialStateProperty<Color?>? _backgroundColor;
   MaterialStateProperty<Color?>? _foregroundColor;
@@ -44,8 +48,8 @@ class AzButton extends StatelessWidget {
   /*
   * Default properties for work easy
   * */
-  final double _borderWidth = 1;
-  final Color _borderColor = AzUtlis().colorDefault;
+  double _borderWidth = 1;
+  Color _borderColor = AzUtlis().colorDefault;
   double _width = double.minPositive;
   double _height = double.minPositive;
   double _minWidth = double.minPositive;
@@ -361,7 +365,7 @@ class AzButton extends StatelessWidget {
     ));
     return this;
   }
-  AzButton widthFull(){
+  AzButton wFull(){
     ui.PlatformDispatcher platformDispatcher = WidgetsBinding.instance.platformDispatcher;
     ui.FlutterView flutterView = platformDispatcher.views.first;
     // Access the physical size of the screen
@@ -426,6 +430,83 @@ class AzButton extends StatelessWidget {
     _maximumSize = MaterialStateProperty.all(Size(_maxWidth, height));
     return this;
   }
+
+  AzButton solidTwo(color, colorOverlay, borderWidth){
+    if(_borderWidth != 1){
+      _borderWidth = borderWidth;
+    }
+    // Color color = AzUtlis().colorPrimary;
+    // Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color.withOpacity(0.2));
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+
+    // set text property
+    _textColor = color;
+    _fontWeight = FontWeight.bold;
+
+    return this;
+  }
+  AzButton primarySolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorPrimary;
+    Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton secondarySolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton infoSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton warningSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton dangerSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton darkSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton lightSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+  AzButton successSolidTwo(){
+    _borderWidth = 2;
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    solidTwo(color, colorOverlay, _borderWidth);
+    return this;
+  }
+
   AzButton primarySolid(){
     Color color = AzUtlis().colorPrimary;
     Color colorOverlay = AzUtlis().colorPrimaryOverlay;
@@ -654,9 +735,10 @@ class AzButton extends StatelessWidget {
       onFocusChange: _onFocusChange,
       style: ButtonStyle(
         // MaterialStateProperty<TextStyle?>? textStyle,
-        // textStyle: MaterialStateProperty.all(TextStyle(
-        //   color: Colors.white
-        // )),
+        textStyle: MaterialStateProperty.all(TextStyle(
+          // color: Colors.black,
+          fontWeight: _fontWeight
+        )),
         overlayColor: _overlayColor,
         backgroundColor: _backgroundColor,
         foregroundColor: _foregroundColor,
@@ -684,7 +766,15 @@ class AzButton extends StatelessWidget {
       clipBehavior: _clipBehavior,
       // MaterialStatesController? statesController,
       // bool? isSemanticButton = true,
-      child: widgetOrString.runtimeType.toString() == 'String' ? Text(widgetOrString) : widgetOrString,
+      //AzText(widgetOrString).color(_textColor!)
+      child: widgetOrString.runtimeType.toString() == 'String'
+          ? _textColor == null
+            ? AzText(widgetOrString)//.color(_textColor!)
+            : Text(widgetOrString,
+                style: TextStyle(
+                  color: _textColor
+                ),)
+          : widgetOrString,
     );
   }
 
