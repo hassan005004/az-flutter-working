@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            AzText("Widget of AzPackage/Flutter").dangerColor().fs(22),
+            AzText("Test").fs(22).container().height(200).width(200).dangerCard(),
 
             AzButton('Text')
             .widthFull()
@@ -257,13 +257,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 codeSnippet(String code){
-  return AzText(code).fs(14).container().cardV1().widthFull().p(10);
+  return AzText(code).fs(14).container().cardV1(Colors.white).widthFull().p(10);
 }
 
 codeSnippetOutput(Widget widget){
   return Container(child: widget,)
       .azContainer()
-      .cardV1()
+      .cardV1(Colors.white)
       .bg(Colors.black12.withOpacity(0.01))
       .widthFull()
       .p(10);

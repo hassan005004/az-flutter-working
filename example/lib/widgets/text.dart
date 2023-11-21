@@ -12,21 +12,10 @@ extension ExtText on Text {
   AzText azText() => AzText(data ?? "");
 }
 
-// extension ExtAzText on AzText {
-//   // AzGestureDetector on() => AzGestureDetector(this);
-//   // AzContainer container() => AzContainer(widget:widget);
-//   AzText container() => AzText(widget:widget);
-// }
-
 // ignore: must_be_immutable
 class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Widget widget = const Text('');
   dynamic name;
-
-  // final Key? key;
-  // Color borderColor = Colors.transparent;//border_color;
-  // Color _bgColor = Colors.transparent;//main_one_color.withOpacity(0.125);
-  // double _opacity = 0.25;
 
   // style proeprties here
   bool _inherit = true;

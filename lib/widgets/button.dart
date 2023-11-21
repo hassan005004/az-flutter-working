@@ -18,7 +18,7 @@ import 'gesture_detector.dart';
 
 // ignore: must_be_immutable
 class AzButton extends StatelessWidget {
-  final Widget child;
+  final dynamic widgetOrString;
   // void Function()? onPressed;
   VoidCallback? _onPressed;
   VoidCallback? _onLongPress;
@@ -31,7 +31,10 @@ class AzButton extends StatelessWidget {
   MaterialStateProperty<Color?>? _shadowColor;
   MaterialStateProperty<Color?>? _surfaceTintColor;
   MaterialStateProperty<Color?>? _iconColor;
+  MaterialStateProperty<double?>? _iconSize;
   MaterialStateProperty<BorderSide?>? _side;
+  MaterialStateProperty<OutlinedBorder?>? _shape;
+  MaterialStateProperty<MouseCursor?>? _mouseCursor;
   MaterialStateProperty<double?>? _elevation;
   MaterialStateProperty<EdgeInsets?>? _padding;
   MaterialStateProperty<Size?>? _minimumSize;
@@ -61,8 +64,56 @@ class AzButton extends StatelessWidget {
   // double? _width;
   // double? _height;
 
+  FocusNode? _focusNode;
+  bool _autofocus = false;
+  Clip _clipBehavior = Clip.none;
+  Alignment? _alignment;
 
-  AzButton(this.child, {Key? key}) : super(key: key);
+
+  AzButton(this.widgetOrString, {Key? key}) : super(key: key);
+
+  // fs(double size){
+  //   _fontSize = size;
+  //   return this;
+  // }
+  //
+  // color(Color color){
+  //   // borderColor = color;
+  //   _bgColor = color.withOpacity(_opacity);
+  //   // textColor = color;
+  //   return this;
+  // }
+  //
+  // textColor(Color color){
+  //   _textColor = color;
+  //   return this;
+  // }
+  //
+  // bgColor(Color color){
+  //   _bgColor = color.withOpacity(_opacity);
+  //   return this;
+  // }
+  //
+  // opacity(opacity){
+  //   _opacity = opacity;
+  //   return this;
+  // }
+  //
+  // full(){
+  //   _width = double.maxFinite;//MediaQuery.of(context).size.width;
+  //   return this;
+  // }
+  //
+  // width(double width){
+  //   _width = width;
+  //   return this;
+  // }
+  //
+  // height(double height){
+  //   _height = height;
+  //   return this;
+  // }
+
 
   AzButton overlayColor(Color color){
     _overlayColor = MaterialStateProperty.all(color);
@@ -88,8 +139,126 @@ class AzButton extends StatelessWidget {
     _iconColor = MaterialStateProperty.all(color);
     return this;
   }
+  AzButton iconSize(double double){
+    _iconSize = MaterialStateProperty.all(double);
+    return this;
+  }
   AzButton side(BorderSide borderSide){
     _side = MaterialStateProperty.all(borderSide);
+    return this;
+  }
+  // AzButton shape(OutlineInputBorder? OutlinedBorder){
+  //   _shape = MaterialStateProperty.all(OutlinedBorder);
+  //   return this;
+  // }
+  AzButton radius(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(double),
+            topRight:Radius.circular(double),
+            bottomRight:Radius.circular(double),
+            bottomLeft:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusPosition(double topLeft, double topRight, double bottomRight, double bottomLeft){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(topLeft),
+            topRight:Radius.circular(topRight),
+            bottomRight:Radius.circular(bottomRight),
+            bottomLeft:Radius.circular(bottomLeft),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusLeft(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(double),
+            bottomLeft:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusTop(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(double),
+            topRight:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusRight(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomRight:Radius.circular(double),
+            topRight:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusBottom(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomRight:Radius.circular(double),
+            bottomLeft:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusTopLeftBottomRight(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(double),
+            bottomRight:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusBottomLeftTopRight(double double){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft:Radius.circular(double),
+            topRight:Radius.circular(double),
+          )
+      ),
+    );
+    return this;
+  }
+  AzButton radiusCircle(){
+    _shape = MaterialStateProperty.all(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(1000),
+            topRight:Radius.circular(1000),
+            bottomRight:Radius.circular(1000),
+            bottomLeft:Radius.circular(1000),
+          )
+      ),
+    );
+    return this;
+  }
+
+  AzButton mousecursor(MouseCursor? MouseCursor){
+    _mouseCursor = MaterialStateProperty.all(MouseCursor);
     return this;
   }
 
@@ -153,6 +322,33 @@ class AzButton extends StatelessWidget {
     return this;
   }
 
+  AzButton focusNode(FocusNode focusNode){
+    _focusNode = focusNode;
+    return this;
+  }
+
+  AzButton autofocus(){
+    _autofocus = true;
+    return this;
+  }
+
+  AzButton clipBehavior(Clip clipBehavior){
+    _clipBehavior = clipBehavior;
+    return this;
+  }
+
+  AzButton clipAntiAlias(){
+    _clipBehavior = Clip.antiAlias;
+    return this;
+  }
+  AzButton clipAntiAliasWithSaveLayer(){
+    _clipBehavior = Clip.antiAliasWithSaveLayer;
+    return this;
+  }
+  AzButton clipHardEdge(){
+    _clipBehavior = Clip.hardEdge;
+    return this;
+  }
 
 
   /*
@@ -197,6 +393,16 @@ class AzButton extends StatelessWidget {
     _fixedSize = MaterialStateProperty.all(Size(_width, height));
     return this;
   }
+  // minWidth(double width){
+  //   _width = width;
+  //   _minimumSize = MaterialStateProperty.all(Size(width, _height));
+  //   return this;
+  // }
+  // minHeight(double height){
+  //   _height = height;
+  //   _minimumSize = MaterialStateProperty.all(Size(_width, height));
+  //   return this;
+  // }
 
   AzButton minWidth(double width){
     _minWidth = width;
@@ -242,7 +448,202 @@ class AzButton extends StatelessWidget {
     ));
     return this;
   }
+  AzButton secondarySolid(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton secondaryOutline(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color);
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton infoSolid(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton infoOutline(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton warningSolid(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton warningOutline(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton dangerSolid(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton dangerOutline(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color);
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton darkSolid(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton darkOutline(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton successSolid(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton successOutline(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton lightSolid(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
+  AzButton lightOutline(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    _foregroundColor ??= MaterialStateProperty.all(color);
+    _side = MaterialStateProperty.all(BorderSide(
+        width: _borderWidth,
+        color: color
+    ));
+    return this;
+  }
 
+  AzButton alignment(Alignment alignment){
+    _alignment = alignment;
+    return this;
+  }
+
+  AzButton centerLeft(){
+    _alignment = Alignment.centerLeft;
+    return this;
+  }
+  AzButton centerCenter(){
+    _alignment = Alignment.center;
+    return this;
+  }
+  AzButton centerRight(){
+    _alignment = Alignment.centerRight;
+    return this;
+  }
+  AzButton topLeft(){
+    _alignment = Alignment.topLeft;
+    return this;
+  }
+  AzButton topCenter(){
+    _alignment = Alignment.topCenter;
+    return this;
+  }
+  AzButton topRight(){
+    _alignment = Alignment.topRight;
+    return this;
+  }
+  AzButton bottomLeft(){
+    _alignment = Alignment.bottomLeft;
+    return this;
+  }
+  AzButton bottomCenter(){
+    _alignment = Alignment.bottomCenter;
+    return this;
+  }
+  AzButton bottomRight(){
+    _alignment = Alignment.bottomRight;
+    return this;
+  }
 
   toBuild(){
     return TextButton(
@@ -252,6 +653,10 @@ class AzButton extends StatelessWidget {
       onHover: _onHover,
       onFocusChange: _onFocusChange,
       style: ButtonStyle(
+        // MaterialStateProperty<TextStyle?>? textStyle,
+        // textStyle: MaterialStateProperty.all(TextStyle(
+        //   color: Colors.white
+        // )),
         overlayColor: _overlayColor,
         backgroundColor: _backgroundColor,
         foregroundColor: _foregroundColor,
@@ -263,23 +668,23 @@ class AzButton extends StatelessWidget {
         fixedSize: _fixedSize,
         minimumSize: _minimumSize,
         iconColor: _iconColor,
-        // MaterialStateProperty<double?>? iconSize,
+        iconSize: _iconSize,
         side: _side,
-        // MaterialStateProperty<OutlinedBorder?>? shape,
-        // MaterialStateProperty<MouseCursor?>? mouseCursor,
+        shape: _shape,
+        mouseCursor: _mouseCursor,
         // VisualDensity? visualDensity,
         // MaterialTapTargetSize? tapTargetSize,
         // Duration? animationDuration,
         // bool? enableFeedback,
-        // AlignmentGeometry? alignment,
+        alignment: _alignment,
         // InteractiveInkFeatureFactory? splashFactory,
       ),
-      // FocusNode? focusNode,
-      // bool autofocus = false,
-      // Clip clipBehavior = Clip.none,
+      focusNode: _focusNode,
+      autofocus: _autofocus,
+      clipBehavior: _clipBehavior,
       // MaterialStatesController? statesController,
       // bool? isSemanticButton = true,
-      child: child,
+      child: widgetOrString.runtimeType.toString() == 'String' ? Text(widgetOrString) : widgetOrString,
     );
   }
 

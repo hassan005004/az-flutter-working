@@ -1,7 +1,3 @@
-border properties call before borderFromLTRB
-borderColor(Colors.black)
-borderWidth(5)
-borderFromLTRB(bool left, bool top, bool right, bool bottom)
 
 
 shape()

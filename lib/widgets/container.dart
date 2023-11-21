@@ -1,15 +1,16 @@
 import 'dart:ui' as ui;
 
+import '../helper/config.dart';
 import 'center.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
+
 import 'card.dart';
 import 'gesture_detector.dart';
 
 extension ExtAzContainer on Container {
   AzContainer azContainer() => AzContainer(widget: this);
 }
-
 // ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
   Widget widget;
@@ -244,8 +245,6 @@ class AzContainer extends StatelessWidget {
     return this;
   }
 
-
-
   // clipBehavior
   AzContainer clipBehavior(Clip clipBehavior){
     _clipBehavior = clipBehavior;
@@ -257,6 +256,67 @@ class AzContainer extends StatelessWidget {
     _radius = BorderRadius.circular(radius);
     return this;
   }
+  AzContainer radiusPosition(double topLeft, double topRight, double bottomRight, double bottomLeft){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(topLeft),
+      topRight:Radius.circular(topRight),
+      bottomRight:Radius.circular(bottomRight),
+      bottomLeft:Radius.circular(bottomLeft),
+    );
+    return this;
+  }
+  AzContainer radiusLeft(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      bottomLeft:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusTop(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusRight(double double){
+    _radius = BorderRadius.only(
+      bottomRight:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusBottom(double double){
+    _radius = BorderRadius.only(
+      bottomRight:Radius.circular(double),
+      bottomLeft:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusTopLeftBottomRight(double double){
+    _radius = BorderRadius.only(
+      topLeft:Radius.circular(double),
+      bottomRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusBottomLeftTopRight(double double){
+    _radius = BorderRadius.only(
+      bottomLeft:Radius.circular(double),
+      topRight:Radius.circular(double),
+    );
+    return this;
+  }
+  AzContainer radiusCircle(double double){
+    _radius = const BorderRadius.only(
+      topLeft:Radius.circular(1000),
+      topRight:Radius.circular(1000),
+      bottomRight:Radius.circular(1000),
+      bottomLeft:Radius.circular(1000),
+    );
+    return this;
+  }
+
   AzContainer radiusForeground(double radius){
     _radiusForeground = BorderRadius.circular(radius);
     return this;
@@ -384,7 +444,6 @@ class AzContainer extends StatelessWidget {
     _borderBottom  = bottom;
 
     _border = borderSet();
-    _border = Border.all();
     return this;
   }
   Border borderSetForeground(){
@@ -466,23 +525,95 @@ class AzContainer extends StatelessWidget {
   /*
   * Methods for work easy
   * */
-  AzContainer cardV1(){
-    _bgColor = Colors.white;
-    _radius = const BorderRadius.only(
+
+  // cards
+  AzContainer cardV1(Color backgroundColor){
+    _bgColor = backgroundColor;
+    _radius = funBorderRadius();
+    _boxShadow = [funBoxShadow()];
+    return this;
+  }
+  AzContainer primaryCard(){
+    cardV1(AzUtlis().colorPrimary);
+    return this;
+  }
+  AzContainer dangerCard(){
+    cardV1(AzUtlis().colorDanger);
+    return this;
+  }
+  AzContainer successCard(){
+    cardV1(AzUtlis().colorSuccess);
+    return this;
+  }
+  AzContainer lightCard(){
+    cardV1(AzUtlis().colorLight);
+    return this;
+  }
+  AzContainer darkCard(){
+    cardV1(AzUtlis().colorDark);
+    return this;
+  }
+  AzContainer infoCard(){
+    cardV1(AzUtlis().colorInfo);
+    return this;
+  }
+  AzContainer secondaryCard(){
+    cardV1(AzUtlis().colorSecondary);
+    return this;
+  }
+
+  // border colors
+  AzContainer primaryBorder(){
+    _borderColor = AzUtlis().colorPrimary;
+    return this;
+  }
+  AzContainer dangerBorder(){
+    _borderColor = AzUtlis().colorDanger;
+    return this;
+  }
+  AzContainer successBorder(){
+    _borderColor = AzUtlis().colorSuccess;
+    return this;
+  }
+  AzContainer lightBorder(){
+    _borderColor = AzUtlis().colorLight;
+    return this;
+  }
+  AzContainer darkBorder(){
+    _borderColor = AzUtlis().colorDark;
+    return this;
+  }
+  AzContainer infoBorder(){
+    _borderColor = AzUtlis().colorInfo;
+    return this;
+  }
+  AzContainer warningBorder(){
+    _borderColor = AzUtlis().colorWarning;
+    return this;
+  }
+  AzContainer secondaryBorder(){
+    _borderColor = AzUtlis().colorSecondary;
+    return this;
+  }
+
+
+  // some more functions for recalling
+  BorderRadius funBorderRadius(){
+    return const BorderRadius.only(
         topLeft: Radius.circular(12),
         topRight: Radius.circular(12),
         bottomLeft: Radius.circular(12),
         bottomRight: Radius.circular(12)
     );
-    _boxShadow = [
-      BoxShadow(
-        color: Colors.grey.withOpacity(0.125),
-        spreadRadius: 1,
-        blurRadius: 2,
-        offset: const Offset(0, 0), // changes position of shadow
-      ),
-    ];
-    return this;
+  }
+
+  BoxShadow funBoxShadow(){
+    return BoxShadow(
+      color: Colors.grey.withOpacity(0.125),
+      spreadRadius: 1,
+      blurRadius: 2,
+      offset: const Offset(0, 0), // changes position of shadow
+    );
   }
 
   toBuild() {

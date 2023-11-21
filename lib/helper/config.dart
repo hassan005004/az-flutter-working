@@ -49,6 +49,9 @@ class AzUtlis{
   Color colorSecondary = const Color(0xFF6C757D);
   Color colorSecondaryAgainst = const Color(0xFF3FCDD9);
   Color colorSecondaryOverlay = const Color(0xFF5A6268).withOpacity(colorOpacity);
+  Color colorSuccess = const Color(0xFF5cb85c);
+  Color colorSuccessAgainst = const Color(0xFF5cb85c);
+  Color colorSuccessOverlay = const Color(0xFF218838).withOpacity(colorOpacity);
   Color colorInfo = const Color(0xFF5bc0de);
   Color colorInfoAgainst = const Color(0xFF5bc0de);
   Color colorInfoOverlay = const Color(0xFF138496).withOpacity(colorOpacity);
@@ -61,9 +64,6 @@ class AzUtlis{
   Color colorDark = const Color(0xFF292b2c);
   Color colorDarkAgainst = const Color(0xFF292b2c);
   Color colorDarkOverlay = const Color(0xFF23272B).withOpacity(colorOpacity);
-  Color colorSuccess = const Color(0xFF5cb85c);
-  Color colorSuccessAgainst = const Color(0xFF5cb85c);
-  Color colorSuccessOverlay = const Color(0xFF218838).withOpacity(colorOpacity);
   Color colorLight = const Color(0xFFf7f7f7);
   Color colorLightAgainst = const Color(0xFFf7f7f7);
   Color colorLightOverlay = const Color(0xFFE2E6EA).withOpacity(colorOpacity);

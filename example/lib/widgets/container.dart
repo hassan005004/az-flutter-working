@@ -1,5 +1,6 @@
 import 'dart:ui' as ui;
 
+import '../helper/config.dart';
 import 'center.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
@@ -7,17 +8,12 @@ import 'package:flutter/material.dart';
 import 'card.dart';
 import 'gesture_detector.dart';
 
-// extension BaseProperty on AzContainer {}
-
 extension ExtAzContainer on Container {
   AzContainer azContainer() => AzContainer(widget: this);
 }
 // ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
   Widget widget;
-
-  // Widget? child;
-  // Widget build() => this._widget;
 
   // color
   Color? _bgColor;
@@ -249,8 +245,6 @@ class AzContainer extends StatelessWidget {
     return this;
   }
 
-
-
   // clipBehavior
   AzContainer clipBehavior(Clip clipBehavior){
     _clipBehavior = clipBehavior;
@@ -314,7 +308,7 @@ class AzContainer extends StatelessWidget {
     return this;
   }
   AzContainer radiusCircle(double double){
-    _radius = BorderRadius.only(
+    _radius = const BorderRadius.only(
       topLeft:Radius.circular(1000),
       topRight:Radius.circular(1000),
       bottomRight:Radius.circular(1000),
@@ -450,7 +444,6 @@ class AzContainer extends StatelessWidget {
     _borderBottom  = bottom;
 
     _border = borderSet();
-    _border = Border.all();
     return this;
   }
   Border borderSetForeground(){
@@ -529,255 +522,98 @@ class AzContainer extends StatelessWidget {
     return this;
   }
 
-
-
-  // bgWhite(){
-  //   _bgColor = Colors.white;
-  //   return this;
-  // }
-
-
-  // @override
-  // Widget build(context) => SizedBox.shrink();
-  //
-  // builder(Widget Function(Widget child) builder) {
-  //   _widget = builder(child!);
-  //   return this;
-  // }
-  //
-  // Widget internalBuild(Widget widget) {
-  //   return Container(
-  //     // color: _bgColor,
-  //     width: _width,
-  //     decoration: BoxDecoration(
-  //       color: _bgColor,
-  //       borderRadius: _radius,
-  //     ),
-  //     padding: _padding,
-  //     margin: _margin,
-  //     child: child,
-  //   );
-  // }
-
-
-  // AzContainer onTap(VoidCallback? callback){
-  //   _onTap = callback;
-  //   return this;
-  // }
-
-  // AzContainer on({
-  //     void Function()? onTap,
-  //   }){
-  //   widget = GestureDetector(
-  //     child: widget,
-  //     // onTapDown: _onTapDown,
-  //     // onTapUp: _onTapUp,
-  //     onTap: onTap,
-  //     // onTapCancel: _onTapCancel,
-  //     // onSecondaryTap: _onSecondaryTap,
-  //     // onSecondaryTapDown: _onSecondaryTapDown,
-  //     // onSecondaryTapUp: _onSecondaryTapUp,
-  //     // onSecondaryTapCancel: _onSecondaryTapCancel,
-  //     // onTertiaryTapDown: _onTertiaryTapDown,
-  //     // onTertiaryTapUp: _onTertiaryTapUp,
-  //     // onTertiaryTapCancel: _onTertiaryTapCancel,
-  //     // onDoubleTapDown: _onDoubleTapDown,
-  //     // onDoubleTap: _onDoubleTap,
-  //     // onDoubleTapCancel: _onDoubleTapCancel,
-  //     // onLongPressDown: _onLongPressDown,
-  //     // onLongPressCancel: _onLongPressCancel,
-  //     // onLongPress: _onLongPress,
-  //     // onLongPressStart: _onLongPressStart,
-  //     // onLongPressMoveUpdate: _onLongPressMoveUpdate,
-  //     // onLongPressUp: _onLongPressUp,
-  //     // onLongPressEnd: _onLongPressEnd,
-  //     // onSecondaryLongPressDown: _onSecondaryLongPressDown,
-  //     // onSecondaryLongPressCancel: _onSecondaryLongPressCancel,
-  //     // onSecondaryLongPress: _onSecondaryLongPress,
-  //     // onSecondaryLongPressStart: _onSecondaryLongPressStart,
-  //     // onSecondaryLongPressMoveUpdate: _onSecondaryLongPressMoveUpdate,
-  //     // onSecondaryLongPressUp: _onSecondaryLongPressUp,
-  //     // onSecondaryLongPressEnd: _onSecondaryLongPressEnd,
-  //     // onTertiaryLongPressDown: _onTertiaryLongPressDown,
-  //     // onTertiaryLongPressCancel: _onTertiaryLongPressCancel,
-  //     // onTertiaryLongPress: _onTertiaryLongPress,
-  //     // onTertiaryLongPressStart: _onTertiaryLongPressStart,
-  //     // onTertiaryLongPressMoveUpdate: _onTertiaryLongPressMoveUpdate,
-  //     // onTertiaryLongPressUp: _onTertiaryLongPressUp,
-  //     // onTertiaryLongPressEnd: _onTertiaryLongPressEnd,
-  //     // onVerticalDragDown: _onVerticalDragDown,
-  //     // onVerticalDragStart: _onVerticalDragStart,
-  //     // onVerticalDragUpdate: _onVerticalDragUpdate,
-  //     // onVerticalDragEnd: _onVerticalDragEnd,
-  //     // onVerticalDragCancel: _onVerticalDragCancel,
-  //     // onHorizontalDragDown: _onHorizontalDragDown,
-  //     // onHorizontalDragStart: _onHorizontalDragStart,
-  //     // onHorizontalDragUpdate: _onHorizontalDragUpdate,
-  //     // onHorizontalDragEnd: _onHorizontalDragEnd,
-  //     // onHorizontalDragCancel: _onHorizontalDragCancel,
-  //     // onForcePressStart: _onForcePressStart,
-  //     // onForcePressPeak: _onForcePressPeak,
-  //     // onForcePressUpdate: _onForcePressUpdate,
-  //     // onForcePressEnd: _onForcePressEnd,
-  //     // onPanDown: _onPanDown,
-  //     // onPanStart: _onPanStart,
-  //     // onPanUpdate: _onPanUpdate,
-  //     // onPanEnd: _onPanEnd,
-  //     // onPanCancel: _onPanCancel,
-  //     // onScaleStart: _onScaleStart,
-  //     // onScaleUpdate: _onScaleUpdate,
-  //     // onScaleEnd: _onScaleEnd,
-  //     // behavior: _behavior,
-  //     // excludeFromSemantics: _excludeFromSemantics,
-  //     // dragStartBehavior: _dragStartBehavior,
-  //     // trackpadScrollCausesScale: _trackpadScrollCausesScale,
-  //     // trackpadScrollToScaleFactor: _trackpadScrollToScaleFactor,
-  //     // supportedDevices: _supportedDevices,
-  //
-  //     // void Function(TapDownDetails)? onTapDown,
-  //     // void Function(TapUpDetails)? onTapUp,
-  //     // void Function()? onTap,
-  //     // void Function()? onTapCancel,
-  //     // void Function()? onSecondaryTap,
-  //     // void Function(TapDownDetails)? onSecondaryTapDown,
-  //     // void Function(TapUpDetails)? onSecondaryTapUp,
-  //     // void Function()? onSecondaryTapCancel,
-  //     // void Function(TapDownDetails)? onTertiaryTapDown,
-  //     // void Function(TapUpDetails)? onTertiaryTapUp,
-  //     // void Function()? onTertiaryTapCancel,
-  //     // void Function(TapDownDetails)? onDoubleTapDown,
-  //     // void Function()? onDoubleTap,
-  //     // void Function()? onDoubleTapCancel,
-  //     // void Function(LongPressDownDetails)? onLongPressDown,
-  //     // void Function()? onLongPressCancel,
-  //     // void Function()? onLongPress,
-  //     // void Function(LongPressStartDetails)? onLongPressStart,
-  //     // void Function(LongPressMoveUpdateDetails)? onLongPressMoveUpdate,
-  //     // void Function()? onLongPressUp,
-  //     // void Function(LongPressEndDetails)? onLongPressEnd,
-  //     // void Function(LongPressDownDetails)? onSecondaryLongPressDown,
-  //     // void Function()? onSecondaryLongPressCancel,
-  //     // void Function()? onSecondaryLongPress,
-  //     // void Function(LongPressStartDetails)? onSecondaryLongPressStart,
-  //     // void Function(LongPressMoveUpdateDetails)? onSecondaryLongPressMoveUpdate,
-  //     // void Function()? onSecondaryLongPressUp,
-  //     // void Function(LongPressEndDetails)? onSecondaryLongPressEnd,
-  //     // void Function(LongPressDownDetails)? onTertiaryLongPressDown,
-  //     // void Function()? onTertiaryLongPressCancel,
-  //     // void Function()? onTertiaryLongPress,
-  //     // void Function(LongPressStartDetails)? onTertiaryLongPressStart,
-  //     // void Function(LongPressMoveUpdateDetails)? onTertiaryLongPressMoveUpdate,
-  //     // void Function()? onTertiaryLongPressUp,
-  //     // void Function(LongPressEndDetails)? onTertiaryLongPressEnd,
-  //     // void Function(DragDownDetails)? onVerticalDragDown,
-  //     // void Function(DragStartDetails)? onVerticalDragStart,
-  //     // void Function(DragUpdateDetails)? onVerticalDragUpdate,
-  //     // void Function(DragEndDetails)? onVerticalDragEnd,
-  //     // void Function()? onVerticalDragCancel,
-  //     // void Function(DragDownDetails)? onHorizontalDragDown,
-  //     // void Function(DragStartDetails)? onHorizontalDragStart,
-  //     // void Function(DragUpdateDetails)? onHorizontalDragUpdate,
-  //     // void Function(DragEndDetails)? onHorizontalDragEnd,
-  //     // void Function()? onHorizontalDragCancel,
-  //     // void Function(ForcePressDetails)? onForcePressStart,
-  //     // void Function(ForcePressDetails)? onForcePressPeak,
-  //     // void Function(ForcePressDetails)? onForcePressUpdate,
-  //     // void Function(ForcePressDetails)? onForcePressEnd,
-  //     // void Function(DragDownDetails)? onPanDown,
-  //     // void Function(DragStartDetails)? onPanStart,
-  //     // void Function(DragUpdateDetails)? onPanUpdate,
-  //     // void Function(DragEndDetails)? onPanEnd,
-  //     // void Function()? onPanCancel,
-  //     // void Function(ScaleStartDetails)? onScaleStart,
-  //     // void Function(ScaleUpdateDetails)? onScaleUpdate,
-  //     // void Function(ScaleEndDetails)? onScaleEnd,
-  //     // HitTestBehavior? behavior,
-  //     // bool excludeFromSemantics = false,
-  //     // DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-  //     // bool trackpadScrollCausesScale = false,
-  //     // Offset trackpadScrollToScaleFactor = kDefaultTrackpadScrollToScaleFactor,
-  //     // Set<PointerDeviceKind>? supportedDevices,
-  //   );
-  //   widget = Container(
-  //     child: widget,
-  //     color: Colors.red,
-  //   );
-  //   return this;
-  // }
-
-  /*
-  @override
-  Widget build(context) => SizedBox.shrink();
-
-  AzContainer builder(Widget Function(Widget child) builder) {
-    widget = builder(widget!);
-    return this;
-  }
-
-  AzContainer builder2(Widget widget) {
-    widget = internalBuild(widget);
-    return this;
-  }
-
-  Widget internalBuild(Widget widget2, {Key? key}) {
-    widget = widget2;
-    return Container(
-      key: key,
-      decoration: BoxDecoration(
-        color: _bgColor,
-        image: _decorationImage,
-        border: _border,
-        borderRadius: _radius,
-        boxShadow: _boxShadow,
-        gradient: _gradient,
-        backgroundBlendMode: _backgroundBlendMode,
-        shape: _shape,
-      ),
-      foregroundDecoration: BoxDecoration(
-        color: _bgColorForeground,
-        image: _decorationImageForeground,
-        border: _borderForeground,
-        borderRadius: _radiusForeground,
-        boxShadow: _boxShadowForeground,
-        gradient: _gradientForeground,
-        backgroundBlendMode: _backgroundBlendModeForeground,
-        shape: _shapeForeground,
-      ),
-      alignment: _alignment,
-      width: _width,
-      height: _height,
-      constraints: _constraints,
-      padding: _padding,
-      margin: _margin,
-      transform: _transform,
-      transformAlignment: _transformAlignment,
-      child: widget,
-      clipBehavior: _clipBehavior
-    );
-  }*/
-
-
-
   /*
   * Methods for work easy
   * */
-  AzContainer cardV1(){
-    _bgColor = Colors.white;
-    _radius = const BorderRadius.only(
+
+  // cards
+  AzContainer cardV1(Color backgroundColor){
+    _bgColor = backgroundColor;
+    _radius = funBorderRadius();
+    _boxShadow = [funBoxShadow()];
+    return this;
+  }
+  AzContainer primaryCard(){
+    cardV1(AzUtlis().colorPrimary);
+    return this;
+  }
+  AzContainer dangerCard(){
+    cardV1(AzUtlis().colorDanger);
+    return this;
+  }
+  AzContainer successCard(){
+    cardV1(AzUtlis().colorSuccess);
+    return this;
+  }
+  AzContainer lightCard(){
+    cardV1(AzUtlis().colorLight);
+    return this;
+  }
+  AzContainer darkCard(){
+    cardV1(AzUtlis().colorDark);
+    return this;
+  }
+  AzContainer infoCard(){
+    cardV1(AzUtlis().colorInfo);
+    return this;
+  }
+  AzContainer secondaryCard(){
+    cardV1(AzUtlis().colorSecondary);
+    return this;
+  }
+
+  // border colors
+  AzContainer primaryBorder(){
+    _borderColor = AzUtlis().colorPrimary;
+    return this;
+  }
+  AzContainer dangerBorder(){
+    _borderColor = AzUtlis().colorDanger;
+    return this;
+  }
+  AzContainer successBorder(){
+    _borderColor = AzUtlis().colorSuccess;
+    return this;
+  }
+  AzContainer lightBorder(){
+    _borderColor = AzUtlis().colorLight;
+    return this;
+  }
+  AzContainer darkBorder(){
+    _borderColor = AzUtlis().colorDark;
+    return this;
+  }
+  AzContainer infoBorder(){
+    _borderColor = AzUtlis().colorInfo;
+    return this;
+  }
+  AzContainer warningBorder(){
+    _borderColor = AzUtlis().colorWarning;
+    return this;
+  }
+  AzContainer secondaryBorder(){
+    _borderColor = AzUtlis().colorSecondary;
+    return this;
+  }
+
+
+  // some more functions for recalling
+  BorderRadius funBorderRadius(){
+    return const BorderRadius.only(
         topLeft: Radius.circular(12),
         topRight: Radius.circular(12),
         bottomLeft: Radius.circular(12),
         bottomRight: Radius.circular(12)
     );
-    _boxShadow = [
-      BoxShadow(
+  }
+
+  BoxShadow funBoxShadow(){
+    return BoxShadow(
         color: Colors.grey.withOpacity(0.125),
         spreadRadius: 1,
         blurRadius: 2,
         offset: const Offset(0, 0), // changes position of shadow
-      ),
-    ];
-    return this;
+      );
   }
 
   toBuild() {
@@ -827,30 +663,5 @@ class AzContainer extends StatelessWidget {
   AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
   AzPositioned positioned() => AzPositioned(toBuild());
 
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     // color: _bgColor,
-  //     width: _width,
-  //     decoration: BoxDecoration(
-  //       color: _bgColor,
-  //       borderRadius: _radius,
-  //     ),
-  //     padding: _padding,
-  //     margin: _margin,
-  //     child: child,
-  //   );
-  // }
-
-
-//
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     color: _bgColor,
-  //     child: build,
-  //   );
-  // }
 
 }

@@ -17,8 +17,15 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Widget widget = const Text('');
   dynamic name;
 
+  // final Key? key;
+  // Color borderColor = Colors.transparent;//border_color;
+  // Color _bgColor = Colors.transparent;//main_one_color.withOpacity(0.125);
+  // double _opacity = 0.25;
+
   // style proeprties here
-  Color? _textColor;
+  bool _inherit = true;
+
+  Color? _textColor;// = Colors.black;
   FontWeight _fontWeight = FontWeight.normal;
   double? _fontSize;
 
@@ -345,7 +352,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _packageStrut = packageStrut;
     return this;
   }
-  
+
   AzText textAlign(TextAlign textAlign){
     _textAlign = textAlign;
     return this;
@@ -390,6 +397,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
+
   /*
   * Methods for work easy
   * */
@@ -401,15 +409,51 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _textColor = AzUtlis().colorPrimary;
     return this;
   }
+  AzText dangerColor(){
+    _textColor = AzUtlis().colorDanger;
+    return this;
+  }
+  AzText successColor(){
+    _textColor = AzUtlis().colorSuccess;
+    return this;
+  }
+  AzText lightColor(){
+    _textColor = AzUtlis().colorLight;
+    return this;
+  }
+  AzText darkColor(){
+    _textColor = AzUtlis().colorDark;
+    return this;
+  }
+  AzText infoColor(){
+    _textColor = AzUtlis().colorInfo;
+    return this;
+  }
+  AzText warningColor(){
+    _textColor = AzUtlis().colorWarning;
+    return this;
+  }
+  AzText secondaryColor(){
+    _textColor = AzUtlis().colorSecondary;
+    return this;
+  }
+
+  AzText opacity(double double){
+    _textColor = _textColor!.withOpacity(double);
+    return this;
+  }
+
+  AzText inherit(bool bool){
+    _inherit = bool;
+    return this;
+  }
 
   toBuild(){
     return Text(name.toString(),
       key:key,
       style: TextStyle(
-        // bool inherit = true,
+        inherit: _inherit,
         color: _textColor,
-        // Color? backgroundColor,
-        // double? fontSize,
         fontWeight: _fontWeight,
         fontSize: _fontSize,
         letterSpacing: _letterSpacing,

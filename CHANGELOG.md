@@ -1,3 +1,8 @@
+## 0.0.3
+* Major part cover Text, Button, Icon, Card, Container, Column, Row, Center, Stack, Positioned, Wrap, GestureDetector
+* You can also use with less properties Image, ListTile, RadioListTile,
+* You can use color groups like this primaryColor, primaryBorder, primaryCard, primaryBg on specific widgets
+* Color groups are primary, success, warning, info, secondary, danger, dark, light
 ## 0.0.2
 * TODO: Try to fixing analyses issues.
 ## 0.0.1
