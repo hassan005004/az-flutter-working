@@ -533,6 +533,7 @@ class AzContainer extends StatelessWidget {
     _boxShadow = [funBoxShadow()];
     return this;
   }
+
   AzContainer primaryCard(){
     cardV1(AzUtlis().colorPrimary);
     return this;
@@ -561,6 +562,8 @@ class AzContainer extends StatelessWidget {
     cardV1(AzUtlis().colorSecondary);
     return this;
   }
+
+
 
   // border colors
   AzContainer primaryBorder(){
@@ -615,6 +618,127 @@ class AzContainer extends StatelessWidget {
         offset: const Offset(0, 0), // changes position of shadow
       );
   }
+
+
+
+  // these should be same method name in button
+  AzContainer solidThree(color){
+    _bgColor = color.withOpacity(0.2);
+    return this;
+  }
+  AzContainer primarySolidThree(){
+    solidThree(AzUtlis().colorPrimary);
+    return this;
+  }
+  AzContainer secondarySolidThree(){
+    solidThree(AzUtlis().colorSecondary);
+    return this;
+  }
+  AzContainer successSolidThree(){
+    solidThree(AzUtlis().colorSuccess);
+    return this;
+  }
+  AzContainer darkSolidThree(){
+    solidThree(AzUtlis().colorDark);
+    return this;
+  }
+  AzContainer dangerSolidThree(){
+    solidThree(AzUtlis().colorDanger);
+    return this;
+  }
+  AzContainer infoSolidThree(){
+    solidThree(AzUtlis().colorInfo);
+    return this;
+  }
+  AzContainer warningSolidThree(){
+    solidThree(AzUtlis().colorWarning);
+    return this;
+  }
+  AzContainer lightSolidThree(){
+    solidThree(AzUtlis().colorLight);
+    return this;
+  }
+
+  AzContainer solidTwo(_borderColor, _borderWidth){
+    _bgColor = _borderColor.withOpacity(0.2);
+    border(_borderColor, _borderWidth, BorderStyle.solid, 0);
+    return this;
+  }
+
+  AzContainer primarySolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorPrimary;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer successSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorSuccess;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer secondarySolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorSecondary;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer lightSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorLight;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer infoSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorInfo;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer dangerSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorDanger;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer darkSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorDark;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer warningSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorWarning;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+
+
 
   toBuild() {
     return Container(

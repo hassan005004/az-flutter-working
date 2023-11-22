@@ -431,6 +431,72 @@ class AzButton extends StatelessWidget {
     return this;
   }
 
+  AzButton solidThree(color, colorOverlay){
+    // Color color = AzUtlis().colorPrimary;
+    // Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color.withOpacity(0.2));
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    // _side = MaterialStateProperty.all(BorderSide(
+    //     width: 0,
+    //     color: color
+    // ));
+
+    // set text property
+    _textColor = color;
+    _fontWeight = FontWeight.bold;
+
+    return this;
+  }
+  AzButton primarySolidThree(){
+    Color color = AzUtlis().colorPrimary;
+    Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton secondarySolidThree(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton infoSolidThree(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton warningSolidThree(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton dangerSolidThree(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton darkSolidThree(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton lightSolidThree(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton successSolidThree(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+
+
   AzButton solidTwo(color, colorOverlay, borderWidth){
     if(_borderWidth != 1){
       _borderWidth = borderWidth;

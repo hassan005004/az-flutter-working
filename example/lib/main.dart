@@ -1,6 +1,3 @@
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:example/screens/ColumnScreen.dart';
 import 'package:example/screens/IconScreen.dart';
 import 'package:example/screens/ImageScreen.dart';
@@ -58,11 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            AzText('Text').container().wFull().p(50).primarySolidThree(),
 
             AzButton('Text')
             .wFull()
             // .successSolid()
-            .successSolidTwo()
+            .primarySolidTwo()
             .radiusCircle()
             .onPressed(() {
               print(1);
