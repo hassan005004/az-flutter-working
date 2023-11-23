@@ -61,7 +61,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   // Locale? _locale;
   bool? _softWrap;
   // TextOverflow? _overflow;
-  double? _textScaleFactor;
   int? _maxLines;
   String? _semanticsLabel;
   TextWidthBasis? _textWidthBasis;
@@ -360,11 +359,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText textScaleFactor(double textScaleFactor){
-    _textScaleFactor = textScaleFactor;
-    return this;
-  }
-
   AzText maxLines(int maxLines){
     _maxLines = maxLines;
     return this;
@@ -489,7 +483,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
       locale: _locale,
       softWrap: _softWrap,
       overflow: _overflow,
-      textScaleFactor: _textScaleFactor,
       maxLines: _maxLines,
       semanticsLabel: _semanticsLabel,
       textWidthBasis: _textWidthBasis,

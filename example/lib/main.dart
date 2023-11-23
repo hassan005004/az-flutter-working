@@ -8,6 +8,7 @@ import 'package:example/widgets/container.dart';
 import 'package:example/widgets/list_tile.dart';
 import 'package:example/widgets/navigate.dart';
 import 'package:example/widgets/text.dart';
+import 'package:example/widgets/text_form_filed.dart';
 import '../helper/extensions.dart';
 import 'package:example/widgets/wrap.dart';
 import 'package:flutter/material.dart';
@@ -61,20 +62,25 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('abc').azText().toContainer()
             ]).azRow(),
 
+            // responsive will give better result inside AzWarp/Wrap
             AzWrap([
-              AzText('Text').toContainer().wFull().dangerSolidThree().toResponsive().sm1(context),
-              AzText('Text').toContainer().wFull().primarySolidThree().toResponsive().col('col-5'),
+
+              // Example of text responsive 1
+              AzText('Responsive Text').toContainer().wFull().dangerSolidThree().toResponsive().sm1(context),
+
+              // Example of text responsive 2
+              AzText('Responsive Text').toContainer().wFull().primarySolidThree().toResponsive().col('col-5'),
+
             ]),
 
-            AzText("Done").fs(16).color('#E1E1E1'.fromHex()).toCenter().toContainer().px(10.0).py(10),
+            // Example of TextFormFiled Border
+            AzTextFormField().borderSecondary(),
 
-
-            TextFormField().azTextFormField().borderSecondary(),
-            AzButton('Text')
+            // Example of Button with border and radius
+            AzButton('Button')
             .wFull()
-            // .successSolid()
             .primarySolidTwo()
-            .radiusCircle()
+            .radius(5)
             .onPressed(() {
               print(1);
             }),
