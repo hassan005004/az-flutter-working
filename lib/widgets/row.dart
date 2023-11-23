@@ -5,13 +5,12 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
 
-extension ExtRow on AzRow {
-  AzRow azRow() => AzRow(children);
-}
 // ignore: must_be_immutable
 class AzRow extends StatelessWidget{
   List<Widget> children;
+  // final Key? key;
 
   CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
   MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.center;
@@ -114,10 +113,11 @@ class AzRow extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

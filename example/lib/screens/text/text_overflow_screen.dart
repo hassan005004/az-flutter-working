@@ -59,7 +59,7 @@ class _TextOverflowScreenState extends State<TextOverflowScreen> {
               codeSnippetOutput(AzText("Fade: This is text long text to see effect of TextOverflow property over screen").overflowFade().fs(14)),
               codeSnippetOutput(AzText("Clip: This is text long text to see effect of TextOverflow property over screen").overflowClip().fs(14)),
               codeSnippetOutput(AzText("Ellipsis: This is text long text to see effect of TextOverflow property over screen").overflowEllipsis().fs(14)),
-            ]).crossStart().container().px(10.0),
+            ]).crossStart().toContainer().px(10.0),
           ],
         ),
       )

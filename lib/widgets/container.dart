@@ -7,10 +7,9 @@ import 'package:flutter/material.dart';
 
 import 'card.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
 
-extension ExtAzContainer on Container {
-  AzContainer azContainer() => AzContainer(widget: this);
-}
+
 // ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
   Widget widget;
@@ -24,10 +23,18 @@ class AzContainer extends StatelessWidget {
   Border? _borderForeground;
 
   // padding
-  EdgeInsets? _padding;
+  // EdgeInsets? _padding;
+  double _paddingLeft = 0;
+  double _paddingTop = 0;
+  double _paddingRight = 0;
+  double _paddingBottom = 0;
 
   // margin
-  EdgeInsets? _margin;
+  // EdgeInsets? _margin;
+  double _marginLeft = 0;
+  double _marginTop = 0;
+  double _marginRight = 0;
+  double _marginBottom = 0;
 
   // radius
   BorderRadius? _radius;
@@ -100,56 +107,155 @@ class AzContainer extends StatelessWidget {
   AzContainer({this.widget = const SizedBox.shrink(), Key? key}): super(key: key);
 
 
+
   // padding
   AzContainer p(double padding){
-    _padding = EdgeInsets.all(padding);
+    _paddingLeft = padding;
+    _paddingTop = padding;
+    _paddingRight = padding;
+    _paddingBottom = padding;
+    // _padding = EdgeInsets.all(padding);
     return this;
   }
   AzContainer pOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
-    _padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+    // _padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
     return this;
   }
   AzContainer pLTRB(left,top,right,bottom){
-    _padding = EdgeInsets.fromLTRB(left,top,right,bottom);
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+
+    // _padding = EdgeInsets.fromLTRB(left,top,right,bottom);
     return this;
   }
   AzContainer pSymmetric({required double h, required double v}){
-    _padding = EdgeInsets.symmetric(horizontal: h, vertical: v);
+    _paddingLeft = h;
+    _paddingTop = v;
+    _paddingRight = h;
+    _paddingBottom = v;
+
+    // _padding = EdgeInsets.symmetric(horizontal: h, vertical: v);
     return this;
   }
   AzContainer px(double x){
-    _padding = EdgeInsets.symmetric(horizontal: x);
+    _paddingLeft = x;
+    _paddingRight = x;
+
+    // _padding = EdgeInsets.symmetric(horizontal: x);
     return this;
   }
   AzContainer py(double y){
-    _padding = EdgeInsets.symmetric(vertical: y);
+    _paddingTop = y;
+    _paddingBottom = y;
+
+    // _padding = EdgeInsets.symmetric(vertical: y);
     return this;
   }
+  AzContainer pl(double double){
+    _paddingLeft = double;
+
+    // _padding = EdgeInsets.only(left: double);
+    return this;
+  }
+  AzContainer pt(double double){
+    _paddingTop = double;
+
+    // _padding = EdgeInsets.only(top: double);
+    return this;
+  }
+  AzContainer pr(double double){
+    _paddingRight = double;
+
+    // _padding = EdgeInsets.only(right: double);
+    return this;
+  }
+  AzContainer pb(double double){
+    _paddingBottom = double;
+
+    // _padding = EdgeInsets.only(bottom: double);
+    return this;
+  }
+
   // margin
   AzContainer m(double margin){
-    _margin = EdgeInsets.all(margin);
+    _marginLeft = margin;
+    _marginTop = margin;
+    _marginRight = margin;
+    _marginBottom = margin;
+    // _margin = EdgeInsets.all(margin);
     return this;
   }
   AzContainer mOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
-    _margin = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
+    _marginLeft = left;
+    _marginTop = top;
+    _marginRight = right;
+    _marginBottom = bottom;
+    // _margin = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
     return this;
   }
   AzContainer mLTRB(left,top,right,bottom){
-    _margin = EdgeInsets.fromLTRB(left,top,right,bottom);
+    _marginLeft = left;
+    _marginTop = top;
+    _marginRight = right;
+    _marginBottom = bottom;
+
+    // _margin = EdgeInsets.fromLTRB(left,top,right,bottom);
     return this;
   }
   AzContainer mSymmetric({required double h, required double v}){
-    _margin = EdgeInsets.symmetric(horizontal: h, vertical: v);
+    _marginLeft = h;
+    _marginTop = v;
+    _marginRight = h;
+    _marginBottom = v;
+
+    // _margin = EdgeInsets.symmetric(horizontal: h, vertical: v);
     return this;
   }
   AzContainer mx(double x){
-    _margin = EdgeInsets.symmetric(horizontal: x);
+    _marginLeft = x;
+    _marginRight = x;
+
+    // _margin = EdgeInsets.symmetric(horizontal: x);
     return this;
   }
   AzContainer my(double y){
-    _margin = EdgeInsets.symmetric(vertical: y);
+    _marginTop = y;
+    _marginBottom = y;
+
+    // _margin = EdgeInsets.symmetric(vertical: y);
     return this;
   }
+  AzContainer ml(double double){
+    _marginLeft = double;
+
+    // _margin = EdgeInsets.only(left: double);
+    return this;
+  }
+  AzContainer mt(double double){
+    _marginTop = double;
+
+    // _margin = EdgeInsets.only(top: double);
+    return this;
+  }
+  AzContainer mr(double double){
+    _marginRight = double;
+
+    // _margin = EdgeInsets.only(right: double);
+    return this;
+  }
+  AzContainer mb(double double){
+    _marginBottom = double;
+
+    // margin = EdgeInsets.only(bottom: double);
+    return this;
+  }
+
 
   // height width
   AzContainer width(double width){
@@ -533,6 +639,7 @@ class AzContainer extends StatelessWidget {
     _boxShadow = [funBoxShadow()];
     return this;
   }
+
   AzContainer primaryCard(){
     cardV1(AzUtlis().colorPrimary);
     return this;
@@ -561,6 +668,8 @@ class AzContainer extends StatelessWidget {
     cardV1(AzUtlis().colorSecondary);
     return this;
   }
+
+
 
   // border colors
   AzContainer primaryBorder(){
@@ -609,12 +718,133 @@ class AzContainer extends StatelessWidget {
 
   BoxShadow funBoxShadow(){
     return BoxShadow(
-      color: Colors.grey.withOpacity(0.125),
-      spreadRadius: 1,
-      blurRadius: 2,
-      offset: const Offset(0, 0), // changes position of shadow
-    );
+        color: Colors.grey.withOpacity(0.125),
+        spreadRadius: 1,
+        blurRadius: 2,
+        offset: const Offset(0, 0), // changes position of shadow
+      );
   }
+
+
+
+  // these should be same method name in button
+  AzContainer solidThree(color){
+    _bgColor = color.withOpacity(0.2);
+    return this;
+  }
+  AzContainer primarySolidThree(){
+    solidThree(AzUtlis().colorPrimary);
+    return this;
+  }
+  AzContainer secondarySolidThree(){
+    solidThree(AzUtlis().colorSecondary);
+    return this;
+  }
+  AzContainer successSolidThree(){
+    solidThree(AzUtlis().colorSuccess);
+    return this;
+  }
+  AzContainer darkSolidThree(){
+    solidThree(AzUtlis().colorDark);
+    return this;
+  }
+  AzContainer dangerSolidThree(){
+    solidThree(AzUtlis().colorDanger);
+    return this;
+  }
+  AzContainer infoSolidThree(){
+    solidThree(AzUtlis().colorInfo);
+    return this;
+  }
+  AzContainer warningSolidThree(){
+    solidThree(AzUtlis().colorWarning);
+    return this;
+  }
+  AzContainer lightSolidThree(){
+    solidThree(AzUtlis().colorLight);
+    return this;
+  }
+
+  AzContainer solidTwo(_borderColor, _borderWidth){
+    _bgColor = _borderColor.withOpacity(0.2);
+    border(_borderColor, _borderWidth, BorderStyle.solid, 0);
+    return this;
+  }
+
+  AzContainer primarySolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorPrimary;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer successSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorSuccess;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer secondarySolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorSecondary;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer lightSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorLight;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer infoSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorInfo;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer dangerSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorDanger;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer darkSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorDark;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+  AzContainer warningSolidTwo(){
+    if(_borderWidth == 1){
+      _borderWidth = 2;
+    }
+    Color color = AzUtlis().colorWarning;
+    // show order
+    solidTwo(color, _borderWidth);
+    return this;
+  }
+
+
 
   toBuild() {
     return Container(
@@ -643,8 +873,8 @@ class AzContainer extends StatelessWidget {
         width: _width,
         height: _height,
         constraints: _constraints,
-        padding: _padding,
-        margin: _margin,
+        padding: EdgeInsets.fromLTRB(_paddingLeft,_paddingTop,_paddingRight,_paddingBottom),
+        margin: EdgeInsets.fromLTRB(_marginLeft,_marginTop,_marginRight,_marginBottom),
         transform: _transform,
         transformAlignment: _transformAlignment,
         clipBehavior: _clipBehavior,
@@ -658,10 +888,11 @@ class AzContainer extends StatelessWidget {
   }
 
 
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 
 }

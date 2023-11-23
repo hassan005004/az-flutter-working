@@ -63,7 +63,7 @@ class _TextFontFamilyScreenState extends State<TextFontFamilyScreen> {
                 AzText('Output').fs(14).bold(),
 
                 codeSnippetOutput(AzText("This is text").fontFamily('GlassAntiqua').fontFamilyFallback(['GlassAntiqua']).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

@@ -2,22 +2,17 @@ import 'positioned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../helper/responsive.dart';
 import '../helper/config.dart';
 import '../helper/hex_color.dart';
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
-
-extension ExtTextFormFiled on TextFormField {
-  // get children => null;
-  AzTextFormField azTextFormField() => AzTextFormField();
-}
+import 'ink_well.dart';
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzTextFormField extends StatelessWidget {
-  // final List<Widget> _children;
   // final Key key;
 
   TextEditingController? _controller;
@@ -51,6 +46,11 @@ class AzTextFormField extends StatelessWidget {
 
   // inputDecoration
   EdgeInsetsGeometry? _contentPadding;
+  double _paddingLeft = 10;
+  double _paddingTop = 10;
+  double _paddingRight = 10;
+  double _paddingBottom = 10;
+
   Widget? _prefixIcon;
   Widget? _suffixIcon;
   TextStyle? _textStyle;
@@ -90,12 +90,10 @@ class AzTextFormField extends StatelessWidget {
   // BorderStyle? _borderRightStyle = BorderStyle.solid;
   // BorderStyle? _borderBottomStyle = BorderStyle.solid;
   // BorderStyle? _borderLeftStyle = BorderStyle.solid;
-  double _roundedTopLeft = 0;
-  double _roundedTopRight = 0;
-  double _roundedBottomLeft = 0;
-  double _roundedBottomRight = 0;
-
-
+  double _radiusTopLeft = 0;
+  double _radiusTopRight = 0;
+  double _radiusBottomLeft = 0;
+  double _radiusBottomRight = 0;
 
   // testStyle
   // Color? _color;
@@ -608,8 +606,80 @@ class AzTextFormField extends StatelessWidget {
     return this;
   }
 
-  AzTextFormField contentPadding(EdgeInsetsGeometry padding) {
-    _contentPadding = padding;
+  // AzTextFormField contentPadding(EdgeInsetsGeometry padding) {
+  //   _contentPadding = padding;
+  //   return this;
+  // }
+  AzTextFormField p(double padding){
+    _paddingLeft = padding;
+    _paddingTop = padding;
+    _paddingRight = padding;
+    _paddingBottom = padding;
+    // _padding = EdgeInsets.all(padding);
+    return this;
+  }
+  AzTextFormField pOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+    // _padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
+    return this;
+  }
+  AzTextFormField pLTRB(left,top,right,bottom){
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+
+    // _padding = EdgeInsets.fromLTRB(left,top,right,bottom);
+    return this;
+  }
+  AzTextFormField pSymmetric({required double h, required double v}){
+    _paddingLeft = h;
+    _paddingTop = v;
+    _paddingRight = h;
+    _paddingBottom = v;
+
+    // _padding = EdgeInsets.symmetric(horizontal: h, vertical: v);
+    return this;
+  }
+  AzTextFormField px(double x){
+    _paddingLeft = x;
+    _paddingRight = x;
+
+    // _padding = EdgeInsets.symmetric(horizontal: x);
+    return this;
+  }
+  AzTextFormField py(double y){
+    _paddingTop = y;
+    _paddingBottom = y;
+
+    // _padding = EdgeInsets.symmetric(vertical: y);
+    return this;
+  }
+  AzTextFormField pl(double double){
+    _paddingLeft = double;
+
+    // _padding = EdgeInsets.only(left: double);
+    return this;
+  }
+  AzTextFormField pt(double double){
+    _paddingTop = double;
+
+    // _padding = EdgeInsets.only(top: double);
+    return this;
+  }
+  AzTextFormField pr(double double){
+    _paddingRight = double;
+
+    // _padding = EdgeInsets.only(right: double);
+    return this;
+  }
+  AzTextFormField pb(double double){
+    _paddingBottom = double;
+
+    // _padding = EdgeInsets.only(bottom: double);
     return this;
   }
 
@@ -623,70 +693,70 @@ class AzTextFormField extends StatelessWidget {
     return this;
   }
 
-  AzTextFormField rounded([double val = radius]) {
-    _roundedTopLeft = val;
-    _roundedTopRight = val;
-    _roundedBottomLeft = val;
-    _roundedBottomRight= val;
+  AzTextFormField radius(double double) {
+    _radiusTopLeft = double;
+    _radiusTopRight = double;
+    _radiusBottomLeft = double;
+    _radiusBottomRight= double;
     return this;
   }
 
-  AzTextFormField roundedLg([double val = radiusLg]) {
-    _roundedTopLeft = val;
-    _roundedTopRight = val;
-    _roundedBottomLeft = val;
-    _roundedBottomRight= val;
+  AzTextFormField radiusLg(double double) {
+    _radiusTopLeft = double;
+    _radiusTopRight = double;
+    _radiusBottomLeft = double;
+    _radiusBottomRight= double;
     return this;
   }
 
-  AzTextFormField roundedSm([double val = radiusSm]) {
-    _roundedTopLeft = val;
-    _roundedTopRight = val;
-    _roundedBottomLeft = val;
-    _roundedBottomRight= val;
+  AzTextFormField radiusSm(double double) {
+    _radiusTopLeft = double;
+    _radiusTopRight = double;
+    _radiusBottomLeft = double;
+    _radiusBottomRight= double;
     return this;
   }
 
-  AzTextFormField roundedTop([double val = radius]) {
-    _roundedTopLeft = val;
-    _roundedTopRight = val;
+  AzTextFormField radiusTop(double double) {
+    _radiusTopLeft = double;
+    _radiusTopRight = double;
     return this;
   }
 
-  AzTextFormField roundedTopLeft([double val = radius]) {
-    _roundedTopLeft = val;
+  AzTextFormField radiusTopLeft(double double) {
+    _radiusTopLeft = double;
     return this;
   }
-  AzTextFormField roundedTopRight([double val = radius]) {
-    _roundedTopRight = val;
-    return this;
-  }
-
-  AzTextFormField roundedRight([double val = radius]) {
-    _roundedTopRight = val;
-    _roundedBottomRight = val;
+  AzTextFormField radiusTopRight(double double) {
+    _radiusTopRight = double;
     return this;
   }
 
-  AzTextFormField roundedBottom([double val = radius]) {
-    _roundedBottomLeft = val;
-    _roundedBottomRight= val;
+  AzTextFormField radiusRight(double double) {
+    _radiusTopRight = double;
+    _radiusBottomRight = double;
     return this;
   }
 
-  AzTextFormField roundedBottomLeft([double val = radius]) {
-    _roundedBottomLeft = val;
+  AzTextFormField radiusBottom(double double) {
+    _radiusBottomLeft = double;
+    _radiusBottomRight= double;
     return this;
   }
 
-  AzTextFormField roundedBottomRight([double val = radius]) {
-    _roundedBottomRight = val;
+  AzTextFormField radiusBottomLeft(double double) {
+    _radiusBottomLeft = double;
     return this;
   }
 
-  AzTextFormField roundedLeft([double val = radius]) {
-    _roundedTopLeft = val;
-    _roundedBottomLeft = val;
+  AzTextFormField radiusBottomRight(double double) {
+    _radiusBottomRight = double;
+    return this;
+  }
+
+  AzTextFormField radiusLeft(double double) {
+    _radiusTopLeft = double;
+    _radiusBottomLeft = double;
     return this;
   }
 
@@ -717,132 +787,131 @@ class AzTextFormField extends StatelessWidget {
   //   return this;
   // }
 
-  AzTextFormField borderColor(String colorHexCode) {
-    // _borderColor = _borderTopColor = _borderRightColor = _borderBottomColor = _borderLeftColor = color(colorHexCode);
-    _borderColor = hexColor(colorHexCode);
+  AzTextFormField borderColor(Color color) {
+    _borderColor = color;
     _border = helperBorder();
     return this;
   }
   AzTextFormField borderNone(){
     _border = const OutlineInputBorder(
       // borderRadius: BorderRadius.only(
-      //   topLeft:Radius.circular(_roundedTopLeft),
-      //   topRight:Radius.circular(_roundedTopRight),
-      //   bottomRight:Radius.circular(_roundedBottomLeft),
-      //   bottomLeft:Radius.circular(_roundedBottomRight),
+      //   topLeft:Radius.circular(_radiusTopLeft),
+      //   topRight:Radius.circular(_radiusTopRight),
+      //   bottomRight:Radius.circular(_radiusBottomLeft),
+      //   bottomLeft:Radius.circular(_radiusBottomRight),
       // ),
       borderSide: BorderSide.none,
     );
     return this;
   }
 
-  // AzTextFormField borderTopColor(String colorHexCode){
+  // AzTextFormField borderTopColor(Color color){
   //   _borderTopColor = color(colorHexCode);
   //   return this;
   // }
 
-  // AzTextFormField borderRightColor(String colorHexCode){
+  // AzTextFormField borderRightColor(Color color){
   //   _borderRightColor = color(colorHexCode);
   //   return this;
   // }
 
-  // AzTextFormField borderBottomColor(String colorHexCode){
+  // AzTextFormField borderBottomColor(Color color){
   //   _borderBottomColor = color(colorHexCode);
   //   return this;
   // }
 
-  // AzTextFormField borderLeftColor(String colorHexCode){
+  // AzTextFormField borderLeftColor(Color color){
   //   _borderLeftColor = color(colorHexCode);
   //   return this;
   // }
 
-  AzTextFormField errorBorder([String hexCode = cDanger]){
-    _errorBorderColor = hexColor(hexCode);
+  AzTextFormField errorBorder([Color color = colorDanger]){
+    _errorBorderColor = color;
     _errorBorder = helperErrorBorder();
     return this;
   }
 
-  AzTextFormField focusedBorder([String hexCode = cInfo]){
-    _focusedBorderColor = hexColor(hexCode);
+  AzTextFormField focusedBorder([Color color = colorInfo]){
+    _focusedBorderColor = color;
     _focusedBorder = helperFocusedBorder();
     return this;
   }
 
-  AzTextFormField focusedErrorBorder([String hexCode = cDanger]){
-    _focusedBorderColor = hexColor(hexCode);
+  AzTextFormField focusedErrorBorder([Color color = colorDanger]){
+    _focusedBorderColor = color;
     _focusedErrorBorder = helperFocusedErrorBorder();
     return this;
   }
 
-  AzTextFormField disabledBorder([String hexCode = cInfo]){
-    _disabledBorderColor = hexColor(hexCode);
+  AzTextFormField disabledBorder([Color color = colorInfo]){
+    _disabledBorderColor = color;
     _disabledBorder = helperDisabledBorder();
     return this;
   }
 
-  AzTextFormField enabledBorder([String hexCode = cMain]){
-    _enabledBorderColor = hexColor(hexCode);
+  AzTextFormField enabledBorder([Color color = colorPrimary]){
+    _enabledBorderColor = color;
     _enabledBorder = helperEnabledBorder();
     return this;
   }
 
-  AzTextFormField border([String hexCode = cBorder]){
-    _borderColor = hexColor(hexCode);
+  AzTextFormField border([Color color = colorBorder]){
+    _borderColor = color;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderPrimary(){
-    _borderColor = hexColor(cPrimary);
+    _borderColor = colorPrimary;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderSecondary(){
-    _borderColor = hexColor(cSecondary);
+    _borderColor = colorSecondary;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderSuccess(){
-    _borderColor = hexColor(cSuccess);
+    _borderColor = colorSuccess;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderDanger(){
-    _borderColor = hexColor(cDanger);
+    _borderColor = colorDanger;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderWarning(){
-    _borderColor = hexColor(cWarning);
+    _borderColor = colorWarning;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderInfo(){
-    _borderColor = hexColor(cInfo);
+    _borderColor = colorInfo;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderLight(){
-    _borderColor = hexColor(cLight);
+    _borderColor = colorLight;
     _border = helperBorder();
     return this;
   }
 
   AzTextFormField borderDark(){
-    _borderColor = hexColor(cDark);
+    _borderColor = colorDark;
     _border = helperBorder();
     return this;
   }
 
   // textStyle
   // color
-  // AzTextFormField text(String colorHexCode) {
+  // AzTextFormField text(Color color) {
   //   _color = setOpacity(hexColor(colorHexCode), isActive_, isDisabled_);
   //   return this;
   // }
@@ -902,7 +971,7 @@ class AzTextFormField extends StatelessWidget {
   // }
   //
   // // background color
-  // AzTextFormField bg(String colorHexCode) {
+  // AzTextFormField bg(Color color) {
   //   _backgroundColor = hexColor(colorHexCode);
   //   return this;
   // }
@@ -1201,7 +1270,7 @@ class AzTextFormField extends StatelessWidget {
         // floatingLabelBehavior
         // isCollapsed
         // isDense
-        contentPadding: _contentPadding,
+        contentPadding: EdgeInsets.fromLTRB(_paddingLeft, _paddingTop, _paddingRight, _paddingBottom),
         prefixIcon: _prefixIcon,
         // prefixIconConstraints
         // prefix
@@ -1260,14 +1329,13 @@ class AzTextFormField extends StatelessWidget {
     return toBuild();
   }
 
-
   helperErrorBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _errorBorderColor, width: _borderWidth),
     );
@@ -1275,10 +1343,10 @@ class AzTextFormField extends StatelessWidget {
   helperFocusedBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _focusedBorderColor, width: _borderWidth),
     );
@@ -1286,10 +1354,10 @@ class AzTextFormField extends StatelessWidget {
   helperFocusedErrorBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _focusedErrorBorderColor, width: _borderWidth),
     );
@@ -1297,10 +1365,10 @@ class AzTextFormField extends StatelessWidget {
   helperDisabledBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _disabledBorderColor, width: _borderWidth),
     );
@@ -1308,10 +1376,10 @@ class AzTextFormField extends StatelessWidget {
   helperEnabledBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _enabledBorderColor, width: _borderWidth),
     );
@@ -1319,19 +1387,21 @@ class AzTextFormField extends StatelessWidget {
   helperBorder(){
     return OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft:Radius.circular(_roundedTopLeft),
-        topRight:Radius.circular(_roundedTopRight),
-        bottomRight:Radius.circular(_roundedBottomLeft),
-        bottomLeft:Radius.circular(_roundedBottomRight),
+        topLeft:Radius.circular(_radiusTopLeft),
+        topRight:Radius.circular(_radiusTopRight),
+        bottomRight:Radius.circular(_radiusBottomLeft),
+        bottomLeft:Radius.circular(_radiusBottomRight),
       ),
       borderSide: BorderSide(color: _borderColor, width: _borderWidth),
     );
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

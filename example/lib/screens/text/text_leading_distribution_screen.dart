@@ -53,7 +53,7 @@ class _TextLeadingDistributionScreenState extends State<TextLeadingDistributionS
                 codeSnippetOutput(AzText("This is text").leadingDistributionEven().fs(14)),
                 codeSnippetOutput(AzText("This is text").leadingDistributionProportional().fs(14)),
                 codeSnippetOutput(AzText("This is text").leadingDistribution(TextLeadingDistribution.proportional).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

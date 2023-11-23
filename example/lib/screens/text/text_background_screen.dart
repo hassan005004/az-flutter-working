@@ -89,7 +89,7 @@ class _TextBackgroundScreenState extends State<TextBackgroundScreen> {
                   ..style = PaintingStyle.stroke
                   ..color = Colors.green
                   ..strokeWidth = 2).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

@@ -4,14 +4,12 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
 
-extension ExtListTile on AzListTile {
-
-}
 
 // ignore: must_be_immutable
 class AzListTile extends StatelessWidget{
-  Widget child;
+  Widget? child;
   // final Key? key;
 
   Widget? _leading;
@@ -20,6 +18,11 @@ class AzListTile extends StatelessWidget{
   VoidCallback? _onTap;
 
   AzListTile(this.child, {Key? key}) : super(key: key);
+
+  // AzListTile leading(Widget leading){
+  //   _leading = leading;
+  //   return this;
+  // }
 
   AzListTile leading(Widget leading){
     _leading = leading;
@@ -85,9 +88,10 @@ class AzListTile extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 }

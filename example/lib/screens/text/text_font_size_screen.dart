@@ -53,7 +53,7 @@ class _TextFontSizeScreenState extends State<TextFontSizeScreen> {
               codeSnippetOutput(
                   AzText("This is text").fs(14)
               ),
-            ]).crossStart().container().px(10.0),
+            ]).crossStart().toContainer().px(10.0),
           ],
         ),
       )

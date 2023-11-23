@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Navigate{
+class AzNavigate{
   BuildContext context;
-  Navigate(this.context);
+  AzNavigate(this.context);
 
   Widget animationBuilder (_, a, __, c) => FadeTransition(opacity: a, child: c);
 

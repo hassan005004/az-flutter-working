@@ -85,7 +85,7 @@ class _TextDecorationScreenState extends State<TextDecorationScreen> {
                 // codeSnippetOutput(AzText("This is text").decorationOverline().fs(14)),
                 // codeSnippetOutput(AzText("This is text").decorationLineThrough().fs(14)),
                 codeSnippetOutput(AzText("This is text").decorationUnderline().decorationColor(Colors.blue).decorationStyleSolid().decorationThickness(5).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

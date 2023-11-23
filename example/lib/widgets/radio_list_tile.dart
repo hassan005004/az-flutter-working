@@ -6,10 +6,8 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
-
-extension AzRadioBuilder on RadioListTile {
-  AzRadioListTile az() => AzRadioListTile();
-}
+import 'ink_well.dart';
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzRadioListTile extends StatelessWidget {
@@ -168,9 +166,11 @@ class AzRadioListTile extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 }

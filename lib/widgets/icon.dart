@@ -5,10 +5,8 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
 
-extension ExtIcon on Icon {
-  AzIcon azIcon() => AzIcon(icon);
-}
 
 // ignore: must_be_immutable
 class AzIcon extends StatelessWidget {
@@ -27,6 +25,11 @@ class AzIcon extends StatelessWidget {
     _size = size;
     return this;
   }
+
+  // AzIcon color(String HexCode){
+  //   _color = hexColor(HexCode);
+  //   return this;
+  // }
 
   AzIcon color(Color color){
     _color = color;
@@ -66,10 +69,12 @@ class AzIcon extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
 
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
+  
 }

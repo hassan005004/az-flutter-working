@@ -1,4 +1,7 @@
 import 'dart:ui' as ui;
+import 'package:example/widgets/responsive.dart';
+
+import 'ink_well.dart';
 import 'text.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
@@ -759,7 +762,7 @@ class AzButton extends StatelessWidget {
     _alignment = Alignment.centerLeft;
     return this;
   }
-  AzButton centerCenter(){
+  AzButton center(){
     _alignment = Alignment.center;
     return this;
   }
@@ -849,10 +852,12 @@ class AzButton extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

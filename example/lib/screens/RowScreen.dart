@@ -57,7 +57,7 @@ class _RowScreenState extends State<RowScreen> {
             child: AzColumn([
 
                 AzListTile(AzText("crossAxisAlignment").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowCrossAxisAlignmentScreen(title: 'crossAxisAlignment')
                   );
                 }),
@@ -65,7 +65,7 @@ class _RowScreenState extends State<RowScreen> {
                 Divider(height:0),
 
                 AzListTile(AzText("mainAxisAlignment").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowMainAxisAlignmentScreen(title: 'mainAxisAlignment')
                   );
                 }),
@@ -73,7 +73,7 @@ class _RowScreenState extends State<RowScreen> {
                 Divider(height:0),
 
                 AzListTile(AzText("mainAxisSize").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowMainAxisSizeScreen(title: 'mainAxisSize')
                   );
                 }),
@@ -81,7 +81,7 @@ class _RowScreenState extends State<RowScreen> {
                 Divider(height:0),
 
                 AzListTile(AzText("textDirection").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowTextDirectionScreen(title: 'textDirection')
                   );
                 }),
@@ -89,7 +89,7 @@ class _RowScreenState extends State<RowScreen> {
                 Divider(height:0),
 
                 AzListTile(AzText("verticalDirection").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowVerticalDirectionScreen(title: 'verticalDirection')
                   );
                 }),
@@ -97,7 +97,7 @@ class _RowScreenState extends State<RowScreen> {
                 Divider(height:0),
 
                 AzListTile(AzText("textBaseline").fs(18).bold()).onTap(() {
-                  Navigate(context).to(
+                  AzNavigate(context).to(
                       screen: RowTextBaselineScreen(title: 'textBaseline')
                   );
                 }),

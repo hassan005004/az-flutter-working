@@ -4,13 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'card.dart';
 import 'container.dart';
+import 'ink_well.dart';
+import 'responsive.dart';
 // https://github.com/hassan005004/niku/blob/main/lib/extension/widget.dart
 
-extension ExtGestureDetector on GestureDetector {
-  // AzGestureDetector as() => AzGestureDetector(child ?? "")..onTap(onTap!);
-  // AzContainer on() => AzContainer(widget: AzGestureDetector(child ?? ""));
-  // AzContainer container() => AzContainer(widget: child);
-}
 // ignore: must_be_immutable
 class AzGestureDetector extends StatelessWidget{
   Widget? child;
@@ -32,7 +29,7 @@ class AzGestureDetector extends StatelessWidget{
     _onTapUp = callback;
     return this;
   }
-  AzGestureDetector tap(VoidCallback? callback){
+  AzGestureDetector onTap(VoidCallback? callback){
     _onTap = callback;
     return this;
   }
@@ -322,10 +319,12 @@ class AzGestureDetector extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
   // AzContainer b() => AzContainer(
   //   child: Builder(

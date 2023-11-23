@@ -1,4 +1,5 @@
 // all file new code
+import 'ink_well.dart';
 import 'positioned.dart';
 
 import 'center.dart';
@@ -8,12 +9,11 @@ import 'package:flutter/material.dart';
 import '../helper/hex_color.dart';
 
 
-extension ExtCard on Card {
-  AzCard azCard() => AzCard(child);
-}
+
 // ignore: must_be_immutable
 class AzCard extends StatelessWidget {
   final Widget? child;
+  // Key? key;
   Color? _color;
   Color? _shadowColor;
   double? _elevation;
@@ -88,8 +88,9 @@ class AzCard extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 }

@@ -91,36 +91,66 @@ const double radiusSm = 40;
 const double dBorderWidth = 2;
 
 
+const Color colorDefault = Color(0xFF0275d8);
+const Color colorDefaultAgainst = Color(0xFF0275d8);
+Color colorDefaultOverlay = Color(0xFF0069D9).withOpacity(colorOpacity);
+const Color colorPrimary = Color(0xFF0275d8);
+const Color colorPrimaryAgainst = Color(0xFF0275d8);
+Color colorPrimaryOverlay = Color(0xFF0069D9).withOpacity(colorOpacity);
+const Color colorSecondary = Color(0xFF6C757D);
+const Color colorSecondaryAgainst = Color(0xFF3FCDD9);
+Color colorSecondaryOverlay = Color(0xFF5A6268).withOpacity(colorOpacity);
+const Color colorInfo = Color(0xFF5bc0de);
+const Color colorInfoAgainst = Color(0xFF5bc0de);
+Color colorInfoOverlay = Color(0xFF138496).withOpacity(colorOpacity);
+const Color colorWarning = Color(0xFFf0ad4e);
+const Color colorWarningAgainst = Color(0xFFf0ad4e);
+Color colorWarningOverlay = Color(0xFFE0A800).withOpacity(colorOpacity);
+const Color colorDanger = Color(0xFFd9534f);
+const Color colorDangerAgainst = Color(0xFFd9534f);
+Color colorDangerOverlay = Color(0xFFC82333).withOpacity(colorOpacity);
+const Color colorDark = Color(0xFF292b2c);
+const Color colorDarkAgainst = Color(0xFF292b2c);
+Color colorDarkOverlay = Color(0xFF23272B).withOpacity(colorOpacity);
+const Color colorSuccess = Color(0xFF5cb85c);
+const Color colorSuccessAgainst = Color(0xFF5cb85c);
+Color colorSuccessOverlay = Color(0xFF218838).withOpacity(colorOpacity);
+const Color colorLight = Color(0xFFf7f7f7);
+const Color colorLightAgainst = Color(0xFFf7f7f7);
+Color colorLightOverlay = Color(0xFFE2E6EA).withOpacity(colorOpacity);
+
+const Color colorBorder = Color(0xFFE1E1E1); // color code not from bootstrap
+
 class AzUtlis{
 
   // colors
-  Color colorDefault = const Color(0xFF0275d8);
-  Color colorDefaultAgainst = const Color(0xFF0275d8);
-  Color colorDefaultOverlay = const Color(0xFF0069D9).withOpacity(colorOpacity);
-  Color colorPrimary = const Color(0xFF0275d8);
-  Color colorPrimaryAgainst = const Color(0xFF0275d8);
-  Color colorPrimaryOverlay = const Color(0xFF0069D9).withOpacity(colorOpacity);
-  Color colorSecondary = const Color(0xFF6C757D);
-  Color colorSecondaryAgainst = const Color(0xFF3FCDD9);
-  Color colorSecondaryOverlay = const Color(0xFF5A6268).withOpacity(colorOpacity);
-  Color colorInfo = const Color(0xFF5bc0de);
-  Color colorInfoAgainst = const Color(0xFF5bc0de);
-  Color colorInfoOverlay = const Color(0xFF138496).withOpacity(colorOpacity);
-  Color colorWarning = const Color(0xFFf0ad4e);
-  Color colorWarningAgainst = const Color(0xFFf0ad4e);
-  Color colorWarningOverlay = const Color(0xFFE0A800).withOpacity(colorOpacity);
-  Color colorDanger = const Color(0xFFd9534f);
-  Color colorDangerAgainst = const Color(0xFFd9534f);
-  Color colorDangerOverlay = const Color(0xFFC82333).withOpacity(colorOpacity);
-  Color colorDark = const Color(0xFF292b2c);
-  Color colorDarkAgainst = const Color(0xFF292b2c);
-  Color colorDarkOverlay = const Color(0xFF23272B).withOpacity(colorOpacity);
-  Color colorSuccess = const Color(0xFF5cb85c);
-  Color colorSuccessAgainst = const Color(0xFF5cb85c);
-  Color colorSuccessOverlay = const Color(0xFF218838).withOpacity(colorOpacity);
-  Color colorLight = const Color(0xFFf7f7f7);
-  Color colorLightAgainst = const Color(0xFFf7f7f7);
-  Color colorLightOverlay = const Color(0xFFE2E6EA).withOpacity(colorOpacity);
+  final Color colorDefault = Color(0xFF0275d8);
+  final Color colorDefaultAgainst = Color(0xFF0275d8);
+  final Color colorDefaultOverlay = Color(0xFF0069D9).withOpacity(colorOpacity);
+  final Color colorPrimary = Color(0xFF0275d8);
+  final Color colorPrimaryAgainst = Color(0xFF0275d8);
+  final Color colorPrimaryOverlay = Color(0xFF0069D9).withOpacity(colorOpacity);
+  final Color colorSecondary = Color(0xFF6C757D);
+  final Color colorSecondaryAgainst = Color(0xFF3FCDD9);
+  final Color colorSecondaryOverlay = Color(0xFF5A6268).withOpacity(colorOpacity);
+  final Color colorInfo = Color(0xFF5bc0de);
+  final Color colorInfoAgainst = Color(0xFF5bc0de);
+  final Color colorInfoOverlay = Color(0xFF138496).withOpacity(colorOpacity);
+  final Color colorWarning = Color(0xFFf0ad4e);
+  final Color colorWarningAgainst = Color(0xFFf0ad4e);
+  final Color colorWarningOverlay = Color(0xFFE0A800).withOpacity(colorOpacity);
+  final Color colorDanger = Color(0xFFd9534f);
+  final Color colorDangerAgainst = Color(0xFFd9534f);
+  final Color colorDangerOverlay = Color(0xFFC82333).withOpacity(colorOpacity);
+  final Color colorDark = Color(0xFF292b2c);
+  final Color colorDarkAgainst = Color(0xFF292b2c);
+  final Color colorDarkOverlay = Color(0xFF23272B).withOpacity(colorOpacity);
+  final Color colorSuccess = Color(0xFF5cb85c);
+  final Color colorSuccessAgainst = Color(0xFF5cb85c);
+  final Color colorSuccessOverlay = Color(0xFF218838).withOpacity(colorOpacity);
+  final Color colorLight = Color(0xFFf7f7f7);
+  final Color colorLightAgainst = Color(0xFFf7f7f7);
+  final Color colorLightOverlay = Color(0xFFE2E6EA).withOpacity(colorOpacity);
 
   // radius
   double radiusOne = 5;

@@ -52,7 +52,7 @@ class _ImageScreenState extends State<ImageScreen> {
           child: AzColumn([
             // Image.asset(name)
               AzListTile(AzText("Examples").fs(18).bold()).onTap(() {
-                Navigate(context).to(
+                AzNavigate(context).to(
                     screen: AssetImageScreen(title: 'Assets Image')
                 );
               }),
@@ -60,7 +60,7 @@ class _ImageScreenState extends State<ImageScreen> {
               Divider(height:0),
 
               // AzListTile(AzText("Network Image").fs(18).bold()).onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconColorScreen(title: 'Network Image')
               //   );
               // }),

@@ -1,4 +1,5 @@
 // all file new code
+import 'ink_well.dart';
 import 'positioned.dart';
 
 import 'center.dart';
@@ -6,11 +7,8 @@ import 'container.dart';
 import 'gesture_detector.dart';
 import 'package:flutter/material.dart';
 import '../helper/hex_color.dart';
+import 'responsive.dart';
 
-
-extension ExtCard on Card {
-  AzCard azCard() => AzCard(child);
-}
 // ignore: must_be_immutable
 class AzCard extends StatelessWidget {
   final Widget? child;
@@ -89,8 +87,10 @@ class AzCard extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 }

@@ -4,13 +4,13 @@ import 'container.dart';
 import 'gesture_detector.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
+import 'ink_well.dart';
 
-extension ExtColumn on AzColumn {
-  AzColumn azColumn() => AzColumn(children);
-}
+
 // ignore: must_be_immutable
 class AzColumn extends StatelessWidget{
   List<Widget> children;
+  // final Key? key;
 
   CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
   MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.center;
@@ -113,10 +113,11 @@ class AzColumn extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

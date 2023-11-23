@@ -87,7 +87,7 @@ class _TextFontVariationScreenState extends State<TextFontVariationScreen> {
                   FontVariation('wght', 700),
                   FontVariation('wdth', 150),
                 ]).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

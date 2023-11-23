@@ -57,7 +57,7 @@ class _TextPackageScreenState extends State<TextPackageScreen> {
                 SizedBox(height: 20),
                 AzText('Output').fs(14).bold(),
                 // codeSnippetOutput(AzText("This is text").package('assets/fonts/GlassAntiqua-Regular.ttf').fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

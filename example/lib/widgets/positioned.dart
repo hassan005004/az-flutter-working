@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-extension ExtPositioned on AzPositioned {
-
-}
-
 // ignore: must_be_immutable
 class AzPositioned extends StatelessWidget{
   Widget child;

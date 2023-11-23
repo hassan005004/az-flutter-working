@@ -7,20 +7,12 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
-
-extension ExtText on Text {
-  AzText azText() => AzText(data ?? "");
-}
+import 'ink_well.dart';
 
 // ignore: must_be_immutable
 class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Widget widget = const Text('');
   dynamic name;
-
-  // final Key? key;
-  // Color borderColor = Colors.transparent;//border_color;
-  // Color _bgColor = Colors.transparent;//main_one_color.withOpacity(0.125);
-  // double _opacity = 0.25;
 
   // style proeprties here
   bool _inherit = true;
@@ -352,7 +344,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _packageStrut = packageStrut;
     return this;
   }
-
+  
   AzText textAlign(TextAlign textAlign){
     _textAlign = textAlign;
     return this;
@@ -511,8 +503,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   }
 
   AzContainer container() => AzContainer(widget:toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
+  
 }

@@ -91,7 +91,7 @@ class _TextFontFeatureScreenState extends State<TextFontFeatureScreen> {
                   FontFeature.enable('dlig'),
                   FontFeature.enable('smcp'),
                 ]).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

@@ -1,13 +1,12 @@
+import 'responsive.dart';
+
 import 'positioned.dart';
 import 'package:flutter/material.dart';
 import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
-
-extension ExtWrap on Wrap {
-  AzWrap azWrap() => AzWrap(children);
-}
+import 'ink_well.dart';
 
 // ignore: must_be_immutable
 class AzWrap extends StatelessWidget {
@@ -197,10 +196,12 @@ class AzWrap extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

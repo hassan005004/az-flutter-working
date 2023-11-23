@@ -8,6 +8,8 @@ import 'package:example/widgets/container.dart';
 import 'package:example/widgets/list_tile.dart';
 import 'package:example/widgets/navigate.dart';
 import 'package:example/widgets/text.dart';
+import 'package:example/helper/extensions.dart';
+import 'package:example/widgets/wrap.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -55,8 +57,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AzText('Text').container().wFull().p(50).primarySolidThree(),
+            Row(children:[
+              Text('abc').azText().container()
+            ]).azRow(),
 
+            AzWrap([
+              AzText('Text').container().wFull().dangerSolidThree().toResponsive().sm1(context),
+              AzText('Text').container().wFull().primarySolidThree().toResponsive().col('col-5'),
+            ]),
+
+            AzText("Done").fs(16).color('#E1E1E1'.fromHex()).toCenter().toContainer().px(10.0).py(10),
+
+
+            TextFormField().azTextFormField().borderSecondary(),
             AzButton('Text')
             .wFull()
             // .successSolid()
@@ -73,12 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
             
             Divider(height:0),
 
-            AzText("Done").fs(16).color(Colors.green).center().container().px(10.0).py(10),
+            AzText("Done").fs(16).color(Colors.green).toCenter().toContainer().px(10.0).py(10),
 
             Divider(height:0),
 
             AzListTile(AzText("AzText/Text").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -86,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzIcon/Icon").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: IconScreen(title: 'AzIcon/Icon')
               );
             }),
@@ -94,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzColumn/Column").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: ColumnScreen(title: 'AzColumn/Column')
               );
             }),
@@ -102,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzRow/Row").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: RowScreen(title: 'AzRow/Row')
               );
             }),
@@ -110,19 +123,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzImage").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: ImageScreen(title: 'AzImage')
               );
             }),
 
             Divider(height:0),
 
-            AzText("Not Done").fs(16).color(Colors.red).center().container().px(10.0).py(10),
+            AzText("Not Done").fs(16).color(Colors.red).toCenter().toContainer().px(10.0).py(10),
 
             Divider(height:0),
 
             AzListTile(AzText("AzTextFormFiled/TextFormFiled").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -131,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzButton/Button").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -139,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzWrap/Wrap").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -147,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzStack/Stack").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -155,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzPositioned/Positioned").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -163,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzListTile/ListTile").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -171,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzRadioTile/RadioTile").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -179,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzDropDown/Dropdown").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -187,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzGestureDetector/GestureDetector").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -195,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzInkWell/InkWell").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -203,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzGridView/GridView").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -211,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             AzListTile(AzText("AzListView/ListView").fs(16)).onTap(() {
-              Navigate(context).to(
+              AzNavigate(context).to(
                   screen: TextScreen(title: 'AzListTile(AzText/Text')
               );
             }),
@@ -219,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Divider(height:0),
 
             // AzListTile(AzText("Pagination").fs(16)).onTap(() {
-            //   Navigate(context).to(
+            //   AzNavigate(context).to(
             //       screen: TextScreen(title: 'AzListTile(AzText/Text')
             //   );
             // }),
@@ -227,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Divider(height:0),
 
             // AzListTile(AzText("Navigation").fs(16)).onTap(() {
-            //   Navigate(context).to(
+            //   AzNavigate(context).to(
             //       screen: TextScreen(title: 'AzListTile(AzText/Text')
             //   );
             // }),

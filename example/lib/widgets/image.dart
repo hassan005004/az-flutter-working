@@ -4,11 +4,9 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
+import 'responsive.dart';
 
-extension ExtImage on AssetImage {
-  // AzImage azImageAsset() => AzImage(assetName);
-  // AzImageNetwrok azImageNetwork() => AzImageNetwrok(data ?? "");
-}
 // ignore: must_be_immutable
 class AzImage extends StatelessWidget {
   dynamic data;
@@ -114,7 +112,7 @@ class AzImage extends StatelessWidget {
     _alignment = Alignment.centerLeft;
     return this;
   }
-  AzImage centerCenter(){
+  AzImage center(){
     _alignment = Alignment.center;
     return this;
   }
@@ -225,11 +223,13 @@ class AzImage extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }
 
@@ -302,11 +302,11 @@ class AzImage extends StatelessWidget {
 //     return toBuild();
 //   }
 //
-//   AzContainer container() => AzContainer(widget: toBuild());
-//   AzCard card() => AzCard(toBuild());
-//   AzCenter center() => AzCenter(toBuild());
-//   AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-//   AzPositioned positioned() => AzPositioned(toBuild());
+//   AzContainer toContainer() => AzContainer(widget: toBuild());
+//   AzCard toCard() => AzCard(toBuild());
+//   AzCenter toCenter() => AzCenter(toBuild());
+//   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+//   AzPositioned toPositioned() => AzPositioned(toBuild());
 // }
 
 //

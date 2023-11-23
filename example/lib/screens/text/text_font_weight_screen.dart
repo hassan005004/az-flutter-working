@@ -74,7 +74,7 @@ class _TextFontWeightScreenState extends State<TextFontWeightScreen> {
               codeSnippetOutput(AzText("w700").w700().fs(14)),
               codeSnippetOutput(AzText("w800").w800().fs(14)),
               codeSnippetOutput(AzText("w900").w900().fs(14)),
-            ]).crossStart().container().px(10.0),
+            ]).crossStart().toContainer().px(10.0),
           ],
         ),
       )

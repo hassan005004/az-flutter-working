@@ -54,7 +54,7 @@ class _TextBaselineScreenState extends State<TextBaselineScreen> {
                 codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
                 codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.ideographic).fs(14)),
                 codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

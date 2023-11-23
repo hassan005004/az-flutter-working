@@ -58,7 +58,7 @@ class _TextColorScreenState extends State<TextColorScreen> {
               codeSnippetOutput(
                   AzText("This is text").color(Colors.blue)
               ),
-            ]).crossStart().container().px(10.0),
+            ]).crossStart().toContainer().px(10.0),
           ],
         ),
       )

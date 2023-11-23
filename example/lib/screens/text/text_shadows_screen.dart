@@ -99,7 +99,7 @@ class _TextShadowScreenState extends State<TextShadowScreen> {
                     offset: Offset(0, 0)
                   )
                 ]).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:example/helper/extensions.dart';
 import 'package:example/widgets/icon.dart';
 import 'package:example/widgets/text.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,9 +65,9 @@ Icon(Icons.add, color: Colors.green,)
             AzText('Output').fs(14).bold(),
 
             codeSnippetOutput(
-                Icon(Icons.add).azIcon().color(Colors.green).container().px(10.0)
+                Icon(Icons.add).azIcon().color(Colors.green).toContainer().px(10.0)
             ),
-          ]).crossStart().container().px(10.0)
+          ]).crossStart().toContainer().px(10.0)
       )
     );
   }

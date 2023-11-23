@@ -58,7 +58,7 @@ class _TextWordSpacingScreenState extends State<TextWordSpacingScreen> {
                 SizedBox(height: 20),
                 AzText('Output').fs(14).bold(),
                 codeSnippetOutput(AzText("This is text").wordSpacing(10).fs(14)),
-              ]).crossStart().container().px(10.0),
+              ]).crossStart().toContainer().px(10.0),
             ],
           ),
         )

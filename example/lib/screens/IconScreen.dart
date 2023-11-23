@@ -51,7 +51,7 @@ class _IconScreenState extends State<IconScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AzListTile(AzText("size").fs(18).bold()).onTap(() {
-                Navigate(context).to(
+                AzNavigate(context).to(
                     screen: IconSizeScreen(title: 'size')
                 );
               }),
@@ -59,7 +59,7 @@ class _IconScreenState extends State<IconScreen> {
               Divider(height:0),
 
               AzListTile(AzText("color").fs(18).bold()).onTap(() {
-                Navigate(context).to(
+                AzNavigate(context).to(
                     screen: IconColorScreen(title: 'color')
                 );
               }),
@@ -67,7 +67,7 @@ class _IconScreenState extends State<IconScreen> {
               Divider(height:0),
 
               AzListTile(AzText("semanticLabel").fs(18).bold()).onTap(() {
-                Navigate(context).to(
+                AzNavigate(context).to(
                     screen: IconSemanticLabelScreen(title: 'semanticLabel')
                 );
               }),
@@ -75,7 +75,7 @@ class _IconScreenState extends State<IconScreen> {
               Divider(height:0),
 
               AzListTile(AzText("textDirection").fs(18).bold()).onTap(() {
-                Navigate(context).to(
+                AzNavigate(context).to(
                     screen: IconTextDirectionScreen(title: 'textDirection')
                 );
               }),
@@ -83,7 +83,7 @@ class _IconScreenState extends State<IconScreen> {
               Divider(height:0),
 
               // AzText("fill").fs(18).bold().onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconTextDirectionScreen(title: 'fill')
               //   );
               // }),
@@ -91,7 +91,7 @@ class _IconScreenState extends State<IconScreen> {
               // Divider(height:0),
               //
               // AzText("weight").fs(18).bold().onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconTextDirectionScreen(title: 'weight')
               //   );
               // }),
@@ -99,7 +99,7 @@ class _IconScreenState extends State<IconScreen> {
               // Divider(height:0),
               //
               // AzText("grade").fs(18).bold().onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconTextDirectionScreen(title: 'grade')
               //   );
               // }),
@@ -107,7 +107,7 @@ class _IconScreenState extends State<IconScreen> {
               // Divider(height:0),
               //
               // AzText("opticalSize").fs(18).bold().onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconTextDirectionScreen(title: 'opticalSize')
               //   );
               // }),
@@ -115,7 +115,7 @@ class _IconScreenState extends State<IconScreen> {
               // Divider(height:0),
               //
               // AzText("shadow").fs(18).bold().onTap(() {
-              //   Navigate(context).to(
+              //   AzNavigate(context).to(
               //       screen: IconTextDirectionScreen(title: 'shadow')
               //   );
               // }),

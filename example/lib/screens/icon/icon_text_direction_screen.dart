@@ -85,7 +85,7 @@ AzIcon(Icons.add)
             codeSnippetOutput(
               AzIcon(Icons.arrow_forward_ios).rtl(),
             ),
-          ]).crossStart().container().px(10.0)
+          ]).crossStart().toContainer().px(10.0)
       )
     );
   }

@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
+import 'ink_well.dart';
 import 'text.dart';
-
 import 'positioned.dart';
 import 'package:flutter/material.dart';
 import '../helper/config.dart';
@@ -432,13 +432,79 @@ class AzButton extends StatelessWidget {
     return this;
   }
 
+  AzButton solidThree(color, colorOverlay){
+    // Color color = AzUtlis().colorPrimary;
+    // Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    _backgroundColor ??= MaterialStateProperty.all(color.withOpacity(0.2));
+    _overlayColor ??= MaterialStateProperty.all(colorOverlay);
+    // _side = MaterialStateProperty.all(BorderSide(
+    //     width: 0,
+    //     color: color
+    // ));
+
+    // set text property
+    _textColor = color;
+    _fontWeight = FontWeight.bold;
+
+    return this;
+  }
+  AzButton primarySolidThree(){
+    Color color = AzUtlis().colorPrimary;
+    Color colorOverlay = AzUtlis().colorPrimaryOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton secondarySolidThree(){
+    Color color = AzUtlis().colorSecondary;
+    Color colorOverlay = AzUtlis().colorSecondaryOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton infoSolidThree(){
+    Color color = AzUtlis().colorInfo;
+    Color colorOverlay = AzUtlis().colorInfoOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton warningSolidThree(){
+    Color color = AzUtlis().colorWarning;
+    Color colorOverlay = AzUtlis().colorWarningOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton dangerSolidThree(){
+    Color color = AzUtlis().colorDanger;
+    Color colorOverlay = AzUtlis().colorDangerOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton darkSolidThree(){
+    Color color = AzUtlis().colorDark;
+    Color colorOverlay = AzUtlis().colorDarkOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton lightSolidThree(){
+    Color color = AzUtlis().colorLight;
+    Color colorOverlay = AzUtlis().colorLightOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+  AzButton successSolidThree(){
+    Color color = AzUtlis().colorSuccess;
+    Color colorOverlay = AzUtlis().colorSuccessOverlay;
+    solidThree(color, colorOverlay);
+    return this;
+  }
+
+
   AzButton solidTwo(color, colorOverlay, borderWidth){
     if(_borderWidth != 1){
       _borderWidth = borderWidth;
     }
     // Color color = AzUtlis().colorPrimary;
     // Color colorOverlay = AzUtlis().colorPrimaryOverlay;
-    _backgroundColor ??= MaterialStateProperty.all(color.withOpacity(0.125));
+    _backgroundColor ??= MaterialStateProperty.all(color.withOpacity(0.2));
     _overlayColor ??= MaterialStateProperty.all(colorOverlay);
     _side = MaterialStateProperty.all(BorderSide(
         width: _borderWidth,
@@ -694,7 +760,7 @@ class AzButton extends StatelessWidget {
     _alignment = Alignment.centerLeft;
     return this;
   }
-  AzButton centerCenter(){
+  AzButton center(){
     _alignment = Alignment.center;
     return this;
   }
@@ -738,7 +804,7 @@ class AzButton extends StatelessWidget {
         // MaterialStateProperty<TextStyle?>? textStyle,
         textStyle: MaterialStateProperty.all(TextStyle(
           // color: Colors.black,
-            fontWeight: _fontWeight
+          fontWeight: _fontWeight
         )),
         overlayColor: _overlayColor,
         backgroundColor: _backgroundColor,
@@ -770,11 +836,11 @@ class AzButton extends StatelessWidget {
       //AzText(widgetOrString).color(_textColor!)
       child: widgetOrString.runtimeType.toString() == 'String'
           ? _textColor == null
-          ? AzText(widgetOrString)//.color(_textColor!)
-          : Text(widgetOrString,
-        style: TextStyle(
-            color: _textColor
-        ),)
+            ? AzText(widgetOrString)//.color(_textColor!)
+            : Text(widgetOrString,
+                style: TextStyle(
+                  color: _textColor
+                ),)
           : widgetOrString,
     );
   }
@@ -784,10 +850,11 @@ class AzButton extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }

@@ -62,7 +62,7 @@
 //       if(showCross == true)
 //         AzButton(context, "X",
 //           onPressed: () {
-//             Navigate(context).back();
+//             AzNavigate(context).back();
 //           },
 //         ).pLTRB(16, 8, 16, 8)
 //             // .color(main_one_color)

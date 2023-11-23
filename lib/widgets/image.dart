@@ -4,11 +4,9 @@ import 'card.dart';
 import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
+import 'ink_well.dart';
 
-extension ExtImage on AssetImage {
-  // AzImage azImageAsset() => AzImage(assetName);
-  // AzImageNetwrok azImageNetwork() => AzImageNetwrok(data ?? "");
-}
+
 // ignore: must_be_immutable
 class AzImage extends StatelessWidget {
   dynamic data;
@@ -114,7 +112,7 @@ class AzImage extends StatelessWidget {
     _alignment = Alignment.centerLeft;
     return this;
   }
-  AzImage centerCenter(){
+  AzImage center(){
     _alignment = Alignment.center;
     return this;
   }
@@ -225,10 +223,164 @@ class AzImage extends StatelessWidget {
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget: toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzCenter center() => AzCenter(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzCenter toCenter() => AzCenter(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }
+
+// class AzImageNetwrok extends AzContainer {
+//   final String data;
+//   double? _width;
+//   double? _height;
+//   BoxFit? _boxFit;
+//
+//
+//   AzImageNetwrok(this.data, {
+//     Key? key,
+//   });
+//
+//   AzImageNetwrok width(double double){
+//     _width = double;
+//     return this;
+//   }
+//
+//   AzImageNetwrok height(double double){
+//     _height = double;
+//     return this;
+//   }
+//
+//   AzImageNetwrok boxFit(BoxFit boxFit){
+//     _boxFit = boxFit;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitNone(){
+//     _boxFit = BoxFit.none;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitScaleDown(){
+//     _boxFit = BoxFit.scaleDown;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFill(){
+//     _boxFit = BoxFit.fill;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFitHeight(){
+//     _boxFit = BoxFit.fitHeight;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitCover(){
+//     _boxFit = BoxFit.cover;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitContain(){
+//     _boxFit = BoxFit.contain;
+//     return this;
+//   }
+//   AzImageNetwrok boxFitFitWidth(){
+//     _boxFit = BoxFit.fitWidth;
+//     return this;
+//   }
+//
+//   toBuild() {
+//     return Image.network(data,
+//       key: key,
+//       scale: 1,
+//       width: _width,
+//       height: _height,
+//       fit: _boxFit,
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return toBuild();
+//   }
+//
+//   AzContainer toContainer() => AzContainer(widget: toBuild());
+//   AzCard toCard() => AzCard(toBuild());
+//   AzCenter toCenter() => AzCenter(toBuild());
+//   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+//   AzPositioned toPositioned() => AzPositioned(toBuild());
+// }
+
+//
+//
+//
+//
+//
+// //
+// //
+// // import 'package:cached_network_image/cached_network_image.dart';
+// // import 'package:flutter/cupertino.dart';
+// // import 'package:flutter/material.dart';
+// //
+// // import '../helper/config.dart';
+// //
+// // class ImgUrl extends StatelessWidget{
+// //   BuildContext context;
+// //   String url;
+// //   double? _width;
+// //   double? _height;
+// //
+// //
+// //   ImgUrl(context, this.url);
+// //
+// //   width(double width){
+// //     _width = width;
+// //     return this;
+// //   }
+// //
+// //   height(double height){
+// //     _height = height;
+// //     return this;
+// //   }
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     if(url == 'null' || url == ''){
+// //       url = 'https://chillbar.zahidaz.com/image/dummy/general.jpg';
+// //     }
+// //     return CachedNetworkImage(
+// //       imageUrl: url,
+// //       height: _height,
+// //       placeholder: (context, url) => Center(
+// //           child: SizedBox(
+// //               height:35,
+// //               width: 35,
+// //               child: CircularProgressIndicator()
+// //           )
+// //       ),
+// //       errorWidget: (context, url, error) => Image.asset('assets/placeholder/category.jpg', height: _height,),
+// //     );
+// //   }
+// // }
+// //
+// // class ImgAsset extends StatelessWidget{
+// //   BuildContext context;
+// //   String path;
+// //   double? _width;
+// //   double? _height;
+// //
+// //
+// //   ImgAsset(this.context, this.path);
+// //
+// //   width(double width){
+// //     _width = width;
+// //     return this;
+// //   }
+// //
+// //   height(double height){
+// //     _height = height;
+// //     return this;
+// //   }
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Image.asset(path, height: _height,);
+// //   }
+// // }

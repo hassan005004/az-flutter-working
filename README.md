@@ -53,6 +53,46 @@ primaryCard,
 primaryBg
 ```
 
-
-## Additional information
+## Additional Information
 TODO: Currently commonly used widgets and properties are implemented
+
+
+## Additional
+### Use Hex Color Code
+Now you can use fromHex() extension on string to see output of hex color code
+```
+'#E1E1E1'.fromHex()
+
+with hex code example
+AzText("Color").color('#000000'.fromHex())
+without hex code example
+AzText("Color").color(Colors.black)
+```
+
+### Responsive Screen
+You can make your screen responsive screen by following methods.
+<br />
+It will convert your widget to Sizedbox
+<br />
+The responsive word col is derived from bootstrap css package
+```
+Example 1
+AzText('Text').toResponsive().sm1(context).md1(context).lg2(context).xl1(context)
+
+Example 2 with single method
+AzText('Text').toResponsive().col('col-sm-1 col-md-1 col-lg-2 col-xl-1')
+```
+
+### Navigate to Screen
+You can navigate between screen like this
+```
+Goto new screen
+AzNavigate(context).to(
+    screen: HomeScreen(),
+    direction:'up'
+);
+
+Go back to previous screen
+AzNavigate(context).back()
+```
+

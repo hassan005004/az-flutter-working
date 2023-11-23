@@ -3,13 +3,13 @@ import 'container.dart';
 import 'gesture_detector.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
+import 'ink_well.dart';
 
-extension ExtPositioned on AzCenter {
 
-}
 // ignore: must_be_immutable
 class AzCenter extends StatelessWidget{
-  Widget child;
+  Widget? child;
+  // final Key? key;
 
   AzCenter(this.child, {Key? key}) : super(key: key);
 
@@ -24,9 +24,10 @@ class AzCenter extends StatelessWidget{
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget:toBuild());
-  AzCard card() => AzCard(toBuild());
-  AzGestureDetector gestureDetector() => AzGestureDetector(toBuild());
-  AzPositioned positioned() => AzPositioned(toBuild());
+  AzContainer toContainer() => AzContainer(widget:toBuild());
+  AzCard toCard() => AzCard(toBuild());
+  AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
+  AzPositioned toPositioned() => AzPositioned(toBuild());
+  AzInkWell toInkWell() => AzInkWell(toBuild());
 
 }
