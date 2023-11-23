@@ -1,9 +1,9 @@
 import 'center.dart';
 import 'positioned.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'card.dart';
 import 'container.dart';
+import 'responsive.dart';
 // https://github.com/hassan005004/niku/blob/main/lib/extension/widget.dart
 
 // ignore: must_be_immutable
@@ -82,6 +82,7 @@ class AzInkWell extends StatelessWidget{
   }
 
   AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzPositioned toPositioned() => AzPositioned(toBuild());

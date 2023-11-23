@@ -7,6 +7,7 @@ import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 import 'ink_well.dart';
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzRadioListTile extends StatelessWidget {
@@ -166,6 +167,7 @@ class AzRadioListTile extends StatelessWidget {
   }
 
   AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());

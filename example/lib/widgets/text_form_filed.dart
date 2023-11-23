@@ -45,7 +45,6 @@ class AzTextFormField extends StatelessWidget {
   dynamic _validator;
 
   // inputDecoration
-  EdgeInsetsGeometry? _contentPadding;
   double _paddingLeft = 10;
   double _paddingTop = 10;
   double _paddingRight = 10;

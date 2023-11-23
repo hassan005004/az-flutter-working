@@ -115,3 +115,11 @@ extension ExtString on String {
     return Color(int.parse("0xFF000000"));
   }
 }
+
+extension ExtDouble on double {
+  double toPrecision(n) {
+    String d = this.toStringAsFixed(n);
+    return double.parse(d);
+  }
+}
+

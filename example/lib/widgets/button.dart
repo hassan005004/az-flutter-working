@@ -1,5 +1,5 @@
 import 'dart:ui' as ui;
-import 'package:example/widgets/responsive.dart';
+import 'responsive.dart';
 
 import 'ink_well.dart';
 import 'text.dart';

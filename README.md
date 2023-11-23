@@ -23,7 +23,7 @@ and so on
 Calling as extension on AzText() to show border
 ```
 AzText('Text')
-.container()
+.toContainer()
 .borderColor(Colors.pink)
 .primaryBorder()
 .borderWidth(1)

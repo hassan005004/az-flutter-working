@@ -4,7 +4,7 @@ import 'gesture_detector.dart';
 import 'positioned.dart';
 import 'package:flutter/material.dart';
 import 'ink_well.dart';
-
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzCenter extends StatelessWidget{
@@ -25,6 +25,7 @@ class AzCenter extends StatelessWidget{
   }
 
   AzContainer toContainer() => AzContainer(widget:toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
   AzPositioned toPositioned() => AzPositioned(toBuild());

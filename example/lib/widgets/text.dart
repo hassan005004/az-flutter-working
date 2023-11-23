@@ -503,7 +503,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return toBuild();
   }
 
-  AzContainer container() => AzContainer(widget:toBuild());
+  AzContainer toContainer() => AzContainer(widget:toBuild());
   AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());

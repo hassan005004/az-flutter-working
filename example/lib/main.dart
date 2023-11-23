@@ -8,7 +8,7 @@ import 'package:example/widgets/container.dart';
 import 'package:example/widgets/list_tile.dart';
 import 'package:example/widgets/navigate.dart';
 import 'package:example/widgets/text.dart';
-import 'package:example/helper/extensions.dart';
+import '../helper/extensions.dart';
 import 'package:example/widgets/wrap.dart';
 import 'package:flutter/material.dart';
 
@@ -58,12 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children:[
-              Text('abc').azText().container()
+              Text('abc').azText().toContainer()
             ]).azRow(),
 
             AzWrap([
-              AzText('Text').container().wFull().dangerSolidThree().toResponsive().sm1(context),
-              AzText('Text').container().wFull().primarySolidThree().toResponsive().col('col-5'),
+              AzText('Text').toContainer().wFull().dangerSolidThree().toResponsive().sm1(context),
+              AzText('Text').toContainer().wFull().primarySolidThree().toResponsive().col('col-5'),
             ]),
 
             AzText("Done").fs(16).color('#E1E1E1'.fromHex()).toCenter().toContainer().px(10.0).py(10),
@@ -79,10 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
               print(1);
             }),
 
-            AzText("Widget of AzPackage/Flutter").fs(20).bold().container().pLTRB(10.0, 10.0, 10.0, 0.0),
+            AzText("Widget of AzPackage/Flutter").fs(20).bold().toContainer().pLTRB(10.0, 10.0, 10.0, 0.0),
 
             AzText("At the moment you will find the commonly used things in this package as well as some supporting pre defined methos to make work smooth & easier")
-                .container().p(10.0),
+                .toContainer().p(10.0),
             
             Divider(height:0),
 
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
         )
         ,
       )
-          // .container()
+          // .toContainer()
           // .m(10.0)
           // .maxHeight(100.0).alignmentTopRight()
           // .borderColor(Colors.black)
@@ -267,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 codeSnippet(String code){
-  return AzText(code).fs(14).container().cardV1(Colors.white).wFull().p(10);
+  return AzText(code).fs(14).toContainer().cardV1(Colors.white).wFull().p(10);
 }
 
 codeSnippetOutput(Widget widget){

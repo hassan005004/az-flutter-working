@@ -7,8 +7,7 @@ import 'container.dart';
 import 'gesture_detector.dart';
 import 'package:flutter/material.dart';
 import '../helper/hex_color.dart';
-
-
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzCard extends StatelessWidget {
@@ -89,6 +88,7 @@ class AzCard extends StatelessWidget {
   }
 
   AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
   AzPositioned toPositioned() => AzPositioned(toBuild());

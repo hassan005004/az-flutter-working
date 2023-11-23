@@ -9,6 +9,7 @@ import 'center.dart';
 import 'container.dart';
 import 'gesture_detector.dart';
 import 'ink_well.dart';
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzTextFormField extends StatelessWidget {
@@ -44,7 +45,11 @@ class AzTextFormField extends StatelessWidget {
   dynamic _validator;
 
   // inputDecoration
-  EdgeInsetsGeometry? _contentPadding;
+  double _paddingLeft = 10;
+  double _paddingTop = 10;
+  double _paddingRight = 10;
+  double _paddingBottom = 10;
+
   Widget? _prefixIcon;
   Widget? _suffixIcon;
   TextStyle? _textStyle;
@@ -88,8 +93,6 @@ class AzTextFormField extends StatelessWidget {
   double _radiusTopRight = 0;
   double _radiusBottomLeft = 0;
   double _radiusBottomRight = 0;
-
-
 
   // testStyle
   // Color? _color;
@@ -602,8 +605,80 @@ class AzTextFormField extends StatelessWidget {
     return this;
   }
 
-  AzTextFormField contentPadding(EdgeInsetsGeometry padding) {
-    _contentPadding = padding;
+  // AzTextFormField contentPadding(EdgeInsetsGeometry padding) {
+  //   _contentPadding = padding;
+  //   return this;
+  // }
+  AzTextFormField p(double padding){
+    _paddingLeft = padding;
+    _paddingTop = padding;
+    _paddingRight = padding;
+    _paddingBottom = padding;
+    // _padding = EdgeInsets.all(padding);
+    return this;
+  }
+  AzTextFormField pOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+    // _padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
+    return this;
+  }
+  AzTextFormField pLTRB(left,top,right,bottom){
+    _paddingLeft = left;
+    _paddingTop = top;
+    _paddingRight = right;
+    _paddingBottom = bottom;
+
+    // _padding = EdgeInsets.fromLTRB(left,top,right,bottom);
+    return this;
+  }
+  AzTextFormField pSymmetric({required double h, required double v}){
+    _paddingLeft = h;
+    _paddingTop = v;
+    _paddingRight = h;
+    _paddingBottom = v;
+
+    // _padding = EdgeInsets.symmetric(horizontal: h, vertical: v);
+    return this;
+  }
+  AzTextFormField px(double x){
+    _paddingLeft = x;
+    _paddingRight = x;
+
+    // _padding = EdgeInsets.symmetric(horizontal: x);
+    return this;
+  }
+  AzTextFormField py(double y){
+    _paddingTop = y;
+    _paddingBottom = y;
+
+    // _padding = EdgeInsets.symmetric(vertical: y);
+    return this;
+  }
+  AzTextFormField pl(double double){
+    _paddingLeft = double;
+
+    // _padding = EdgeInsets.only(left: double);
+    return this;
+  }
+  AzTextFormField pt(double double){
+    _paddingTop = double;
+
+    // _padding = EdgeInsets.only(top: double);
+    return this;
+  }
+  AzTextFormField pr(double double){
+    _paddingRight = double;
+
+    // _padding = EdgeInsets.only(right: double);
+    return this;
+  }
+  AzTextFormField pb(double double){
+    _paddingBottom = double;
+
+    // _padding = EdgeInsets.only(bottom: double);
     return this;
   }
 
@@ -1194,7 +1269,7 @@ class AzTextFormField extends StatelessWidget {
         // floatingLabelBehavior
         // isCollapsed
         // isDense
-        contentPadding: _contentPadding,
+        contentPadding: EdgeInsets.fromLTRB(_paddingLeft, _paddingTop, _paddingRight, _paddingBottom),
         prefixIcon: _prefixIcon,
         // prefixIconConstraints
         // prefix
@@ -1252,7 +1327,6 @@ class AzTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return toBuild();
   }
-
 
   helperErrorBorder(){
     return OutlineInputBorder(
@@ -1322,6 +1396,7 @@ class AzTextFormField extends StatelessWidget {
   }
 
   AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());

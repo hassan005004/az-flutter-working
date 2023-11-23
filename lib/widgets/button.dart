@@ -1,4 +1,6 @@
 import 'dart:ui' as ui;
+import 'responsive.dart';
+
 import 'ink_well.dart';
 import 'text.dart';
 import 'positioned.dart';
@@ -851,6 +853,7 @@ class AzButton extends StatelessWidget {
   }
 
   AzContainer toContainer() => AzContainer(widget: toBuild());
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());

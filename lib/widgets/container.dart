@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'card.dart';
 import 'gesture_detector.dart';
 import 'ink_well.dart';
-
+import 'responsive.dart';
 
 // ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
@@ -103,10 +103,7 @@ class AzContainer extends StatelessWidget {
   BoxShape _shape = BoxShape.rectangle;
   BoxShape _shapeForeground = BoxShape.rectangle;
 
-
   AzContainer({this.widget = const SizedBox.shrink(), Key? key}): super(key: key);
-
-
 
   // padding
   AzContainer p(double padding){
@@ -114,7 +111,6 @@ class AzContainer extends StatelessWidget {
     _paddingTop = padding;
     _paddingRight = padding;
     _paddingBottom = padding;
-    // _padding = EdgeInsets.all(padding);
     return this;
   }
   AzContainer pOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
@@ -130,8 +126,6 @@ class AzContainer extends StatelessWidget {
     _paddingTop = top;
     _paddingRight = right;
     _paddingBottom = bottom;
-
-    // _padding = EdgeInsets.fromLTRB(left,top,right,bottom);
     return this;
   }
   AzContainer pSymmetric({required double h, required double v}){
@@ -139,46 +133,32 @@ class AzContainer extends StatelessWidget {
     _paddingTop = v;
     _paddingRight = h;
     _paddingBottom = v;
-
-    // _padding = EdgeInsets.symmetric(horizontal: h, vertical: v);
     return this;
   }
   AzContainer px(double x){
     _paddingLeft = x;
     _paddingRight = x;
-
-    // _padding = EdgeInsets.symmetric(horizontal: x);
     return this;
   }
   AzContainer py(double y){
     _paddingTop = y;
     _paddingBottom = y;
-
-    // _padding = EdgeInsets.symmetric(vertical: y);
     return this;
   }
   AzContainer pl(double double){
     _paddingLeft = double;
-
-    // _padding = EdgeInsets.only(left: double);
     return this;
   }
   AzContainer pt(double double){
     _paddingTop = double;
-
-    // _padding = EdgeInsets.only(top: double);
     return this;
   }
   AzContainer pr(double double){
     _paddingRight = double;
-
-    // _padding = EdgeInsets.only(right: double);
     return this;
   }
   AzContainer pb(double double){
     _paddingBottom = double;
-
-    // _padding = EdgeInsets.only(bottom: double);
     return this;
   }
 
@@ -188,7 +168,6 @@ class AzContainer extends StatelessWidget {
     _marginTop = margin;
     _marginRight = margin;
     _marginBottom = margin;
-    // _margin = EdgeInsets.all(margin);
     return this;
   }
   AzContainer mOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}){
@@ -196,7 +175,6 @@ class AzContainer extends StatelessWidget {
     _marginTop = top;
     _marginRight = right;
     _marginBottom = bottom;
-    // _margin = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
     return this;
   }
   AzContainer mLTRB(left,top,right,bottom){
@@ -204,8 +182,6 @@ class AzContainer extends StatelessWidget {
     _marginTop = top;
     _marginRight = right;
     _marginBottom = bottom;
-
-    // _margin = EdgeInsets.fromLTRB(left,top,right,bottom);
     return this;
   }
   AzContainer mSymmetric({required double h, required double v}){
@@ -213,49 +189,34 @@ class AzContainer extends StatelessWidget {
     _marginTop = v;
     _marginRight = h;
     _marginBottom = v;
-
-    // _margin = EdgeInsets.symmetric(horizontal: h, vertical: v);
     return this;
   }
   AzContainer mx(double x){
     _marginLeft = x;
     _marginRight = x;
-
-    // _margin = EdgeInsets.symmetric(horizontal: x);
     return this;
   }
   AzContainer my(double y){
     _marginTop = y;
     _marginBottom = y;
-
-    // _margin = EdgeInsets.symmetric(vertical: y);
     return this;
   }
   AzContainer ml(double double){
     _marginLeft = double;
-
-    // _margin = EdgeInsets.only(left: double);
     return this;
   }
   AzContainer mt(double double){
     _marginTop = double;
-
-    // _margin = EdgeInsets.only(top: double);
     return this;
   }
   AzContainer mr(double double){
     _marginRight = double;
-
-    // _margin = EdgeInsets.only(right: double);
     return this;
   }
   AzContainer mb(double double){
     _marginBottom = double;
-
-    // margin = EdgeInsets.only(bottom: double);
     return this;
   }
-
 
   // height width
   AzContainer width(double width){
@@ -765,9 +726,9 @@ class AzContainer extends StatelessWidget {
     return this;
   }
 
-  AzContainer solidTwo(_borderColor, _borderWidth){
-    _bgColor = _borderColor.withOpacity(0.2);
-    border(_borderColor, _borderWidth, BorderStyle.solid, 0);
+  AzContainer solidTwo(borderColor, borderWidth){
+    _bgColor = borderColor.withOpacity(0.2);
+    border(borderColor, borderWidth, BorderStyle.solid, 0);
     return this;
   }
 
@@ -888,6 +849,7 @@ class AzContainer extends StatelessWidget {
   }
 
 
+  AzResponsive toResponsive() => AzResponsive(toBuild());
   AzCard toCard() => AzCard(toBuild());
   AzCenter toCenter() => AzCenter(toBuild());
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());

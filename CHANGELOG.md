@@ -1,4 +1,4 @@
-## 0.0.5
+## 0.0.5/0.0.6
 * Some InkWell Properties added
 * Methods changes container to toContainer, center to toCenter to make suggestions easy
 * to use hex code a method is added on string fromHex

@@ -726,9 +726,9 @@ class AzContainer extends StatelessWidget {
     return this;
   }
 
-  AzContainer solidTwo(_borderColor, _borderWidth){
-    _bgColor = _borderColor.withOpacity(0.2);
-    border(_borderColor, _borderWidth, BorderStyle.solid, 0);
+  AzContainer solidTwo(borderColor, borderWidth){
+    _bgColor = borderColor.withOpacity(0.2);
+    border(borderColor, borderWidth, BorderStyle.solid, 0);
     return this;
   }
 
