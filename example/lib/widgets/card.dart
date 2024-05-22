@@ -67,6 +67,27 @@ class AzCard extends StatelessWidget {
     return this;
   }
 
+  AzCard internalUseOfAz({
+    color,
+    shadowColor,
+    elevation,
+    shape,
+    borderOnForeground,
+    margin,
+    clipBehavior,
+    semanticContainer,
+  }){
+    _color = color;
+    _shadowColor = shadowColor;
+    _elevation = elevation;
+    _shape = shape;
+    _borderOnForeground = borderOnForeground;
+    _margin = margin;
+    _clipBehavior = clipBehavior;
+    _semanticContainer = semanticContainer;
+    return this;
+  }
+
   toBuild() {
     return Card(
       key: key,

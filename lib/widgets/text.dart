@@ -14,6 +14,8 @@ import 'responsive.dart';
 class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Widget widget = const Text('');
   dynamic name;
+  TextStyle style = TextStyle();
+  StrutStyle? strutStyle;
 
   // style proeprties here
   bool _inherit = true;
@@ -21,7 +23,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   Color? _textColor;// = Colors.black;
   FontWeight _fontWeight = FontWeight.normal;
   double? _fontSize;
-
+  double? _textScaler;
   double? _letterSpacing;
   double? _wordSpacing;
   TextBaseline? _textBaseline;
@@ -55,21 +57,48 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   // String? _debugLabelStrut;
   String? _packageStrut;
 
-
   TextAlign? _textAlign;
   TextDirection? _textDirection;
-  // Locale? _locale;
   bool? _softWrap;
-  // TextOverflow? _overflow;
-  double? _textScaleFactor;
   int? _maxLines;
   String? _semanticsLabel;
   TextWidthBasis? _textWidthBasis;
   TextHeightBehavior? _textHeightBehavior;
   Color? _selectionColor;
 
-
-  AzText(this.name, {Key? key}) : super(key: key);
+  AzText(this.name, {Key? key,}) : super(key: key);
+  AzText internalUseOfAz({
+    thisStyle,
+    thisStrutStyle,
+    thisTextAlign,
+    thisTextDirection,
+    thisLocale,
+    thisSoftWrap,
+    thisOverflow,
+    thisTextScaler,
+    thisMaxLines,
+    thisSemanticsLabel,
+    thisTextWidthBasis,
+    thisTextHeightBehavior,
+    thisSelectionColor,
+  }){
+    if(thisStyle != null){
+      style = thisStyle;
+    }
+    strutStyle = thisStrutStyle;
+    _textAlign = thisTextAlign;
+    _textDirection = thisTextDirection;
+    _locale = thisLocale;
+    _softWrap = thisSoftWrap;
+    _overflow = thisOverflow;
+    _textScaler = thisTextScaler;
+    _maxLines = thisMaxLines;
+    _semanticsLabel = thisSemanticsLabel;
+    _textWidthBasis = thisTextWidthBasis;
+    _textHeightBehavior = thisTextHeightBehavior;
+    _selectionColor = thisSelectionColor;
+    return this;
+  }
 
   AzText fs(size){
     _fontSize = size.toDouble();
@@ -131,6 +160,11 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
+  AzText textScaler(double textScaler) {
+    _textScaler = textScaler;
+    return this;
+  }
+
   AzText letterSpacing(double letterSpacing) {
     _letterSpacing = letterSpacing;
     return this;
@@ -141,10 +175,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText textBaseline(TextBaseline textBaseline) {
-    _textBaseline = textBaseline;
-    return this;
-  }
+  // AzText textBaseline(TextBaseline textBaseline) {
+  //   _textBaseline = textBaseline;
+  //   return this;
+  // }
   AzText alphabetic() {
     _textBaseline = TextBaseline.alphabetic;
     return this;
@@ -160,10 +194,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText leadingDistribution(TextLeadingDistribution leadingDistribution) {
-    _leadingDistribution = leadingDistribution;
-    return this;
-  }
+  // AzText leadingDistribution(TextLeadingDistribution leadingDistribution) {
+  //   _leadingDistribution = leadingDistribution;
+  //   return this;
+  // }
   AzText leadingDistributionEven() {
     _leadingDistribution = TextLeadingDistribution.even;
     return this;
@@ -203,10 +237,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText decoration(TextDecoration decoration) {
-    _decoration = decoration;
-    return this;
-  }
+  // AzText decoration(TextDecoration decoration) {
+  //   _decoration = decoration;
+  //   return this;
+  // }
   AzText decorationLineThrough() {
     _decoration = TextDecoration.lineThrough;
     return this;
@@ -229,10 +263,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText decorationStyle(TextDecorationStyle decorationStyle) {
-    _decorationStyle = decorationStyle;
-    return this;
-  }
+  // AzText decorationStyle(TextDecorationStyle decorationStyle) {
+  //   _decorationStyle = decorationStyle;
+  //   return this;
+  // }
   AzText decorationStyleSolid() {
     _decorationStyle = TextDecorationStyle.solid;
     return this;
@@ -274,10 +308,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     return this;
   }
 
-  AzText overflow(TextOverflow overflow) {
-    _overflow = overflow;
-    return this;
-  }
+  // AzText overflow(TextOverflow overflow) {
+  //   _overflow = overflow;
+  //   return this;
+  // }
   AzText overflowEllipsis() {
     _overflow = TextOverflow.ellipsis;
     return this;
@@ -345,7 +379,7 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
     _packageStrut = packageStrut;
     return this;
   }
-  
+
   AzText textAlign(TextAlign textAlign){
     _textAlign = textAlign;
     return this;
@@ -357,11 +391,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
 
   AzText softWrap(bool softWrap){
     _softWrap = _softWrap;
-    return this;
-  }
-
-  AzText textScaleFactor(double textScaleFactor){
-    _textScaleFactor = textScaleFactor;
     return this;
   }
 
@@ -442,9 +471,10 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   }
 
   toBuild(){
+
     return Text(name.toString(),
       key:key,
-      style: TextStyle(
+      style: style.copyWith(
         inherit: _inherit,
         color: _textColor,
         fontWeight: _fontWeight,
@@ -470,7 +500,6 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
         package: _package,
         overflow: _overflow,
       ),
-      // StrutStyle? strutStyle,
       strutStyle: StrutStyle(
         fontFamily: _fontFamilyStrut,
         fontFamilyFallback: _fontFamilyFallbackStrut,
@@ -489,12 +518,12 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
       locale: _locale,
       softWrap: _softWrap,
       overflow: _overflow,
-      textScaleFactor: _textScaleFactor,
       maxLines: _maxLines,
       semanticsLabel: _semanticsLabel,
       textWidthBasis: _textWidthBasis,
       textHeightBehavior: _textHeightBehavior,
       selectionColor: _selectionColor,
+      textScaleFactor: _textScaler,
     );
   }
 
@@ -510,5 +539,5 @@ class AzText extends StatelessWidget { // extends AzContainer StatelessWidget
   AzGestureDetector toGestureDetector() => AzGestureDetector(toBuild());
   AzPositioned toPositioned() => AzPositioned(toBuild());
   AzInkWell toInkWell() => AzInkWell(toBuild());
-  
+
 }

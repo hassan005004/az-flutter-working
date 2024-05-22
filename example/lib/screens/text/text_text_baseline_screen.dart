@@ -51,9 +51,9 @@ class _TextBaselineScreenState extends State<TextBaselineScreen> {
 
                 SizedBox(height: 20),
                 AzText('Output').fs(14).bold(),
-                codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
-                codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.ideographic).fs(14)),
-                codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
+                // codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
+                // codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.ideographic).fs(14)),
+                // codeSnippetOutput(AzText("This is text").textBaseline(TextBaseline.alphabetic).fs(14)),
               ]).crossStart().toContainer().px(10.0),
             ],
           ),

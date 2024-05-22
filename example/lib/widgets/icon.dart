@@ -20,6 +20,28 @@ class AzIcon extends StatelessWidget {
       this.icon, {
         Key? key,
       }) : super(key: key);
+  AzIcon internalUseOfAz({
+    double? size,
+    // double? fill,
+    // double? weight,
+    // double? grade,
+    // double? opticalSize,
+    Color? color,
+    // List<Shadow>? shadows,
+    String? semanticLabel,
+    TextDirection? textDirection,
+  }){
+    _size = size;
+    // _fill = fill;
+    // _weight = weight;
+    // _grade = grade;
+    // _opticalSize = opticalSize;
+    _color = color;
+    // _shadows = shadows;
+    _semanticLabel = semanticLabel;
+    _textDirection = textDirection;
+    return this;
+  }
 
   AzIcon size(double size){
     _size = size;

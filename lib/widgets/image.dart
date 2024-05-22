@@ -35,7 +35,7 @@ class AzImage extends StatelessWidget {
       return child;
     }
     return const CircularProgressIndicator();
-  }; // onlu n
+  }; // only
 
   AzImage({
     Key? key,

@@ -35,23 +35,84 @@ extension ExtOutlinedButtonButton on OutlinedButton {
 // }
 
 extension ExtCard on Card {
-  AzCard azCard() => AzCard(child);
+  AzCard azCard() => AzCard(child).internalUseOfAz(
+      color: color,
+      shadowColor: shadowColor,
+      elevation: elevation,
+      shape: shape,
+      borderOnForeground: borderOnForeground,
+      margin: margin,
+      clipBehavior: clipBehavior,
+      semanticContainer: semanticContainer,
+  );
 }
 
 extension ExtCenter on Center {
-  AzCenter azCenter() => AzCenter(child);
+  AzCenter azCenter() => AzCenter(child).internalUseOfAz(
+    widthFactor: widthFactor,
+    heightFactor: heightFactor,
+  );
 }
 
 extension ExtColumn on Column {
-  AzColumn azColumn() => AzColumn(children);
+  AzColumn azColumn() => AzColumn(children).internalUseOfAz(
+    thisMainAxisAlignment: mainAxisAlignment,
+    thisCrossAxisAlignment: crossAxisAlignment,
+    thisTextDirection: textDirection,
+    thisVerticalDirection: verticalDirection,
+    thisTextBaseline: textBaseline,
+  );
 }
 
 extension ExtAzContainer on Container {
-  AzContainer azContainer() => AzContainer(widget: this);
+  AzContainer azContainer() => AzContainer(widget: this).internalUseOfAz(
+    alignment: alignment,
+    padding: padding,
+    color: color,
+    decoration: decoration,
+    foregroundDecoration: foregroundDecoration,
+    // width: width,
+    // height: height,
+    constraints: constraints,
+    margin: margin,
+    transform: transform,
+    transformAlignment: transformAlignment,
+    clipBehavior: clipBehavior,
+  );
 }
 
-extension ExtAzInkWell on Container {
-  AzInkWell azInkWell() => AzInkWell(child);
+extension ExtAzInkWell on InkWell {
+  AzInkWell azInkWell() => AzInkWell(child).internalUseOfAz(
+    thisOnTap: onTap,
+    // void Function()? onDoubleTap,
+    // void Function()? onLongPress,
+    // void Function(TapDownDetails)? onTapDown,
+    // void Function(TapUpDetails)? onTapUp,
+    // void Function()? onTapCancel,
+    // void Function()? onSecondaryTap,
+    // void Function(TapUpDetails)? onSecondaryTapUp,
+    // void Function(TapDownDetails)? onSecondaryTapDown,
+    // void Function()? onSecondaryTapCancel,
+    // void Function(bool)? onHighlightChanged,
+    // void Function(bool)? onHover,
+    // MouseCursor? mouseCursor,
+    // Color? focusColor,
+    // Color? hoverColor,
+    // Color? highlightColor,
+    // MaterialStateProperty<Color?>? overlayColor,
+    // Color? splashColor,
+    // InteractiveInkFeatureFactory? splashFactory,
+    // double? radius,
+    thisBorderRadius: borderRadius,
+    // ShapeBorder? customBorder,
+    // bool? enableFeedback = true,
+    // bool excludeFromSemantics = false,
+    // FocusNode? focusNode,
+    // bool canRequestFocus = true,
+    // void Function(bool)? onFocusChange,
+    // bool autofocus = false,
+    // MaterialStatesController? statesController,
+  );
 }
 
 extension ExtGestureDetector on GestureDetector {
@@ -59,7 +120,17 @@ extension ExtGestureDetector on GestureDetector {
 }
 
 extension ExtIcon on Icon {
-  AzIcon azIcon() => AzIcon(icon);
+  AzIcon azIcon() => AzIcon(icon).internalUseOfAz(
+    size: size,
+    // fill,
+    // weight,
+    // grade,
+    // opticalSize,
+    color: color,
+    // shadows,
+    semanticLabel: semanticLabel,
+    textDirection: textDirection,
+  );
 }
 
 extension ExtAssetImage on AssetImage {
@@ -83,7 +154,13 @@ extension AzRadioBuilder on RadioListTile {
 }
 
 extension ExtRow on Row {
-  AzRow azRow() => AzRow(children);
+  AzRow azRow() => AzRow(children).internalUseOfAz(
+    thisMainAxisAlignment: mainAxisAlignment,
+    thisCrossAxisAlignment: crossAxisAlignment,
+    thisTextDirection: textDirection,
+    thisVerticalDirection: verticalDirection,
+    thisTextBaseline: textBaseline,
+  );
 }
 
 extension ExtStack on Stack {
@@ -91,7 +168,23 @@ extension ExtStack on Stack {
 }
 
 extension ExtText on Text {
-  AzText azText() => AzText(data ?? "");
+  AzText azText() {
+    return AzText(data ?? "").internalUseOfAz(
+      thisStyle: style,
+      thisStrutStyle: strutStyle,
+      thisTextAlign: textAlign,
+      thisTextDirection: textDirection,
+      thisLocale: locale,
+      thisSoftWrap: softWrap,
+      thisOverflow: overflow,
+      thisTextScaler: textScaleFactor,
+      thisMaxLines: maxLines,
+      thisSemanticsLabel: semanticsLabel,
+      thisTextWidthBasis: textWidthBasis,
+      thisTextHeightBehavior: textHeightBehavior,
+      thisSelectionColor: selectionColor,
+    );
+  }
 }
 
 extension ExtTextFormFiled on TextFormField {

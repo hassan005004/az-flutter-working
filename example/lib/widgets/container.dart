@@ -13,14 +13,14 @@ import 'responsive.dart';
 // ignore: must_be_immutable
 class AzContainer extends StatelessWidget {
   Widget widget;
-
+  BoxDecoration? _decoration;
   // color
   Color? _bgColor;
   Color? _bgColorForeground;
 
   // border
   Border? _border;
-  Border? _borderForeground;
+  BoxBorder? _borderForeground;
 
   // padding
   // EdgeInsets? _padding;
@@ -38,7 +38,7 @@ class AzContainer extends StatelessWidget {
 
   // radius
   BorderRadius? _radius;
-  BorderRadius? _radiusForeground;
+  BorderRadiusGeometry? _radiusForeground;
 
   // height width
   double? _width;
@@ -79,7 +79,7 @@ class AzContainer extends StatelessWidget {
 
   // shaodw
   List<BoxShadow> _boxShadow = [];
-  List<BoxShadow> _boxShadowForeground = [];
+  List<BoxShadow>? _boxShadowForeground = [];
 
   // border
   bool _borderLeft = false;
@@ -104,6 +104,61 @@ class AzContainer extends StatelessWidget {
   BoxShape _shapeForeground = BoxShape.rectangle;
 
   AzContainer({this.widget = const SizedBox.shrink(), Key? key}): super(key: key);
+
+  AzContainer internalUseOfAz({thisStyle,
+    alignment,
+    padding,
+    color,
+    decoration,
+    Decoration? foregroundDecoration,
+    width,
+    height,
+    constraints,
+    margin,
+    transform,
+    transformAlignment,
+    clipBehavior,
+  }){
+    _alignment = alignment;
+
+    if(padding != null){
+      EdgeInsets p = padding;
+      _paddingLeft = p.left;
+      _paddingTop = p.top;
+      _paddingBottom = p.bottom;
+      _paddingRight = p.right;
+    }
+
+    _bgColor = color;
+    _decoration = decoration;
+    // foregroundDecoration;
+    if(foregroundDecoration != null){
+      BoxDecoration _foregroundDecoration = foregroundDecoration as BoxDecoration;
+      _bgColorForeground = _foregroundDecoration.color;
+      _decorationImageForeground = _foregroundDecoration.image;
+      _borderForeground = _foregroundDecoration.border;
+      _radiusForeground = _foregroundDecoration.borderRadius;
+      _boxShadowForeground = _foregroundDecoration.boxShadow;
+      _gradientForeground = _foregroundDecoration.gradient;
+      _backgroundBlendModeForeground = _foregroundDecoration.backgroundBlendMode;
+      _shapeForeground = _foregroundDecoration.shape;
+    }
+    _height = height;
+    _width = width;
+    _constraints = constraints;
+
+    if(margin != null){
+      EdgeInsets m = margin;
+      _paddingLeft = m.left;
+      _paddingTop = m.top;
+      _paddingBottom = m.bottom;
+      _paddingRight = m.right;
+    }
+    _transform = transform;
+    _transformAlignment = transformAlignment;
+    _clipBehavior = clipBehavior;
+    return this;
+  }
 
   // padding
   AzContainer p(double padding){
@@ -810,15 +865,25 @@ class AzContainer extends StatelessWidget {
   toBuild() {
     return Container(
         key: key,
-        decoration: BoxDecoration(
-          color: _bgColor,
-          image: _decorationImage,
-          border: _border,
-          borderRadius: _radius,
-          boxShadow: _boxShadow,
-          gradient: _gradient,
-          backgroundBlendMode: _backgroundBlendMode,
-          shape: _shape,
+        decoration: _decoration != null
+          ? _decoration!.copyWith(color: _bgColor,
+              image: _decorationImage,
+              border: _border,
+              borderRadius: _radius,
+              boxShadow: _boxShadow,
+              gradient: _gradient,
+              backgroundBlendMode: _backgroundBlendMode,
+              shape: _shape,
+            )
+          : BoxDecoration(
+            color: _bgColor,
+            image: _decorationImage,
+            border: _border,
+            borderRadius: _radius,
+            boxShadow: _boxShadow,
+            gradient: _gradient,
+            backgroundBlendMode: _backgroundBlendMode,
+            shape: _shape,
         ),
         foregroundDecoration: BoxDecoration(
           color: _bgColorForeground,

@@ -56,7 +56,7 @@ class _TextLocaleScreenState extends State<TextLocaleScreen> {
 
                 SizedBox(height: 20),
                 AzText('Output').fs(14).bold(),
-                codeSnippetOutput(AzText("This is text").locale(Locale('en')).fs(14)),
+                // codeSnippetOutput(AzText("This is text").locale(Locale('en')).fs(14)),
               ]).crossStart().toContainer().px(10.0),
             ],
           ),

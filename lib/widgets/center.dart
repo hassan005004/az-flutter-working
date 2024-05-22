@@ -9,12 +9,35 @@ import 'responsive.dart';
 // ignore: must_be_immutable
 class AzCenter extends StatelessWidget{
   Widget? child;
+  double? _widthFactor;
+  double? _heightFactor;
+
   // final Key? key;
 
   AzCenter(this.child, {Key? key}) : super(key: key);
+  AzCenter internalUseOfAz({
+    widthFactor,
+    heightFactor,
+  }){
+    _widthFactor = widthFactor;
+    _heightFactor = heightFactor;
+    return this;
+  }
+
+  AzCenter hf(double dobule){
+    _heightFactor = dobule;
+    return this;
+  }
+
+  AzCenter wf(double dobule){
+    _widthFactor = dobule;
+    return this;
+  }
 
   toBuild() {
     return Center(
+      widthFactor: _widthFactor,
+      heightFactor: _heightFactor,
       child: child,
     );
   }

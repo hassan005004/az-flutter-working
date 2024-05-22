@@ -20,6 +20,20 @@ class AzColumn extends StatelessWidget{
   TextBaseline? _textBaseline;
 
   AzColumn(this.children, {Key? key}) : super(key: key);
+  AzColumn internalUseOfAz({
+    thisMainAxisAlignment,
+    thisCrossAxisAlignment,
+    thisTextDirection,
+    thisVerticalDirection,
+    thisTextBaseline,
+  }){
+    _mainAxisAlignment = thisMainAxisAlignment;
+    _crossAxisAlignment = thisCrossAxisAlignment;
+    _textDirection = thisTextDirection;
+    _verticalDirection = thisVerticalDirection;
+    _textBaseline = thisTextBaseline;
+    return this;
+  }
 
   AzColumn crossStart(){
     _crossAxisAlignment = CrossAxisAlignment.start;

@@ -56,11 +56,33 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Row(children:[
-              Text('abc').azText().toContainer()
-            ]).azRow(),
+
+            Container(
+              height: 50,
+              foregroundDecoration: BoxDecoration(
+                color: Colors.red,
+              ),
+            ).azContainer(),
+
+            const Text('Ink well button text',
+              overflow: TextOverflow.ellipsis,
+              textScaleFactor: 2,
+              maxLines: 2,
+              // style: TextStyle(
+              //       color: Colors.red,
+              //       fontSize: 50
+              //     ),
+                )
+              .azText()
+              .fs(15)
+              .color(Colors.green)
+              .toContainer().p(50)
+              .toInkWell().borderRadius(10).onTap(() {
+                print('asd');
+            }),
+
 
             // responsive will give better result inside AzWarp/Wrap
             AzWrap([
@@ -89,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             AzText("At the moment you will find the commonly used things in this package as well as some supporting pre defined methos to make work smooth & easier")
                 .toContainer().p(10.0),
-            
+
             Divider(height:0),
 
             AzText("Done").fs(16).color(Colors.green).toCenter().toContainer().px(10.0).py(10),
@@ -253,8 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             // Divider(height:0),
           ],
-        )
-        ,
+        ).azColumn().mainCenter(),
       )
           // .toContainer()
           // .m(10.0)
