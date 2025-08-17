@@ -1,3 +1,5 @@
+## 0.0.12
+* Inkwell bug fix
 ## 0.0.11
 * bugs fix
 ## 0.0.9
