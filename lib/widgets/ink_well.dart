@@ -33,7 +33,7 @@ class AzInkWell extends StatelessWidget{
   double? _radius;
   BorderRadius? _borderRadius;
   // ShapeBorder? customBorder;
-  bool? _enableFeedback = true;
+  bool _enableFeedback = true;
   bool _excludeFromSemantics = false;
   // FocusNode? focusNode;
   bool _canRequestFocus = true;
